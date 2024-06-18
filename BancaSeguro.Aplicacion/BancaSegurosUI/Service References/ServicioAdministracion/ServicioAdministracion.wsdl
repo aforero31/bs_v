@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioAdministracion" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Administracion" />
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" />
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" />
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" />
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" />
+      <xsd:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Planos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioAdministracion_PrevisualizarPlantilla_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrevisualizarPlantilla" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_PrevisualizarPlantilla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrevisualizarPlantillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarDocumentoPlantillaSeguro_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDocumentoPlantillaSeguro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarDocumentoPlantillaSeguro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDocumentoPlantillaSeguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerPlantillasPorIdSeguro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPlantillasPorIdSeguro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerPlantillasPorIdSeguro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPlantillasPorIdSeguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarPlantilla_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPlantilla" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarPlantilla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPlantillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActivarEstadoPlantilla_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarEstadoPlantilla" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActivarEstadoPlantilla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivarEstadoPlantillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerDocumentoPolizaPorIdDocumentoPoliza_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentoPolizaPorIdDocumentoPoliza" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerDocumentoPolizaPorIdDocumentoPoliza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentoPolizaPorIdDocumentoPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarPlantillasActivas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPlantillasActivas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarPlantillasActivas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPlantillasActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarCanalVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCanalVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarCanalVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarCanalVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizaCanalVentaPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaCanalVentaPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizaCanalVentaPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaCanalVentaPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAseguradoras_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAseguradoras" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAseguradoras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAseguradorasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAseguradoraPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAseguradoraPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAseguradoraPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAseguradoraPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarAseguradora_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAseguradora" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarAseguradora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAseguradoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarAseguradora_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAseguradora" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarAseguradora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAseguradoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarConveniosPorIdAseguradora_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarConveniosPorIdAseguradora" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarConveniosPorIdAseguradora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarConveniosPorIdAseguradoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarTipoDocumentoSeguro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarTipoDocumentoSeguro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarTipoDocumentoSeguro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarTipoDocumentoSeguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarTipoDocumentoSeguro_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTipoDocumentoSeguro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarTipoDocumentoSeguro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTipoDocumentoSeguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarParametro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarParametro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarParametro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarParametroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizaParametroPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaParametroPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizaParametroPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaParametroPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarSeguro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSeguro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarSeguro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSeguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerCanalesVentaActivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCanalesVentaActivos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerCanalesVentaActivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCanalesVentaActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerPeriodicidadesActivas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPeriodicidadesActivas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerPeriodicidadesActivas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPeriodicidadesActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarTodosLosSeguros_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTodosLosSeguros" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarTodosLosSeguros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTodosLosSegurosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarSeguroPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSeguroPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarSeguroPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSeguroPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarInformacionSeguroPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionSeguroPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarInformacionSeguroPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionSeguroPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarSegurosPorParametros_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSegurosPorParametros" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarSegurosPorParametros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSegurosPorParametrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarSegurosPorAseguradora_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSegurosPorAseguradora" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarSegurosPorAseguradora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSegurosPorAseguradoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarIPC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarIPC" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarIPC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarIPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizaIPC_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaIPC" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizaIPC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaIPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarIPC_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarIPC" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarIPC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarIPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerAuditorias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAuditorias" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ObtenerAuditorias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAuditoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarNovedad_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarNovedad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarNovedad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarNovedad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNovedad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarNovedad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarNovedades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNovedades" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarNovedades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNovedadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarCausalNovedad_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCausalNovedad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarCausalNovedad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCausalNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarCausalNovedad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCausalNovedad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarCausalNovedad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCausalNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarCausalNovedad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCausalNovedad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarCausalNovedad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCausalNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarMensaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarMensaje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarMensaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarMensaje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarMensajes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMensajes" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarMensajes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMensajesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarAprobacionDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAprobacionDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarAprobacionDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAprobacionDualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAprobacionesControlDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAprobacionesControlDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAprobacionesControlDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAprobacionesControlDualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarAprobacionDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAprobacionDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarAprobacionDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAprobacionDualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAprobacionesControlDualPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAprobacionesControlDualPorId" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAprobacionesControlDualPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAprobacionesControlDualPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarVariableProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarVariableProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarVariableProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarVariableProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarVariableProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarVariableProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarVariableProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarVariableProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarVariablesProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVariablesProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarVariablesProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVariablesProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarVariablesProductoActivas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVariablesProductoActivas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarVariablesProductoActivas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVariablesProductoActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarVariableProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVariableProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarVariableProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarVariableProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarMaestra_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarMaestra" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarMaestra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarMaestraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarMaestra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMaestra" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarMaestra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMaestraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarMaestras_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMaestras" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarMaestras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMaestrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarMaestra_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMaestra" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarMaestra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMaestraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarItemMaestra_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarItemMaestra" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_InsertarItemMaestra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarItemMaestraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarItemMaestra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarItemMaestra" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarItemMaestra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarItemMaestraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarItemsMaestra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarItemsMaestra" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarItemsMaestra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarItemsMaestraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarItemMaestra_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarItemMaestra" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarItemMaestra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarItemMaestraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAseguradorasActivas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAseguradorasActivas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarAseguradorasActivas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAseguradorasActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarPolizas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPolizas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarPolizas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPolizasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarCobros_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCobros" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarCobros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCobrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarCancelaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCancelaciones" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarCancelaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCancelacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarFiltrosCancelaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarFiltrosCancelaciones" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarFiltrosCancelaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarFiltrosCancelacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarDatosArchivoPlano_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarDatosArchivoPlano" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_GuardarDatosArchivoPlano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarDatosArchivoPlanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarDatosGrilla_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDatosGrilla" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ConsultarDatosGrilla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDatosGrillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarDatosArchivoPlano_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDatosArchivoPlano" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_ActualizarDatosArchivoPlano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDatosArchivoPlanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarDatosArchivoPlano_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarDatosArchivoPlano" />
+  </wsdl:message>
+  <wsdl:message name="IServicioAdministracion_EliminarDatosArchivoPlano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarDatosArchivoPlanoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioAdministracion">
+    <wsdl:operation name="PrevisualizarPlantilla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/PrevisualizarPlantilla" message="tns:IServicioAdministracion_PrevisualizarPlantilla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/PrevisualizarPlantillaResponse" message="tns:IServicioAdministracion_PrevisualizarPlantilla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDocumentoPlantillaSeguro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarDocumentoPlantillaSeguro" message="tns:IServicioAdministracion_InsertarDocumentoPlantillaSeguro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarDocumentoPlantillaSeguroResponse" message="tns:IServicioAdministracion_InsertarDocumentoPlantillaSeguro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlantillasPorIdSeguro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerPlantillasPorIdSeguro" message="tns:IServicioAdministracion_ObtenerPlantillasPorIdSeguro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerPlantillasPorIdSeguroResponse" message="tns:IServicioAdministracion_ObtenerPlantillasPorIdSeguro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPlantilla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarPlantilla" message="tns:IServicioAdministracion_EliminarPlantilla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarPlantillaResponse" message="tns:IServicioAdministracion_EliminarPlantilla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivarEstadoPlantilla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActivarEstadoPlantilla" message="tns:IServicioAdministracion_ActivarEstadoPlantilla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActivarEstadoPlantillaResponse" message="tns:IServicioAdministracion_ActivarEstadoPlantilla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentoPolizaPorIdDocumentoPoliza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerDocumentoPolizaPorIdDocumentoPoliza" message="tns:IServicioAdministracion_ObtenerDocumentoPolizaPorIdDocumentoPoliza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerDocumentoPolizaPorIdDocumentoPolizaResponse" message="tns:IServicioAdministracion_ObtenerDocumentoPolizaPorIdDocumentoPoliza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPlantillasActivas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarPlantillasActivas" message="tns:IServicioAdministracion_ConsultarPlantillasActivas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarPlantillasActivasResponse" message="tns:IServicioAdministracion_ConsultarPlantillasActivas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCanalVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarCanalVenta" message="tns:IServicioAdministracion_GuardarCanalVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarCanalVentaResponse" message="tns:IServicioAdministracion_GuardarCanalVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCanalVentaPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizaCanalVentaPorId" message="tns:IServicioAdministracion_ActualizaCanalVentaPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizaCanalVentaPorIdResponse" message="tns:IServicioAdministracion_ActualizaCanalVentaPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAseguradoras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAseguradoras" message="tns:IServicioAdministracion_ConsultarAseguradoras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAseguradorasResponse" message="tns:IServicioAdministracion_ConsultarAseguradoras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAseguradoraPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAseguradoraPorId" message="tns:IServicioAdministracion_ConsultarAseguradoraPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAseguradoraPorIdResponse" message="tns:IServicioAdministracion_ConsultarAseguradoraPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAseguradora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarAseguradora" message="tns:IServicioAdministracion_InsertarAseguradora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarAseguradoraResponse" message="tns:IServicioAdministracion_InsertarAseguradora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAseguradora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarAseguradora" message="tns:IServicioAdministracion_ActualizarAseguradora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarAseguradoraResponse" message="tns:IServicioAdministracion_ActualizarAseguradora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConveniosPorIdAseguradora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarConveniosPorIdAseguradora" message="tns:IServicioAdministracion_ConsultarConveniosPorIdAseguradora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarConveniosPorIdAseguradoraResponse" message="tns:IServicioAdministracion_ConsultarConveniosPorIdAseguradora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarTipoDocumentoSeguro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarTipoDocumentoSeguro" message="tns:IServicioAdministracion_GuardarTipoDocumentoSeguro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarTipoDocumentoSeguroResponse" message="tns:IServicioAdministracion_GuardarTipoDocumentoSeguro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipoDocumentoSeguro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarTipoDocumentoSeguro" message="tns:IServicioAdministracion_EliminarTipoDocumentoSeguro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarTipoDocumentoSeguroResponse" message="tns:IServicioAdministracion_EliminarTipoDocumentoSeguro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarParametro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarParametro" message="tns:IServicioAdministracion_GuardarParametro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarParametroResponse" message="tns:IServicioAdministracion_GuardarParametro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaParametroPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizaParametroPorId" message="tns:IServicioAdministracion_ActualizaParametroPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizaParametroPorIdResponse" message="tns:IServicioAdministracion_ActualizaParametroPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSeguro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarSeguro" message="tns:IServicioAdministracion_GuardarSeguro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarSeguroResponse" message="tns:IServicioAdministracion_GuardarSeguro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCanalesVentaActivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerCanalesVentaActivos" message="tns:IServicioAdministracion_ObtenerCanalesVentaActivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerCanalesVentaActivosResponse" message="tns:IServicioAdministracion_ObtenerCanalesVentaActivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPeriodicidadesActivas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerPeriodicidadesActivas" message="tns:IServicioAdministracion_ObtenerPeriodicidadesActivas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerPeriodicidadesActivasResponse" message="tns:IServicioAdministracion_ObtenerPeriodicidadesActivas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTodosLosSeguros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarTodosLosSeguros" message="tns:IServicioAdministracion_ConsultarTodosLosSeguros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarTodosLosSegurosResponse" message="tns:IServicioAdministracion_ConsultarTodosLosSeguros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSeguroPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarSeguroPorId" message="tns:IServicioAdministracion_ActualizarSeguroPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarSeguroPorIdResponse" message="tns:IServicioAdministracion_ActualizarSeguroPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionSeguroPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarInformacionSeguroPorId" message="tns:IServicioAdministracion_ConsultarInformacionSeguroPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarInformacionSeguroPorIdResponse" message="tns:IServicioAdministracion_ConsultarInformacionSeguroPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSegurosPorParametros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarSegurosPorParametros" message="tns:IServicioAdministracion_ConsultarSegurosPorParametros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarSegurosPorParametrosResponse" message="tns:IServicioAdministracion_ConsultarSegurosPorParametros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSegurosPorAseguradora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarSegurosPorAseguradora" message="tns:IServicioAdministracion_ConsultarSegurosPorAseguradora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarSegurosPorAseguradoraResponse" message="tns:IServicioAdministracion_ConsultarSegurosPorAseguradora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarIPC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarIPC" message="tns:IServicioAdministracion_GuardarIPC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarIPCResponse" message="tns:IServicioAdministracion_GuardarIPC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaIPC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizaIPC" message="tns:IServicioAdministracion_ActualizaIPC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizaIPCResponse" message="tns:IServicioAdministracion_ActualizaIPC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarIPC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarIPC" message="tns:IServicioAdministracion_ConsultarIPC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarIPCResponse" message="tns:IServicioAdministracion_ConsultarIPC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAuditorias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerAuditorias" message="tns:IServicioAdministracion_ObtenerAuditorias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ObtenerAuditoriasResponse" message="tns:IServicioAdministracion_ObtenerAuditorias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarNovedad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarNovedad" message="tns:IServicioAdministracion_InsertarNovedad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarNovedadResponse" message="tns:IServicioAdministracion_InsertarNovedad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNovedad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarNovedad" message="tns:IServicioAdministracion_ActualizarNovedad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarNovedadResponse" message="tns:IServicioAdministracion_ActualizarNovedad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNovedades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarNovedades" message="tns:IServicioAdministracion_ConsultarNovedades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarNovedadesResponse" message="tns:IServicioAdministracion_ConsultarNovedades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCausalNovedad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarCausalNovedad" message="tns:IServicioAdministracion_InsertarCausalNovedad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarCausalNovedadResponse" message="tns:IServicioAdministracion_InsertarCausalNovedad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCausalNovedad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarCausalNovedad" message="tns:IServicioAdministracion_ActualizarCausalNovedad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarCausalNovedadResponse" message="tns:IServicioAdministracion_ActualizarCausalNovedad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCausalNovedad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarCausalNovedad" message="tns:IServicioAdministracion_ConsultarCausalNovedad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarCausalNovedadResponse" message="tns:IServicioAdministracion_ConsultarCausalNovedad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMensaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarMensaje" message="tns:IServicioAdministracion_InsertarMensaje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarMensajeResponse" message="tns:IServicioAdministracion_InsertarMensaje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMensaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarMensaje" message="tns:IServicioAdministracion_ActualizarMensaje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarMensajeResponse" message="tns:IServicioAdministracion_ActualizarMensaje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMensajes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarMensajes" message="tns:IServicioAdministracion_ConsultarMensajes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarMensajesResponse" message="tns:IServicioAdministracion_ConsultarMensajes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAprobacionDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarAprobacionDual" message="tns:IServicioAdministracion_InsertarAprobacionDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarAprobacionDualResponse" message="tns:IServicioAdministracion_InsertarAprobacionDual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAprobacionesControlDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAprobacionesControlDual" message="tns:IServicioAdministracion_ConsultarAprobacionesControlDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAprobacionesControlDualResponse" message="tns:IServicioAdministracion_ConsultarAprobacionesControlDual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAprobacionDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarAprobacionDual" message="tns:IServicioAdministracion_ActualizarAprobacionDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarAprobacionDualResponse" message="tns:IServicioAdministracion_ActualizarAprobacionDual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAprobacionesControlDualPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAprobacionesControlDualPorId" message="tns:IServicioAdministracion_ConsultarAprobacionesControlDualPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAprobacionesControlDualPorIdResponse" message="tns:IServicioAdministracion_ConsultarAprobacionesControlDualPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVariableProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarVariableProducto" message="tns:IServicioAdministracion_InsertarVariableProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarVariableProductoResponse" message="tns:IServicioAdministracion_InsertarVariableProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVariableProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarVariableProducto" message="tns:IServicioAdministracion_ActualizarVariableProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarVariableProductoResponse" message="tns:IServicioAdministracion_ActualizarVariableProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariablesProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarVariablesProducto" message="tns:IServicioAdministracion_ConsultarVariablesProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarVariablesProductoResponse" message="tns:IServicioAdministracion_ConsultarVariablesProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariablesProductoActivas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarVariablesProductoActivas" message="tns:IServicioAdministracion_ConsultarVariablesProductoActivas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarVariablesProductoActivasResponse" message="tns:IServicioAdministracion_ConsultarVariablesProductoActivas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariableProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarVariableProducto" message="tns:IServicioAdministracion_EliminarVariableProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarVariableProductoResponse" message="tns:IServicioAdministracion_EliminarVariableProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMaestra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarMaestra" message="tns:IServicioAdministracion_InsertarMaestra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarMaestraResponse" message="tns:IServicioAdministracion_InsertarMaestra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMaestra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarMaestra" message="tns:IServicioAdministracion_ActualizarMaestra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarMaestraResponse" message="tns:IServicioAdministracion_ActualizarMaestra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMaestras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarMaestras" message="tns:IServicioAdministracion_ConsultarMaestras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarMaestrasResponse" message="tns:IServicioAdministracion_ConsultarMaestras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMaestra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarMaestra" message="tns:IServicioAdministracion_EliminarMaestra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarMaestraResponse" message="tns:IServicioAdministracion_EliminarMaestra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarItemMaestra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarItemMaestra" message="tns:IServicioAdministracion_InsertarItemMaestra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/InsertarItemMaestraResponse" message="tns:IServicioAdministracion_InsertarItemMaestra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarItemMaestra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarItemMaestra" message="tns:IServicioAdministracion_ActualizarItemMaestra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarItemMaestraResponse" message="tns:IServicioAdministracion_ActualizarItemMaestra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarItemsMaestra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarItemsMaestra" message="tns:IServicioAdministracion_ConsultarItemsMaestra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarItemsMaestraResponse" message="tns:IServicioAdministracion_ConsultarItemsMaestra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarItemMaestra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarItemMaestra" message="tns:IServicioAdministracion_EliminarItemMaestra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarItemMaestraResponse" message="tns:IServicioAdministracion_EliminarItemMaestra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAseguradorasActivas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAseguradorasActivas" message="tns:IServicioAdministracion_ConsultarAseguradorasActivas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarAseguradorasActivasResponse" message="tns:IServicioAdministracion_ConsultarAseguradorasActivas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPolizas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarPolizas" message="tns:IServicioAdministracion_ConsultarPolizas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarPolizasResponse" message="tns:IServicioAdministracion_ConsultarPolizas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCobros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarCobros" message="tns:IServicioAdministracion_ConsultarCobros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarCobrosResponse" message="tns:IServicioAdministracion_ConsultarCobros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCancelaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarCancelaciones" message="tns:IServicioAdministracion_ConsultarCancelaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarCancelacionesResponse" message="tns:IServicioAdministracion_ConsultarCancelaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosCancelaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarFiltrosCancelaciones" message="tns:IServicioAdministracion_ConsultarFiltrosCancelaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarFiltrosCancelacionesResponse" message="tns:IServicioAdministracion_ConsultarFiltrosCancelaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarDatosArchivoPlano">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarDatosArchivoPlano" message="tns:IServicioAdministracion_GuardarDatosArchivoPlano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/GuardarDatosArchivoPlanoResponse" message="tns:IServicioAdministracion_GuardarDatosArchivoPlano_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDatosGrilla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarDatosGrilla" message="tns:IServicioAdministracion_ConsultarDatosGrilla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ConsultarDatosGrillaResponse" message="tns:IServicioAdministracion_ConsultarDatosGrilla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDatosArchivoPlano">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarDatosArchivoPlano" message="tns:IServicioAdministracion_ActualizarDatosArchivoPlano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/ActualizarDatosArchivoPlanoResponse" message="tns:IServicioAdministracion_ActualizarDatosArchivoPlano_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDatosArchivoPlano">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarDatosArchivoPlano" message="tns:IServicioAdministracion_EliminarDatosArchivoPlano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioAdministracion/EliminarDatosArchivoPlanoResponse" message="tns:IServicioAdministracion_EliminarDatosArchivoPlano_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioAdministracion" type="tns:IServicioAdministracion">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrevisualizarPlantilla">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/PrevisualizarPlantilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDocumentoPlantillaSeguro">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarDocumentoPlantillaSeguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPlantillasPorIdSeguro">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ObtenerPlantillasPorIdSeguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPlantilla">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/EliminarPlantilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivarEstadoPlantilla">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActivarEstadoPlantilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentoPolizaPorIdDocumentoPoliza">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ObtenerDocumentoPolizaPorIdDocumentoPoliza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPlantillasActivas">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarPlantillasActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCanalVenta">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/GuardarCanalVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCanalVentaPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizaCanalVentaPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAseguradoras">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarAseguradoras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAseguradoraPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarAseguradoraPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAseguradora">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarAseguradora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAseguradora">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarAseguradora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConveniosPorIdAseguradora">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarConveniosPorIdAseguradora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarTipoDocumentoSeguro">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/GuardarTipoDocumentoSeguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipoDocumentoSeguro">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/EliminarTipoDocumentoSeguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarParametro">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/GuardarParametro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaParametroPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizaParametroPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSeguro">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/GuardarSeguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCanalesVentaActivos">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ObtenerCanalesVentaActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPeriodicidadesActivas">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ObtenerPeriodicidadesActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTodosLosSeguros">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarTodosLosSeguros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSeguroPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarSeguroPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionSeguroPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarInformacionSeguroPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSegurosPorParametros">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarSegurosPorParametros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSegurosPorAseguradora">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarSegurosPorAseguradora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarIPC">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/GuardarIPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaIPC">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizaIPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarIPC">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarIPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAuditorias">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ObtenerAuditorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarNovedad">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNovedad">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNovedades">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarNovedades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCausalNovedad">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarCausalNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCausalNovedad">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarCausalNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCausalNovedad">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarCausalNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMensaje">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMensaje">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMensajes">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarMensajes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAprobacionDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarAprobacionDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAprobacionesControlDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarAprobacionesControlDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAprobacionDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarAprobacionDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAprobacionesControlDualPorId">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarAprobacionesControlDualPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVariableProducto">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarVariableProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVariableProducto">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarVariableProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariablesProducto">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarVariablesProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVariablesProductoActivas">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarVariablesProductoActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarVariableProducto">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/EliminarVariableProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMaestra">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarMaestra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMaestra">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarMaestra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMaestras">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarMaestras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMaestra">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/EliminarMaestra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarItemMaestra">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/InsertarItemMaestra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarItemMaestra">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarItemMaestra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarItemsMaestra">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarItemsMaestra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarItemMaestra">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/EliminarItemMaestra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAseguradorasActivas">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarAseguradorasActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPolizas">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarPolizas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCobros">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarCobros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCancelaciones">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarCancelaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosCancelaciones">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarFiltrosCancelaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarDatosArchivoPlano">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/GuardarDatosArchivoPlano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDatosGrilla">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ConsultarDatosGrilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDatosArchivoPlano">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/ActualizarDatosArchivoPlano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarDatosArchivoPlano">
+      <soap:operation soapAction="http://tempuri.org/IServicioAdministracion/EliminarDatosArchivoPlano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioAdministracion">
+    <wsdl:port name="BasicHttpBinding_IServicioAdministracion" binding="tns:BasicHttpBinding_IServicioAdministracion">
+      <soap:address location="http://localhost:60524/Administracion/ServicioAdministracion.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

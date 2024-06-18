@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" />
+  <xs:complexType name="ArrayOfSeguro">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Seguro" nillable="true" type="tns:Seguro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeguro" nillable="true" type="tns:ArrayOfSeguro" />
+  <xs:complexType name="Seguro">
+    <xs:sequence>
+      <xs:element name="_x003C_IdAseguradora_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdCanalVenta_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_MaximoBeneficiarios_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_NumeroMaximoSegurosPorCliente_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="aseguradora" nillable="true" type="tns:Aseguradora" />
+      <xs:element name="beneficiario" type="xs:boolean" />
+      <xs:element name="causalRechazo" nillable="true" type="tns:CausalRechazo" />
+      <xs:element name="codigo" nillable="true" type="xs:string" />
+      <xs:element name="conyuge" type="xs:boolean" />
+      <xs:element name="descripcion" nillable="true" type="xs:string" />
+      <xs:element name="edadMaximaConyuge" type="xs:int" />
+      <xs:element name="edadMaximaHombre" type="xs:int" />
+      <xs:element name="edadMaximaMujer" type="xs:int" />
+      <xs:element name="edadMinimaConyuge" type="xs:int" />
+      <xs:element name="edadMinimaHombre" type="xs:int" />
+      <xs:element name="edadMinimaMujer" type="xs:int" />
+      <xs:element name="estadoPoliza" nillable="true" type="tns:EstadoPoliza" />
+      <xs:element name="idSeguro" type="xs:int" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element name="nombreEstado" nillable="true" type="xs:string" />
+      <xs:element name="numeroMaximoVentaSegurosPorCuentaCliente" type="xs:int" />
+      <xs:element name="plan" nillable="true" type="tns:Plan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seguro" nillable="true" type="tns:Seguro" />
+  <xs:complexType name="Aseguradora">
+    <xs:sequence>
+      <xs:element name="activo" nillable="true" type="xs:boolean" />
+      <xs:element name="actualizaConsecutivo" type="xs:boolean" />
+      <xs:element name="codigoSuperintendencia" nillable="true" type="xs:string" />
+      <xs:element name="consecutivoActual" type="xs:int" />
+      <xs:element name="consecutivoInicial" type="xs:int" />
+      <xs:element name="contacto" nillable="true" type="xs:string" />
+      <xs:element name="convenio" nillable="true" type="tns:Convenio" />
+      <xs:element name="correo" nillable="true" type="xs:string" />
+      <xs:element name="idAseguradora" type="xs:int" />
+      <xs:element name="identificacion" nillable="true" type="xs:string" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element name="telefono" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" name="tipoIdentificacion" nillable="true" type="q1:TipoIdentificacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Aseguradora" nillable="true" type="tns:Aseguradora" />
+  <xs:complexType name="Convenio">
+    <xs:sequence>
+      <xs:element name="_x003C_Activo_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_CodigoConvenio_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdAseguradora_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_NombreConvenio_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Convenio" nillable="true" type="tns:Convenio" />
+  <xs:complexType name="CausalRechazo">
+    <xs:sequence>
+      <xs:element name="codigoCausalRechazo" type="xs:int" />
+      <xs:element name="nombreCausalRechazo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CausalRechazo" nillable="true" type="tns:CausalRechazo" />
+  <xs:complexType name="EstadoPoliza">
+    <xs:sequence>
+      <xs:element name="codigoEstadoPoliza" type="xs:int" />
+      <xs:element name="descripcionEstadoPoliza" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoPoliza" nillable="true" type="tns:EstadoPoliza" />
+  <xs:complexType name="Plan">
+    <xs:sequence>
+      <xs:element name="_x003C_Login_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="codigoConvenio" type="xs:int" />
+      <xs:element name="codigoPlan" type="xs:int" />
+      <xs:element name="descripcion" nillable="true" type="xs:string" />
+      <xs:element name="idPeriodicidad" type="xs:int" />
+      <xs:element name="idPlan" type="xs:int" />
+      <xs:element name="idSeguro" type="xs:int" />
+      <xs:element name="nombrePeriodicidad" nillable="true" type="xs:string" />
+      <xs:element name="nombrePlan" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" name="periodicidad" nillable="true" type="q2:Periodicidad" />
+      <xs:element name="valor" type="xs:decimal" />
+      <xs:element name="valorIVA" type="xs:decimal" />
+      <xs:element name="valorMoneda" nillable="true" type="xs:string" />
+      <xs:element name="valorSinIVA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plan" nillable="true" type="tns:Plan" />
+  <xs:complexType name="ArrayOfPlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Plan" nillable="true" type="tns:Plan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlan" nillable="true" type="tns:ArrayOfPlan" />
+  <xs:complexType name="ArrayOfAseguradora">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Aseguradora" nillable="true" type="tns:Aseguradora" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAseguradora" nillable="true" type="tns:ArrayOfAseguradora" />
+  <xs:complexType name="DetalleCancelacionPoliza">
+    <xs:sequence>
+      <xs:element name="causalRechazo" nillable="true" type="tns:CausalRechazo" />
+      <xs:element name="fechaCancelacion" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleCancelacionPoliza" nillable="true" type="tns:DetalleCancelacionPoliza" />
+</xs:schema>

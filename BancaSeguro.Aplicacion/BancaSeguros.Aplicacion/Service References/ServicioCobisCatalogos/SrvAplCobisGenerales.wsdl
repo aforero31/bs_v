@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://service.srvaplcobisgenerales.ecobis.cobiscorp" xmlns:dto1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S1="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/" name="SrvAplCobisGenerales" targetNamespace="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/">
+      <xsd:import schemaLocation="services.xsd" namespace="http://service.srvaplcobisgenerales.ecobis.cobiscorp" />
+      <xsd:import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+      <xsd:element name="ContextoRespuesta" type="dto1:ContextoRespuesta" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MsjOpBuscarDepartamentoSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarDepartamentoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarPaisSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarPaisSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpActivarEntregaExtractoFisicoRespuesta">
+    <wsdl:part name="parameters" element="tns:opActivarEntregaExtractoFisicoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpActivarEntregaExtractoFisicoSolicitud">
+    <wsdl:part name="parameters" element="tns:opActivarEntregaExtractoFisicoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarCatalogoSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarCatalogoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoAnualCostosSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoAnualCostosSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarCatalogoRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarCatalogoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpInscripcionMulticashRespuesta">
+    <wsdl:part name="parameters" element="tns:opInscripcionMulticashRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarMunicipioRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarMunicipioRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarPorIdParametroSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarPorIdParametroSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarTramiteRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarTramiteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarOficinaRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarOficinaRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarTramiteSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarTramiteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpSolicitarProductoRespuesta">
+    <wsdl:part name="parameters" element="tns:opSolicitarProductoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarPaisRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarPaisRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarOficinaSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarOficinaSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoAnualCostosRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoAnualCostosRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarPorIdParametroRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarPorIdParametroRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjError">
+    <wsdl:part name="parameters" element="S1:ContextoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarMunicipioSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarMunicipioSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpSolicitarProductoSolicitud">
+    <wsdl:part name="parameters" element="tns:opSolicitarProductoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarDepartamentoRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarDepartamentoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpInscripcionMulticashSolicitud">
+    <wsdl:part name="parameters" element="tns:opInscripcionMulticashSolicitud" />
+  </wsdl:message>
+  <wsdl:portType name="SrvAplCobisGenerales">
+    <wsdl:operation name="OpActivarEntregaExtractoFisico">
+      <wsdl:input message="S1:MsjOpActivarEntregaExtractoFisicoSolicitud" />
+      <wsdl:output message="S1:MsjOpActivarEntregaExtractoFisicoRespuesta" />
+      <wsdl:fault name="OpActivarEntregaExtractoFisicoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCatalogo">
+      <wsdl:input message="S1:MsjOpBuscarCatalogoSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarCatalogoRespuesta" />
+      <wsdl:fault name="OpBuscarCatalogoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarDepartamento">
+      <wsdl:input message="S1:MsjOpBuscarDepartamentoSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarDepartamentoRespuesta" />
+      <wsdl:fault name="OpBuscarDepartamentoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoAnualCostos">
+      <wsdl:input message="S1:MsjOpBuscarExtractoAnualCostosSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarExtractoAnualCostosRespuesta" />
+      <wsdl:fault name="OpBuscarExtractoAnualCostosError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMunicipio">
+      <wsdl:input message="S1:MsjOpBuscarMunicipioSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarMunicipioRespuesta" />
+      <wsdl:fault name="OpBuscarMunicipioError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarOficina">
+      <wsdl:input message="S1:MsjOpBuscarOficinaSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarOficinaRespuesta" />
+      <wsdl:fault name="OpBuscarOficinaError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPais">
+      <wsdl:input message="S1:MsjOpBuscarPaisSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarPaisRespuesta" />
+      <wsdl:fault name="OpBuscarPaisError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPorIdParametro">
+      <wsdl:input message="S1:MsjOpBuscarPorIdParametroSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarPorIdParametroRespuesta" />
+      <wsdl:fault name="OpBuscarPorIdParametroError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTramite">
+      <wsdl:input message="S1:MsjOpBuscarTramiteSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarTramiteRespuesta" />
+      <wsdl:fault name="OpBuscarTramiteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpInscripcionMulticash">
+      <wsdl:input message="S1:MsjOpInscripcionMulticashSolicitud" />
+      <wsdl:output message="S1:MsjOpInscripcionMulticashRespuesta" />
+      <wsdl:fault name="OpInscripcionMulticashError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpSolicitarProducto">
+      <wsdl:input message="S1:MsjOpSolicitarProductoSolicitud" />
+      <wsdl:output message="S1:MsjOpSolicitarProductoRespuesta" />
+      <wsdl:fault name="OpSolicitarProductoError" message="S1:MsjError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvAplCobisGeneralesBindingSOAP11" type="S1:SrvAplCobisGenerales">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpActivarEntregaExtractoFisico">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpActivarEntregaExtractoFisico" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpActivarEntregaExtractoFisicoError">
+        <soap:fault use="literal" name="OpActivarEntregaExtractoFisicoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCatalogo">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarCatalogo" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarCatalogoError">
+        <soap:fault use="literal" name="OpBuscarCatalogoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarDepartamento">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarDepartamento" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarDepartamentoError">
+        <soap:fault use="literal" name="OpBuscarDepartamentoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoAnualCostos">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarExtractoAnualCostos" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoAnualCostosError">
+        <soap:fault use="literal" name="OpBuscarExtractoAnualCostosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMunicipio">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarMunicipio" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarMunicipioError">
+        <soap:fault use="literal" name="OpBuscarMunicipioError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarOficina">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarOficina" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarOficinaError">
+        <soap:fault use="literal" name="OpBuscarOficinaError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPais">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarPais" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarPaisError">
+        <soap:fault use="literal" name="OpBuscarPaisError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPorIdParametro">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarPorIdParametro" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarPorIdParametroError">
+        <soap:fault use="literal" name="OpBuscarPorIdParametroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTramite">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarTramite" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarTramiteError">
+        <soap:fault use="literal" name="OpBuscarTramiteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpInscripcionMulticash">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpInscripcionMulticash" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpInscripcionMulticashError">
+        <soap:fault use="literal" name="OpInscripcionMulticashError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpSolicitarProducto">
+      <soap:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpSolicitarProducto" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpSolicitarProductoError">
+        <soap:fault use="literal" name="OpSolicitarProductoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SrvAplCobisGeneralesBindingSOAP12" type="S1:SrvAplCobisGenerales">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpActivarEntregaExtractoFisico">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpActivarEntregaExtractoFisico" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpActivarEntregaExtractoFisicoError">
+        <soap12:fault use="literal" name="OpActivarEntregaExtractoFisicoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCatalogo">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarCatalogo" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarCatalogoError">
+        <soap12:fault use="literal" name="OpBuscarCatalogoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarDepartamento">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarDepartamento" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarDepartamentoError">
+        <soap12:fault use="literal" name="OpBuscarDepartamentoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoAnualCostos">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarExtractoAnualCostos" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoAnualCostosError">
+        <soap12:fault use="literal" name="OpBuscarExtractoAnualCostosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMunicipio">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarMunicipio" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarMunicipioError">
+        <soap12:fault use="literal" name="OpBuscarMunicipioError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarOficina">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarOficina" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarOficinaError">
+        <soap12:fault use="literal" name="OpBuscarOficinaError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPais">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarPais" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarPaisError">
+        <soap12:fault use="literal" name="OpBuscarPaisError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPorIdParametro">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarPorIdParametro" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarPorIdParametroError">
+        <soap12:fault use="literal" name="OpBuscarPorIdParametroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTramite">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpBuscarTramite" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarTramiteError">
+        <soap12:fault use="literal" name="OpBuscarTramiteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpInscripcionMulticash">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpInscripcionMulticash" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpInscripcionMulticashError">
+        <soap12:fault use="literal" name="OpInscripcionMulticashError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpSolicitarProducto">
+      <soap12:operation soapAction="http://service.srvaplcobisgenerales.ecobis.cobiscorp.ws/SrvAplCobisGenerales/OpSolicitarProducto" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpSolicitarProductoError">
+        <soap12:fault use="literal" name="OpSolicitarProductoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvAplCobisGenerales">
+    <wsdl:port name="SrvAplCobisGeneralesBindingSOAP11" binding="S1:SrvAplCobisGeneralesBindingSOAP11">
+      <soap:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisGenerales.Service/SrvAplCobisGenerales" />
+    </wsdl:port>
+    <wsdl:port name="SrvAplCobisGeneralesBindingSOAP12" binding="S1:SrvAplCobisGeneralesBindingSOAP12">
+      <soap12:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisGenerales.Service/SrvAplCobisGenerales" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PR_SEG_ConsultarProductosNoPermitidosPorSeguro" xml:space="preserve">
+    <value>PR_SEG_ConsultarProductosNoPermitidosPorSeguro</value>
+  </data>
+  <data name="PR_SEG_ConstruirNroPoliza" xml:space="preserve">
+    <value>PR_SEG_ConstruirNroPoliza</value>
+    <comment>ObtenerConsecutivo</comment>
+  </data>
+  <data name="PR_SEG_ConsultarLosSegurosAVender" xml:space="preserve">
+    <value>PR_SEG_ConsultarLosSegurosAVender</value>
+    <comment>ConsultarLosSegurosAVender</comment>
+  </data>
+  <data name="PR_SEG_ConsultarOficina" xml:space="preserve">
+    <value>PR_SEG_ConsultarOficina</value>
+    <comment>ConsultarOficina</comment>
+  </data>
+  <data name="PR_SEG_ConsultarPlanesPorIdSeguro" xml:space="preserve">
+    <value>PR_SEG_ConsultarPlanesPorIdSeguro</value>
+    <comment>ConsultarPlanPorIdSeguro</comment>
+  </data>
+  <data name="PR_SEG_GuardarAsesor" xml:space="preserve">
+    <value>PR_SEG_GuardarAsesor</value>
+    <comment>GuardarAsesor</comment>
+  </data>
+  <data name="PR_SEG_GuardarBeneficiario" xml:space="preserve">
+    <value>PR_SEG_GuardarBeneficiario</value>
+    <comment>GuardarBeneficiario</comment>
+  </data>
+  <data name="PR_SEG_GuardarConyuge" xml:space="preserve">
+    <value>PR_SEG_GuardarConyuge</value>
+    <comment>GuardarConyuge</comment>
+  </data>
+  <data name="PR_SEG_GuardarVenta" xml:space="preserve">
+    <value>PR_SEG_GuardarVenta</value>
+    <comment>GuardarVenta</comment>
+  </data>
+  <data name="PR_SEG_ConsultarOficinaPorCodigo" xml:space="preserve">
+    <value>PR_SEG_ConsultarOficinaPorCodigo</value>
+    <comment>ConsultarOficinaPorCodigo</comment>
+  </data>
+  <data name="PR_SEG_ConsultarDocumentoPlantillaPoliza" xml:space="preserve">
+    <value>PR_SEG_ConsultarDocumentoPlantillaPoliza</value>
+  </data>
+  <data name="PR_SEG_ConsultarInformacionDocumentoPoliza" xml:space="preserve">
+    <value>PR_SEG_ConsultarInformacionDocumentoPoliza</value>
+  </data>
+  <data name="PR_SEG_ConsultarInformacionBeneficiarioPorConsecutivoPoliza" xml:space="preserve">
+    <value>PR_SEG_ConsultarInformacionBeneficiarioPorConsecutivoPoliza</value>
+  </data>
+  <data name="PR_SEG_ConsultarInformacionDinamicoPoridVenta" xml:space="preserve">
+    <value>PR_SEG_ConsultarInformacionDinamicoPoridVenta</value>
+  </data>
+  <data name="PR_SEG_ConsultarInformacionConyugePorConsecutivoPoliza" xml:space="preserve">
+    <value>PR_SEG_ConsultarInformacionConyugePorConsecutivoPoliza</value>
+  </data>
+  <data name="PR_SEG_ConsultarInformacionPolizaPorConsecutivo" xml:space="preserve">
+    <value>PR_SEG_ConsultarInformacionPolizaPorConsecutivo</value>
+    <comment>Consulta el encabezado del documento de la poliza</comment>
+  </data>
+  <data name="PR_SEG_InsertarPlantillaSeguro" xml:space="preserve">
+    <value>PR_SEG_InsertarPlantillaSeguro</value>
+  </data>
+  <data name="PR_SEG_ConsultarPolizasPorCliente" xml:space="preserve">
+    <value>PR_SEG_ConsultarPolizasPorCliente</value>
+  </data>
+  <data name="PR_SEG_ConsultarDetallePolizaPorIdVenta" xml:space="preserve">
+    <value>PR_SEG_ConsultarDetallePolizaPorIdVenta</value>
+  </data>
+  <data name="PR_SEG_ConsultarRolPorGrupo" xml:space="preserve">
+    <value>PR_SEG_ConsultarRolPorGrupo</value>
+  </data>
+  <data name="PR_SEG_ConsultarMenuPorRol" xml:space="preserve">
+    <value>PR_SEG_ConsultarMenuPorRol</value>
+  </data>
+  <data name="PR_SEG_GuardarPolizaVendidaImpresion" xml:space="preserve">
+    <value>PR_SEG_GuardarPolizaVendidaImpresion</value>
+  </data>
+  <data name="PR_SEG_ConsultarInformacionReimpresion" xml:space="preserve">
+    <value>PR_SEG_ConsultarInformacionReimpresion</value>
+  </data>
+  <data name="PR_SEG_ConsultarPlantillaPorIdSeguro" xml:space="preserve">
+    <value>PR_SEG_ConsultarPlantillaPorIdSeguro</value>
+  </data>
+  <data name="PR_SEG_ActualizarEstadoEliminadoPlantilla" xml:space="preserve">
+    <value>PR_SEG_ActualizarEstadoEliminadoPlantilla</value>
+  </data>
+  <data name="PR_SEG_ActualizarEstadoActivoPlantilla" xml:space="preserve">
+    <value>PR_SEG_ActualizarEstadoActivoPlantilla</value>
+  </data>
+  <data name="PR_SEG_ObtenerPolizasCreadasPorIdDocumentoPoliza" xml:space="preserve">
+    <value>PR_SEG_ObtenerPolizasCreadasPorIdDocumentoPoliza</value>
+  </data>
+  <data name="PR_SEG_ConsultarDocumentoPlantillaPolizaPorId" xml:space="preserve">
+    <value>PR_SEG_ConsultarDocumentoPlantillaPolizaPorId</value>
+  </data>
+  <data name="PR_SEG_ConsultarTodosLosSeguros" xml:space="preserve">
+    <value>PR_SEG_ConsultarTodosLosSeguros</value>
+  </data>
+  <data name="PR_SEG_GuardarCanalVenta" xml:space="preserve">
+    <value>PR_SEG_GuardarCanalVenta</value>
+  </data>
+  <data name="PR_SEG_ActualizaCanalVentaPorId" xml:space="preserve">
+    <value>PR_SEG_ActualizaCanalVentaPorId</value>
+  </data>
+  <data name="PR_SEG_ActualizarAseguradora" xml:space="preserve">
+    <value>PR_SEG_ActualizarAseguradora</value>
+  </data>
+  <data name="PR_SEG_ConsultarAseguradoraPorId" xml:space="preserve">
+    <value>PR_SEG_ConsultarAseguradoraPorId</value>
+  </data>
+  <data name="PR_SEG_ConsultarAseguradoras" xml:space="preserve">
+    <value>PR_SEG_ConsultarAseguradoras</value>
+  </data>
+  <data name="PR_SEG_InsertarAseguradora" xml:space="preserve">
+    <value>PR_SEG_InsertarAseguradora</value>
+  </data>
+  <data name="PR_SEG_GuardarParametro" xml:space="preserve">
+    <value>PR_SEG_GuardarParametro</value>
+  </data>
+  <data name="PR_SEG_ActualizaParametroPorId" xml:space="preserve">
+    <value>PR_SEG_ActualizaParametroPorId</value>
+  </data>
+  <data name="PR_SEG_ConsultarCategoriasPorSubProductos" xml:space="preserve">
+    <value>PR_SEG_ConsultarCategoriasPorSubProductos</value>
+  </data>
+  <data name="PR_SEG_EliminarPermiso" xml:space="preserve">
+    <value>PR_SEG_EliminarPermiso</value>
+  </data>
+  <data name="PR_SEG_InsertarPermiso" xml:space="preserve">
+    <value>PR_SEG_InsertarPermiso</value>
+  </data>
+  <data name="PR_SEG_ConsultarSubProductosPorCodigoProducto" xml:space="preserve">
+    <value>PR_SEG_ConsultarSubProductosPorCodigoProducto</value>
+  </data>
+  <data name="PR_SEG_ConsultarGrupoBAC" xml:space="preserve">
+    <value>PR_SEG_ConsultarGrupoBAC</value>
+  </data>
+  <data name="PR_SEG_ConsultarGrupoPorRol" xml:space="preserve">
+    <value>PR_SEG_ConsultarGrupoPorRol</value>
+  </data>
+  <data name="PR_SEG_EliminarRolGrupoBAC" xml:space="preserve">
+    <value>PR_SEG_EliminarRolGrupoBAC</value>
+  </data>
+  <data name="PR_SEG_InsertarRolGrupoBAC" xml:space="preserve">
+    <value>PR_SEG_InsertarRolGrupoBAC</value>
+  </data>
+  <data name="PR_SEG_InsertarSeguroTipoIdentificacion" xml:space="preserve">
+    <value>PR_SEG_InsertarSeguroTipoIdentificacion</value>
+  </data>
+  <data name="PR_SEG_EliminarSeguroTipoIdentificacion" xml:space="preserve">
+    <value>PR_SEG_EliminarSeguroTipoIdentificacion</value>
+  </data>
+  <data name="PR_SEG_InsertarSeguro" xml:space="preserve">
+    <value>PR_SEG_InsertarSeguro</value>
+  </data>
+  <data name="PR_SEG_InsertarPlan" xml:space="preserve">
+    <value>PR_SEG_InsertarPlan</value>
+  </data>
+  <data name="PR_SEG_EliminarProductoNoPermitido" xml:space="preserve">
+    <value>PR_SEG_EliminarProductoNoPermitido</value>
+  </data>
+  <data name="PR_SEG_InsertarProductoNoPermitido" xml:space="preserve">
+    <value>PR_SEG_InsertarProductoNoPermitido</value>
+  </data>
+  <data name="PR_SEG_InsertarCanalVentaSeguro" xml:space="preserve">
+    <value>PR_SEG_InsertarCanalVentaSeguro</value>
+  </data>
+  <data name="PR_SEG_ConsultarCanalesActivos" xml:space="preserve">
+    <value>PR_SEG_ConsultarCanalesActivos</value>
+  </data>
+  <data name="PR_SEG_ConsultarPeriodicidadActivos" xml:space="preserve">
+    <value>PR_SEG_ConsultarPeriodicidadActivos</value>
+  </data>
+  <data name="PR_SEG_ConsultarProductosBancariosActivos" xml:space="preserve">
+    <value>PR_SEG_ConsultarProductosBancariosActivos</value>
+  </data>
+  <data name="PR_SEG_InsertarLogCobis" xml:space="preserve">
+    <value>PR_SEG_InsertarLogCobis</value>
+    <comment>Guarda Datos de request y response de Cobis</comment>
+  </data>
+  <data name="PR_SEG_ConsultarCodigosPlanes" xml:space="preserve">
+    <value>PR_SEG_ConsultarCodigosPlanes</value>
+  </data>
+  <data name="PR_SEG_ConsultarAuditoria" xml:space="preserve">
+    <value>PR_SEG_ConsultarAuditoria</value>
+  </data>
+  <data name="PR_SEG_ActualizarIPC" xml:space="preserve">
+    <value>PR_SEG_ActualizarIPC</value>
+    <comment>Actualiza Datos de año y valor de IPC</comment>
+  </data>
+  <data name="PR_SEG_ConsultarIPC" xml:space="preserve">
+    <value>PR_SEG_ConsultarIPC</value>
+    <comment>Consulta Datos de IPC</comment>
+  </data>
+  <data name="PR_SEG_InsertarIPC" xml:space="preserve">
+    <value>PR_SEG_InsertarIPC</value>
+    <comment>Guarda Datos de año y valor del IPC</comment>
+  </data>
+  <data name="PR_SEG_ActualizarTipoNovedad" xml:space="preserve">
+    <value>PR_SEG_ActualizarTipoNovedad</value>
+  </data>
+  <data name="PR_SEG_ConsultarTipoNovedades" xml:space="preserve">
+    <value>PR_SEG_ConsultarTipoNovedades</value>
+  </data>
+  <data name="PR_SEG_InsertarTipoNovedad" xml:space="preserve">
+    <value>PR_SEG_InsertarTipoNovedad</value>
+  </data>
+  <data name="PR_SEG_ActualizarCausalNovedad" xml:space="preserve">
+    <value>PR_SEG_ActualizarCausalNovedad</value>
+  </data>
+  <data name="PR_SEG_ConsultarCausalNovedad" xml:space="preserve">
+    <value>PR_SEG_ConsultarCausalNovedad</value>
+  </data>
+  <data name="PR_SEG_InsertarCausalNovedad" xml:space="preserve">
+    <value>PR_SEG_InsertarCausalNovedad</value>
+  </data>
+  <data name="PR_SEG_ActualizarMensaje" xml:space="preserve">
+    <value>PR_SEG_ActualizarMensaje</value>
+  </data>
+  <data name="PR_SEG_ConsultarMensaje" xml:space="preserve">
+    <value>PR_SEG_ConsultarMensaje</value>
+  </data>
+  <data name="PR_SEG_ConsultarMensajePorId" xml:space="preserve">
+    <value>PR_SEG_ConsultarMensajePorId</value>
+  </data>
+  <data name="PR_SEG_InsertarMensaje" xml:space="preserve">
+    <value>PR_SEG_InsertarMensaje</value>
+  </data>
+  <data name="PR_SEG_ConsultarAprobacionDual" xml:space="preserve">
+    <value>PR_SEG_ConsultarAprobacionDual</value>
+  </data>
+  <data name="PR_SEG_InsertarAprobacionDual" xml:space="preserve">
+    <value>PR_SEG_InsertarAprobacionDual</value>
+  </data>
+  <data name="PR_SEG_ConsultarMenuParaControlDual" xml:space="preserve">
+    <value>PR_SEG_ConsultarMenuParaControlDual</value>
+  </data>
+  <data name="PR_SEG_InsertarAdmonControlDual" xml:space="preserve">
+    <value>PR_SEG_InsertarAdmonControlDual</value>
+  </data>
+  <data name="PR_SEG_ActualizarAprobacionDual" xml:space="preserve">
+    <value>PR_SEG_ActualizarAprobacionDual</value>
+  </data>
+  <data name="PR_SEG_ConsultarAprobacionDualPorId" xml:space="preserve">
+    <value>PR_SEG_ConsultarAprobacionDualPorId</value>
+  </data>
+  <data name="PR_SEG_ActualizaSeguroPorId" xml:space="preserve">
+    <value>PR_SEG_ActualizaSeguroPorId</value>
+  </data>
+  <data name="PR_SEG_ActualizarAdmonControlDual" xml:space="preserve">
+    <value>PR_SEG_ActualizarAdmonControlDual</value>
+  </data>
+  <data name="PR_SEG_ConsultarMenuAprobacionDualPorRol" xml:space="preserve">
+    <value>PR_SEG_ConsultarMenuAprobacionDualPorRol</value>
+  </data>
+  <data name="PR_SEG_ConsultarSeguroPorId" xml:space="preserve">
+    <value>PR_SEG_ConsultarSeguroPorId</value>
+  </data>
+  <data name="PR_SEG_ConsultarCanalesVentaPorIdSeguro" xml:space="preserve">
+    <value>PR_SEG_ConsultarCanalesVentaPorIdSeguro</value>
+  </data>
+  <data name="PR_SEG_ConsultarTiposIdentificacionPorIdSeguro" xml:space="preserve">
+    <value>PR_SEG_ConsultarTiposIdentificacionPorIdSeguro</value>
+  </data>
+  <data name="PR_SEG_ObtenerConsecutivoCobis" xml:space="preserve">
+    <value>PR_SEG_ObtenerConsecutivoCobis</value>
+  </data>
+  <data name="PR_SEG_ConsultarMenuRequiereDualPorRol" xml:space="preserve">
+    <value>PR_SEG_ConsultarMenuRequiereDualPorRol</value>
+  </data>
+  <data name="PR_SEG_ConsultarSegurosPorParametros" xml:space="preserve">
+    <value>PR_SEG_ConsultarSegurosPorParametros</value>
+  </data>
+  <data name="PR_SEG_ActualizarVariableProducto" xml:space="preserve">
+    <value>PR_SEG_ActualizarVariableProducto</value>
+  </data>
+  <data name="PR_SEG_ConsultarVariableProducto" xml:space="preserve">
+    <value>PR_SEG_ConsultarVariableProducto</value>
+  </data>
+  <data name="PR_SEG_ConsultarVariableVenta" xml:space="preserve">
+    <value>PR_SEG_ConsultarVariableVenta</value>
+  </data>
+  <data name="PR_SEG_InsertarVariableProducto" xml:space="preserve">
+    <value>PR_SEG_InsertarVariableProducto</value>
+  </data>
+  <data name="PR_SEG_InsertarVariableVenta" xml:space="preserve">
+    <value>PR_SEG_InsertarVariableVenta</value>
+  </data>
+  <data name="PR_SEG_EliminarVariableProducto" xml:space="preserve">
+    <value>PR_SEG_EliminarVariableProducto</value>
+  </data>
+  <data name="PR_SEG_ActualizarItemMaestra" xml:space="preserve">
+    <value>PR_SEG_ActualizarItemMaestra</value>
+  </data>
+  <data name="PR_SEG_ActualizarMaestra" xml:space="preserve">
+    <value>PR_SEG_ActualizarMaestra</value>
+  </data>
+  <data name="PR_SEG_ConsultarItemMaestra" xml:space="preserve">
+    <value>PR_SEG_ConsultarItemMaestra</value>
+  </data>
+  <data name="PR_SEG_ConsultarMaestra" xml:space="preserve">
+    <value>PR_SEG_ConsultarMaestra</value>
+  </data>
+  <data name="PR_SEG_EliminarItemMaestra" xml:space="preserve">
+    <value>PR_SEG_EliminarItemMaestra</value>
+  </data>
+  <data name="PR_SEG_EliminarMaestra" xml:space="preserve">
+    <value>PR_SEG_EliminarMaestra</value>
+  </data>
+  <data name="PR_SEG_InsertarItemMaestra" xml:space="preserve">
+    <value>PR_SEG_InsertarItemMaestra</value>
+  </data>
+  <data name="PR_SEG_InsertarMaestra" xml:space="preserve">
+    <value>PR_SEG_InsertarMaestra</value>
+  </data>
+  <data name="PR_SEG_ConsultarPlnatillasActivas" xml:space="preserve">
+    <value>PR_SEG_ConsultarPlnatillasActivas</value>
+  </data>
+  <data name="PR_SEG_InsertarPlantillaSeguroDuplicada" xml:space="preserve">
+    <value>PR_SEG_InsertarPlantillaSeguroDuplicada</value>
+  </data>
+  <data name="PR_SEG_ConsultarAseguradorasActivas" xml:space="preserve">
+    <value>PR_SEG_ConsultarAseguradorasActivas</value>
+  </data>
+  <data name="PR_SEG_ConsultarColumnasFiltro" xml:space="preserve">
+    <value>PR_SEG_ConsultarColumnasFiltro</value>
+  </data>
+  <data name="PR_SEG_ConsultarMaestraPorNombre" xml:space="preserve">
+    <value>PR_SEG_ConsultarMaestraPorNombre</value>
+  </data>
+  <data name="PR_SEG_ConsultarFiltrosCancelaciones" xml:space="preserve">
+    <value>PR_SEG_ConsultarFiltrosCancelaciones</value>
+  </data>
+  <data name="PR_SEG_ActualizarPlanesPorId" xml:space="preserve">
+    <value>PR_SEG_ActualizarPlanesPorId</value>
+  </data>
+  <data name="PR_SEG_ActualizarProductosNoPermitidosPorId" xml:space="preserve">
+    <value>PR_SEG_ActualizarProductosNoPermitidosPorId</value>
+  </data>
+  <data name="PR_SEG_ActualizarSeguroTipoIdentiPorId" xml:space="preserve">
+    <value>PR_SEG_ActualizarSeguroTipoIdentiPorId</value>
+  </data>
+  <data name="PR_SEG_GuardarDatosArchivoPlano" xml:space="preserve">
+    <value>PR_SEG_GuardarDatosArchivoPlano</value>
+  </data>
+  <data name="PR_SEG_ConsultarDatosArchivosPlanos" xml:space="preserve">
+    <value>PR_SEG_ConsultarDatosArchivosPlanos</value>
+  </data>
+  <data name="PR_SEG_ConsultarVentasCuentasPorCliente" xml:space="preserve">
+    <value>PR_SEG_ConsultarVentasCuentasPorCliente</value>
+  </data>
+  <data name="PR_SEG_ActualizarArchivoPlano" xml:space="preserve">
+    <value>PR_SEG_ActualizarArchivoPlano</value>
+  </data>
+  <data name="PR_SEG_EliminarDatosArchivoPlano" xml:space="preserve">
+    <value>PR_SEG_EliminarDatosArchivoPlano</value>
+  </data>
+  <data name="PR_SEG_ActualizarPlantilla" xml:space="preserve">
+    <value>PR_SEG_ActualizarPlantilla</value>
+  </data>
+  <data name="PR_SEG_ConsultarSegurosPorCodigoYAseguradora" xml:space="preserve">
+    <value>PR_SEG_ConsultarSegurosPorCodigoYAseguradora</value>
+  </data>
+  <data name="PR_SEG_EliminarDiasHabilesApartirDeFecha" xml:space="preserve">
+    <value>PR_SEG_EliminarDiasHabilesApartirDeFecha</value>
+  </data>
+  <data name="PR_SEG_InsertarDiaHabil" xml:space="preserve">
+    <value>PR_SEG_InsertarDiaHabil</value>
+  </data>
+  <data name="PR_SEG_DesActivarPlantillasPorIdSeguro" xml:space="preserve">
+    <value>PR_SEG_DesActivarPlantillasPorIdSeguro</value>
+  </data>
+  <data name="PR_SEG_SincronizarCategorias" xml:space="preserve">
+    <value>PR_SEG_SincronizarCategorias</value>
+  </data>
+  <data name="PR_SEG_SincronizarParentesco" xml:space="preserve">
+    <value>PR_SEG_SincronizarParentesco</value>
+  </data>
+  <data name="PR_SEG_SincronizarPeriodicidad" xml:space="preserve">
+    <value>PR_SEG_SincronizarPeriodicidad</value>
+  </data>
+  <data name="PR_SEG_SincronizarProductos" xml:space="preserve">
+    <value>PR_SEG_SincronizarProductos</value>
+  </data>
+  <data name="PR_SEG_SincronizarSubProductos" xml:space="preserve">
+    <value>PR_SEG_SincronizarSubProductos</value>
+  </data>
+  <data name="PR_SEG_SincronizarTiposIdentificacion" xml:space="preserve">
+    <value>PR_SEG_SincronizarTiposIdentificacion</value>
+  </data>
+  <data name="PR_SEG_ConsultarPolizasPorClienteDiaHabil" xml:space="preserve">
+    <value>PR_SEG_ConsultarPolizasPorClienteDiaHabil</value>
+  </data>
+  <data name="PR_SEG_ActualizarSiguienteConsecutivo" xml:space="preserve">
+    <value>PR_SEG_ActualizarSiguienteConsecutivo</value>
+  </data>
+  <data name="PR_SEG_ConsultarSeguroPorConsecutivoPoliza" xml:space="preserve">
+    <value>PR_SEG_ConsultarSeguroPorConsecutivoPoliza</value>
+  </data>
+</root>

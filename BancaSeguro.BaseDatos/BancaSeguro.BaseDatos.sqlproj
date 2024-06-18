@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>BancaSeguro.BaseDatos</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{c96259d0-29d0-4f64-a7ae-f2efb89bf74f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>BancaSeguro.BaseDatos</RootNamespace>
+    <AssemblyName>BancaSeguro.BaseDatos</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\SEG_Recobro.sql" />
+    <Build Include="dbo\Tables\SEG_EstadoPoliza.sql" />
+    <Build Include="dbo\Tables\SEG_Aseguradora.sql" />
+    <Build Include="dbo\Tables\SEG_ProductoNoPermitido.sql" />
+    <Build Include="dbo\Tables\SEG_IncrementoIPC.sql" />
+    <Build Include="dbo\Tables\SEG_Parametro.sql" />
+    <Build Include="dbo\Tables\SEG_EstadoCobro.sql" />
+    <Build Include="dbo\Tables\SEG_Parentesco.sql" />
+    <Build Include="dbo\Tables\SEG_DiaHabil.sql" />
+    <Build Include="dbo\Tables\SEG_LogResultadoCobis.sql" />
+    <Build Include="dbo\Tables\SEG_FechaEjecucionETL.sql" />
+    <Build Include="dbo\Tables\SEG_Beneficiario.sql" />
+    <Build Include="dbo\Tables\SEG_Productos.sql" />
+    <Build Include="dbo\Tables\SEG_ArchivoResultadoCobis.sql" />
+    <Build Include="dbo\Tables\SEG_DocumentoPoliza.sql" />
+    <Build Include="dbo\Tables\SEG_Menu.sql" />
+    <Build Include="dbo\Tables\SEG_SeguroTipoIdentificacion.sql" />
+    <Build Include="dbo\Tables\SEG_Convenio.sql" />
+    <Build Include="dbo\Tables\SEG_Seguro.sql" />
+    <Build Include="dbo\Tables\SEG_Conyuge.sql" />
+    <Build Include="dbo\Tables\SEG_Consecutivo.sql" />
+    <Build Include="dbo\Tables\SEG_Periodicidad.sql" />
+    <Build Include="dbo\Tables\SEG_Plan.sql" />
+    <Build Include="dbo\Tables\SEG_TipoIdentificacion.sql" />
+    <Build Include="dbo\Tables\SEG_Oficina.sql" />
+    <Build Include="dbo\Tables\SEG_Asesor.sql" />
+    <Build Include="dbo\Tables\SEG_AprobacionDual.sql" />
+    <Build Include="dbo\Tables\SEG_Permisos.sql" />
+    <Build Include="dbo\Tables\SEG_Rol.sql" />
+    <Build Include="dbo\Tables\SEG_Venta.sql" />
+    <Build Include="dbo\Tables\SEG_Genero.sql" />
+    <Build Include="dbo\Tables\SEG_SubProductos.sql" />
+    <Build Include="dbo\Tables\SEG_Categorias.sql" />
+    <Build Include="dbo\Tables\SEG_ArchivoCobro.sql" />
+    <Build Include="dbo\Tables\SEG_ArchivoEntradaCancelaPoliza.sql" />
+    <Build Include="dbo\Tables\SEG_ArchivoSalidaCancelacionPolizas.sql" />
+    <Build Include="dbo\Functions\FN_SEG_ObtenerBeneficiariosArchivoEmisiones.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarLosSegurosAVender.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarProductosNoPermitidosPorSeguro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_BuscarPolizasVigentes.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarInformacionConyugePorConsecutivoPoliza.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarVenta.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarInformacionBeneficiarioPorConsecutivoPoliza.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarOficinaPorCodigo.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_CrearBeneficiario.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarCatalogo.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarEmisionesDia.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarInformacionPolizaPorConsecutivo.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConstruirNroPoliza.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarPlanesPorIdSeguro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarRol.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMenu.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarRoles.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarRol.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_CancelarPolizasPorCausalesRechazo.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_CancelarPolizasPorLlegarMaxIntentoCobro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarReCobros.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarDocumentoPlantillaPoliza.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarAsesor.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarPlantillaSeguro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarBeneficiario.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarPolizasPorCliente.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarConyuge.sql" />
+    <Build Include="dbo\Tables\SEG_VariableVenta.sql" />
+    <Build Include="dbo\Tables\SEG_VariableProducto.sql" />
+    <Build Include="dbo\Tables\SEG_TipoValidacion.sql" />
+    <Build Include="dbo\Tables\SEG_TipoNovedad.sql" />
+    <Build Include="dbo\Tables\SEG_TipoDato.sql" />
+    <Build Include="dbo\Tables\SEG_TablaAuditada.sql" />
+    <Build Include="dbo\Tables\SEG_SubProductosCategorias.sql" />
+    <Build Include="dbo\Tables\SEG_RolGrupoBAC.sql" />
+    <Build Include="dbo\Tables\SEG_ProgramacionArchivo.sql" />
+    <Build Include="dbo\Tables\SEG_ProductoSubProducto.sql" />
+    <Build Include="dbo\Tables\SEG_ProcesoETL.sql" />
+    <Build Include="dbo\Tables\SEG_Mensaje.sql" />
+    <Build Include="dbo\Tables\SEG_Maestra.sql" />
+    <Build Include="dbo\Tables\SEG_LogErrores.sql" />
+    <Build Include="dbo\Tables\SEG_LogCobis.sql" />
+    <Build Include="dbo\Tables\SEG_LogArchivoSalidaCancelacionPolizas.sql" />
+    <Build Include="dbo\Tables\SEG_LogArchivoCobro.sql" />
+    <Build Include="dbo\Tables\SEG_ItemMaestra.sql" />
+    <Build Include="dbo\Tables\SEG_ImpresionesPoliza.sql" />
+    <Build Include="dbo\Tables\SEG_GrupoBAC.sql" />
+    <Build Include="dbo\Tables\SEG_Evento.sql" />
+    <Build Include="dbo\Tables\SEG_DetalleNovedadPoliza.sql" />
+    <Build Include="dbo\Tables\SEG_CuentaEximidaCobro.sql" />
+    <Build Include="dbo\Tables\SEG_ConsecutivoCobis.sql" />
+    <Build Include="dbo\Tables\SEG_CausalNovedad.sql" />
+    <Build Include="dbo\Tables\SEG_CanalVenta.sql" />
+    <Build Include="dbo\Tables\SEG_Auditoria.sql" />
+    <Build Include="dbo\Tables\SEG_ArchivoPlano.sql" />
+    <Build Include="dbo\Tables\SEG_ArchivoAseguradora.sql" />
+    <Build Include="dbo\Tables\SEG_AdministracionControlDual.sql" />
+    <Build Include="dbo\Tables\MIG_VentaTemp.sql" />
+    <Build Include="dbo\Tables\MIG_VentaError.sql" />
+    <Build Include="dbo\Tables\MIG_VentaCarga.sql" />
+    <Build Include="dbo\Tables\MIG_RegistroControlArchivo.sql" />
+    <Build Include="dbo\Tables\MIG_RecobroTemp.sql" />
+    <Build Include="dbo\Tables\MIG_RecobroError.sql" />
+    <Build Include="dbo\Tables\MIG_RecobroCarga.sql" />
+    <Build Include="dbo\Tables\MIG_LogErrorVenta.sql" />
+    <Build Include="dbo\Tables\MIG_LogErrorRecobro.sql" />
+    <Build Include="dbo\Tables\MIG_LogErrorConyuge.sql" />
+    <Build Include="dbo\Tables\MIG_LogErrorBeneficiario.sql" />
+    <Build Include="dbo\Tables\MIG_EjecucionMigracion.sql" />
+    <Build Include="dbo\Tables\MIG_ConyugeTemp.sql" />
+    <Build Include="dbo\Tables\MIG_ConyugeError.sql" />
+    <Build Include="dbo\Tables\MIG_ConyugeCarga.sql" />
+    <Build Include="dbo\Tables\MIG_BeneficiarioTemp.sql" />
+    <Build Include="dbo\Tables\MIG_BeneficiarioError.sql" />
+    <Build Include="dbo\Tables\MIG_BeneficiarioCarga.sql" />
+    <Build Include="dbo\Views\VW_SEG_Recobros.sql" />
+    <Build Include="dbo\Views\VW_SEG_Polizas.sql" />
+    <Build Include="dbo\Views\VW_SEG_InformacionBeneficiario.sql" />
+    <Build Include="dbo\Views\VW_SEG_DetalleNovPoliza.sql" />
+    <Build Include="dbo\Functions\FN_SEG_RedondeoCentavos.sql" />
+    <Build Include="dbo\Functions\FN_SEG_ObtenerUltimoPago.sql" />
+    <Build Include="dbo\Functions\FN_SEG_ObtenerSiguienteDiaHabil.sql" />
+    <Build Include="dbo\Functions\FN_SEG_ObtenerPeriodoCobro.sql" />
+    <Build Include="dbo\Functions\FN_SEG_ObtenerBeneficiarios.sql" />
+    <Build Include="dbo\Functions\FN_SEG_GeneraMontoEfectivo.sql" />
+    <Build Include="dbo\Functions\FN_SEG_ObtenerColumnasConsulta.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_SincronizarTiposIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_SincronizarSubProductos.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_SincronizarParentesco.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_SincronizarCategorias.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_RechazarRegistrosPendienteAprobacion.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ObtenerPolizasCreadasPorIdDocumentoPoliza.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ObtenerConsecutivoCobis.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_LogControlErrores.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarVariableVenta.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarVariableProducto.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarTipoNovedad.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarSubProducto.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarSeguroTipoIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarSeguro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarRolGrupoBAC.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarProductoNoPermitido.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarProducto.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarPlantillaSeguroDuplicada.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarPlan.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarPermiso.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarMensaje.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarMaestra.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarLogErrores.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarLogCobis.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarItemMaestra.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarIPC.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarDiaHabil.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarCausalNovedad.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarCategoria.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarAseguradora.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarAprobacionDual.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_InsertarAdmonControlDual.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_IncrementoIPC.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarPolizaVendidaImpresion.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarParametro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarLogResultadoCobis.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarLogArchivoCobro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarLogArchivoCancelacion.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarDatosArchivoPlano.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GuardarCanalVenta.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_GenerarArchivoAseguradora.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EvaluarEjecucionETLRecobro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EvaluarEjecucionETLCobro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EvaluarEjecucionETLCancelarPoliza.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarVariableProducto.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarSeguroTipoIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarRolGrupoBAC.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarProductoNoPermitido.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarPermiso.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarMaestra.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarItemMaestra.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarDiasHabilesApartirDeFecha.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarDatosArchivoPlano.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_EliminarCanalVentaSeguro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_DesActivarPlantillasPorIdSeguro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_CosultarVentasCuentasPorCliente.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarVentasCuentasPorCliente.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarVariableVenta.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarVariableProducto.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarTodosLosSeguros.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarTiposIdentificacionPorIdSeguro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarTipoNovedades.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarSubProductosPorCodigoProducto.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarSegurosPorParametros.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarSegurosPorCodigoYAseguradora.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarSeguroPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarRolPorGrupo.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarProductosBancariosActivos.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarPolizasPorClienteDiaHabil.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarPlnatillasActivas.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarPlantillaPorIdSeguro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarPeriodicidadActivos.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMenuRequiereDualPorRol.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMenuPorRol.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMenuParaControlDual.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMenuAprobacionDualPorRol.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMensajePorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMensaje.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMaestraPorNombre.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarMaestra.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarItemMaestra.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarIPC.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarInformacionReimpresion.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarGrupoPorRol.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarGrupoBAC.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarFiltrosCancelaciones.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarDocumentoPlantillaPolizaPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarDatosArchivosPlanos.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarDatosArchivoPlano.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarColumnasFiltro.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarCausalNovedad.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarCategoriasPorSubProductos.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarCanalesActivos.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarAuditoria.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarAseguradorasActivas.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarAseguradoras.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarAseguradoraPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarArchivosProgramados.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarAprobacionDualPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarAprobacionDual.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarAdmonControlDualIdMenu.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ConsultarAdmonControlDual.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_CancelaPolizaPorAseguradora.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_BorrarArchivosPorDemandaInactivos.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_Auditoria.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizaSeguroPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarVariableProducto.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarTipoNovedad.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarSiguienteConsecutivo.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarSeguroTipoIdentiPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarProductosNoPermitidosPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarPlantilla.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarPlanesPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarMensaje.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarMaestra.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarItemMaestra.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarEstadoEliminadoPlantilla.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarEstadoActivoPlantilla.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarCausalNovedad.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarAseguradora.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarArchivoPlano.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarAprobacionDual.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizarAdmonControlDual.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizaParametroPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_ActualizaCanalVentaPorId.sql" />
+    <Build Include="dbo\Stored Procedures\PR_MIG_VerificarRegistrosControl.sql" />
+    <Build Include="dbo\Stored Procedures\PR_MIG_VerificarDuplicados.sql" />
+    <Build Include="dbo\Stored Procedures\PR_MIG_ValidarParticipacionBeneficiarios.sql" />
+    <Build Include="dbo\User Defined Types\TipoSubProductos.sql" />
+    <Build Include="dbo\User Defined Types\TipoSeguroTipoIdentificacion.sql" />
+    <Build Include="dbo\User Defined Types\TipoProductos.sql" />
+    <Build Include="dbo\User Defined Types\TipoProductoNoPermitido.sql" />
+    <Build Include="dbo\User Defined Types\TipoPlan.sql" />
+    <Build Include="dbo\User Defined Types\TipoPeriodicidad.sql" />
+    <Build Include="dbo\User Defined Types\TipoParentesco.sql" />
+    <Build Include="dbo\User Defined Types\TipoIdentificacion.sql" />
+    <Build Include="dbo\User Defined Types\TipoCategorias.sql" />
+    <Build Include="dbo\User Defined Types\Cliente.sql" />
+    <Build Include="dbo\Tables\SEG_TempReintegros.sql" />
+    <Build Include="dbo\Tables\SEG_Venta_ATM.sql" />
+    <Build Include="dbo\Tables\SEG_Aplicacion.sql" />
+    <Build Include="dbo\Tables\LogGeneral.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_Aplicacion_Consultar_User.sql" />
+    <Build Include="dbo\Stored Procedures\PR_InsertarLogGeneral.sql" />
+    <Build Include="dbo\Stored Procedures\PR_INSERT_VentaAtm.sql" />
+    <Build Include="dbo\Stored Procedures\PR_SEG_Venta_ATM.sql" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:Q1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:tns2="http://dto2.sdf.cts.cobis.cobiscorp.com" elementFormDefault="qualified" targetNamespace="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="commonDTO2.xsd" namespace="http://dto2.sdf.cts.cobis.cobiscorp.com" />
+  <import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+  <element name="opActivarChequeraSolicitud" type="Q1:OpActivarChequeraSolicitud" />
+  <element name="opActivarChequeraRespuesta" type="Q1:OpActivarChequeraRespuesta" />
+  <element name="opBuscarChequeSolicitud" type="Q1:OpBuscarChequeSolicitud" />
+  <element name="opBuscarChequeRespuesta" type="Q1:OpBuscarChequeRespuesta" />
+  <element name="opBuscarChequeraSolicitud" type="Q1:OpBuscarChequeraSolicitud" />
+  <element name="opBuscarChequeraRespuesta" type="Q1:OpBuscarChequeraRespuesta" />
+  <element name="opBuscarCostoChequeraSolicitud" type="Q1:OpBuscarCostoChequeraSolicitud" />
+  <element name="opBuscarCostoChequeraRespuesta" type="Q1:OpBuscarCostoChequeraRespuesta" />
+  <element name="opBuscarCuentaCorrienteSolicitud" type="Q1:OpBuscarCuentaCorrienteSolicitud" />
+  <element name="opBuscarCuentaCorrienteRespuesta" type="Q1:OpBuscarCuentaCorrienteRespuesta" />
+  <element name="opBuscarExtractoEncabezadoCuentaCorrienteSolicitud" type="Q1:OpBuscarExtractoEncabezadoCuentaCorrienteSolicitud" />
+  <element name="opBuscarExtractoEncabezadoCuentaCorrienteRespuesta" type="Q1:OpBuscarExtractoEncabezadoCuentaCorrienteRespuesta" />
+  <element name="opBuscarExtractoMovimientoCuentaCorrienteSolicitud" type="Q1:OpBuscarExtractoMovimientoCuentaCorrienteSolicitud" />
+  <element name="opBuscarExtractoMovimientoCuentaCorrienteRespuesta" type="Q1:OpBuscarExtractoMovimientoCuentaCorrienteRespuesta" />
+  <element name="opBuscarExtractoSaldoCuentaCorrienteSolicitud" type="Q1:OpBuscarExtractoSaldoCuentaCorrienteSolicitud" />
+  <element name="opBuscarExtractoSaldoCuentaCorrienteRespuesta" type="Q1:OpBuscarExtractoSaldoCuentaCorrienteRespuesta" />
+  <element name="opBuscarMovimientoSolicitud" type="Q1:OpBuscarMovimientoSolicitud" />
+  <element name="opBuscarMovimientoRespuesta" type="Q1:OpBuscarMovimientoRespuesta" />
+  <element name="opBuscarNoPagoSolicitud" type="Q1:OpBuscarOrdenNoPagoSolicitud" />
+  <element name="opBuscarNoPagoRespuesta" type="Q1:OpBuscarOrdenNoPagoRespuesta" />
+  <element name="opCrearOrdenNoPagoSolicitud" type="Q1:OpCrearOrdenNoPagoSolicitud" />
+  <element name="opCrearOrdenNoPagoRespuesta" type="Q1:OpCrearOrdenNoPagoRespuesta" />
+  <element name="opSolicitarChequeraSolicitud" type="Q1:OpSolicitarChequeraSolicitud" />
+  <element name="opSolicitarChequeraRespuesta" type="Q1:OpSolicitarChequeraRespuesta" />
+</schema>

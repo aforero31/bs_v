@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" />
+  <xs:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" />
+  <xs:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" />
+  <xs:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguridad" />
+  <xs:element name="AutenticarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="usuario" nillable="true" type="q1:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutenticarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="AutenticarUsuarioResult" nillable="true" type="q2:AutenticacionUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerRefreshToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="usuario" nillable="true" type="q3:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerRefreshTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ObtenerRefreshTokenResult" nillable="true" type="q4:RefreshTokenResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAsesor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="asesor" nillable="true" type="q5:Asesor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAsesorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ConsultarAsesorResult" nillable="true" type="q6:Asesor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="rol" nillable="true" type="q7:Rol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="InsertarRolResult" nillable="true" type="q8:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="rol" nillable="true" type="q9:Rol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="ActualizarRolResult" nillable="true" type="q10:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ObtenerRolesResult" nillable="true" type="q11:ArrayOfRol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerRolesCompletos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerRolesCompletosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ObtenerRolesCompletosResult" nillable="true" type="q12:ArrayOfRol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerMenu">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ObtenerMenuResult" nillable="true" type="q13:ArrayOfMenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerMenuPorRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="roles" nillable="true" type="q14:ArrayOfRol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerMenuPorRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ObtenerMenuPorRolResult" nillable="true" type="q15:ArrayOfMenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFuncionesMenu">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFuncionesMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ObtenerFuncionesMenuResult" nillable="true" type="q16:ArrayOfMenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFuncionesMenuPorRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="rol" nillable="true" type="q17:Rol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFuncionesMenuPorRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ObtenerFuncionesMenuPorRolResult" nillable="true" type="q18:ArrayOfMenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMenusAprobacionDualPorRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="roles" nillable="true" type="q19:ArrayOfRol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMenusAprobacionDualPorRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ConsultarMenusAprobacionDualPorRolesResult" nillable="true" type="q20:ArrayOfMenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMenusRequiereDualPorRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="roles" nillable="true" type="q21:ArrayOfRol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMenusRequiereDualPorRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ConsultarMenusRequiereDualPorRolesResult" nillable="true" type="q22:ArrayOfMenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarOficinaPorCodigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOficina" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarOficinaPorCodigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ConsultarOficinaPorCodigoResult" nillable="true" type="q23:Oficina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarPermiso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="permiso" nillable="true" type="q24:Permisos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarPermisoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="AsignarPermisoResult" nillable="true" type="q25:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarPermiso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="permiso" nillable="true" type="q26:Permisos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarPermisoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="EliminarPermisoResult" nillable="true" type="q27:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarGruposBAC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="grupo" nillable="true" type="q28:GrupoBAC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarGruposBACResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ConsultarGruposBACResult" nillable="true" type="q29:ArrayOfGrupoBAC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarGrupoPorRol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="rol" nillable="true" type="q30:Rol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarGrupoPorRolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ConsultarGrupoPorRolResult" nillable="true" type="q31:ArrayOfGrupoBAC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMenuControlDual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMenuControlDualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="ConsultarMenuControlDualResult" nillable="true" type="q32:ArrayOfMenu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAdmonControlDual">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAdmonControlDualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguridad" minOccurs="0" name="ConsultarAdmonControlDualResult" nillable="true" type="q33:ArrayOfAdministracionControlDual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAdmonControlDualIdMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idMenu" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAdmonControlDualIdMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguridad" minOccurs="0" name="ConsultarAdmonControlDualIdMenuResult" nillable="true" type="q34:ArrayOfAdministracionControlDual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarAdmonControlDual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguridad" minOccurs="0" name="controlDual" nillable="true" type="q35:ArrayOfAdministracionControlDual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarAdmonControlDualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="InsertarAdmonControlDualResult" nillable="true" type="q36:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarAdmonControlDual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguridad" minOccurs="0" name="controlDual" nillable="true" type="q37:ArrayOfAdministracionControlDual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarAdmonControlDualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="ActualizarAdmonControlDualResult" nillable="true" type="q38:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequiereAutorizacionDual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="rolesUsuario" nillable="true" type="q39:ArrayOfRol" />
+        <xs:element minOccurs="0" name="idMenu" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequiereAutorizacionDualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RequiereAutorizacionDualResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarAutorizadorDual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" minOccurs="0" name="rolesUsuario" nillable="true" type="q40:ArrayOfRol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarAutorizadorDualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidarAutorizadorDualResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

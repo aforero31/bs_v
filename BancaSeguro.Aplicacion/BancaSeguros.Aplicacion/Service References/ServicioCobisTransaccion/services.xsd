@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:Q1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:tns2="http://dto2.sdf.cts.cobis.cobiscorp.com" elementFormDefault="qualified" targetNamespace="http://service.srvaplcobistransaccion.ecobis.cobiscorp" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="commonDTO2.xsd" namespace="http://dto2.sdf.cts.cobis.cobiscorp.com" />
+  <import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+  <element name="opBloquearFondosSolicitud" type="Q1:OpBloquearFondosSolicitud" />
+  <element name="opBloquearFondosRespuesta" type="Q1:OpBloquearFondosRespuesta" />
+  <element name="opBuscarComisionInstrumentoSolicitud" type="Q1:OpBuscarComisionInstrumentoSolicitud" />
+  <element name="opBuscarComisionInstrumentoRespuesta" type="Q1:OpBuscarComisionInstrumentoRespuesta" />
+  <element name="opBuscarTarifaCanalSolicitud" type="Q1:OpBuscarTarifaCanalSolicitud" />
+  <element name="opBuscarTarifaCanalRespuesta" type="Q1:OpBuscarTarifaCanalRespuesta" />
+  <element name="opCalcularImpuestosNotaDebitoSolicitud" type="Q1:OpCalcularImpuestosNotaDebitoSolicitud" />
+  <element name="opCalcularImpuestosNotaDebitoRespuesta" type="Q1:OpCalcularImpuestosNotaDebitoRespuesta" />
+  <element name="opCobrarComisionSolicitud" type="Q1:OpCobrarComisionSolicitud" />
+  <element name="opCobrarComisionRespuesta" type="Q1:OpCobrarComisionRespuesta" />
+  <element name="opGenerarClaveTransaccionalSolicitud" type="Q1:OpGenerarClaveTransaccionalSolicitud" />
+  <element name="opGenerarClaveTransaccionalRespuesta" type="Q1:OpGenerarClaveTransaccionalRespuesta" />
+  <element name="opRealizarDesbloqueoSolicitud" type="Q1:OpRealizarDesbloqueoSolicitud" />
+  <element name="opRealizarDesbloqueoRespuesta" type="Q1:OpRealizarDesbloqueoRespuesta" />
+  <element name="opRealizarDesbloqueoNotaDebitoSolicitud" type="Q1:OpRealizarDesbloqueoNotaDebitoSolicitud" />
+  <element name="opRealizarDesbloqueoNotaDebitoRespuesta" type="Q1:OpRealizarDesbloqueoNotaDebitoRespuesta" />
+  <element name="opRealizarNotaCreditoSolicitud" type="Q1:OpRealizarNotaCreditoSolicitud" />
+  <element name="opRealizarNotaCreditoRespuesta" type="Q1:OpRealizarNotaCreditoRespuesta" />
+  <element name="opRealizarNotaDebitoSolicitud" type="Q1:OpRealizarNotaDebitoSolicitud" />
+  <element name="opRealizarNotaDebitoRespuesta" type="Q1:OpRealizarNotaDebitoRespuesta" />
+  <element name="opRealizarRecargaCelularSolicitud" type="Q1:OpRealizarRecargaCelularSolicitud" />
+  <element name="opRealizarRecargaCelularRespuesta" type="Q1:OpRealizarRecargaCelularRespuesta" />
+  <element name="opRegistrarMovimientoContableTesoreriaBACSolicitud" type="Q1:OpRegistrarMovimientoContableTesoreriaBACSolicitud" />
+  <element name="opRegistrarMovimientoContableTesoreriaBACRespuesta" type="Q1:OpRegistrarMovimientoContableTesoreriaBACRespuesta" />
+  <element name="opValidarClaveTransaccionalSolicitud" type="Q1:OpValidarClaveTransaccionalSolicitud" />
+  <element name="opValidarClaveTransaccionalRespuesta" type="Q1:OpValidarClaveTransaccionalRespuesta" />
+  <element name="opValidarDiaTransaccionSolicitud" type="Q1:OpValidarDiaTransaccionSolicitud" />
+  <element name="opValidarDiaTransaccionRespuesta" type="Q1:OpValidarDiaTransaccionRespuesta" />
+  <element name="opValidarPrenotificacionSolicitud" type="Q1:OpValidarPrenotificacionSolicitud" />
+  <element name="opValidarPrenotificacionRespuesta" type="Q1:OpValidarPrenotificacionRespuesta" />
+  <element name="opValidarTarjetaDebitoSolicitud" type="Q1:OpValidarTarjetaDebitoSolicitud" />
+  <element name="opValidarTarjetaDebitoRespuesta" type="Q1:OpValidarTarjetaDebitoRespuesta" />
+</schema>

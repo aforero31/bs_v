@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://service.srvaplcobistransaccion.ecobis.cobiscorp" xmlns:dto1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S1="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/" name="SrvAplCobisTransaccion" targetNamespace="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/">
+      <xsd:import schemaLocation="services.xsd" namespace="http://service.srvaplcobistransaccion.ecobis.cobiscorp" />
+      <xsd:import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+      <xsd:element name="ContextoRespuesta" type="dto1:ContextoRespuesta" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MsjError">
+    <wsdl:part name="parameters" element="S1:ContextoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarRecargaCelularRespuesta">
+    <wsdl:part name="parameters" element="tns:opRealizarRecargaCelularRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRegistrarMovimientoContableTesoreriaBACSolicitud">
+    <wsdl:part name="parameters" element="tns:opRegistrarMovimientoContableTesoreriaBACSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpValidarPrenotificacionSolicitud">
+    <wsdl:part name="parameters" element="tns:opValidarPrenotificacionSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpValidarClaveTransaccionalSolicitud">
+    <wsdl:part name="parameters" element="tns:opValidarClaveTransaccionalSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarTarifaCanalSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarTarifaCanalSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarNotaCreditoSolicitud">
+    <wsdl:part name="parameters" element="tns:opRealizarNotaCreditoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpValidarDiaTransaccionSolicitud">
+    <wsdl:part name="parameters" element="tns:opValidarDiaTransaccionSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCalcularImpuestosNotaDebitoSolicitud">
+    <wsdl:part name="parameters" element="tns:opCalcularImpuestosNotaDebitoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarNotaDebitoRespuesta">
+    <wsdl:part name="parameters" element="tns:opRealizarNotaDebitoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarTarifaCanalRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarTarifaCanalRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarDesbloqueoRespuesta">
+    <wsdl:part name="parameters" element="tns:opRealizarDesbloqueoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpValidarPrenotificacionRespuesta">
+    <wsdl:part name="parameters" element="tns:opValidarPrenotificacionRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpValidarClaveTransaccionalRespuesta">
+    <wsdl:part name="parameters" element="tns:opValidarClaveTransaccionalRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpValidarTarjetaDebitoRespuesta">
+    <wsdl:part name="parameters" element="tns:opValidarTarjetaDebitoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCalcularImpuestosNotaDebitoRespuesta">
+    <wsdl:part name="parameters" element="tns:opCalcularImpuestosNotaDebitoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpGenerarClaveTransaccionalSolicitud">
+    <wsdl:part name="parameters" element="tns:opGenerarClaveTransaccionalSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarComisionInstrumentoSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarComisionInstrumentoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarDesbloqueoNotaDebitoRespuesta">
+    <wsdl:part name="parameters" element="tns:opRealizarDesbloqueoNotaDebitoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarNotaDebitoSolicitud">
+    <wsdl:part name="parameters" element="tns:opRealizarNotaDebitoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarDesbloqueoSolicitud">
+    <wsdl:part name="parameters" element="tns:opRealizarDesbloqueoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRegistrarMovimientoContableTesoreriaBACRespuesta">
+    <wsdl:part name="parameters" element="tns:opRegistrarMovimientoContableTesoreriaBACRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpGenerarClaveTransaccionalRespuesta">
+    <wsdl:part name="parameters" element="tns:opGenerarClaveTransaccionalRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCobrarComisionRespuesta">
+    <wsdl:part name="parameters" element="tns:opCobrarComisionRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCobrarComisionSolicitud">
+    <wsdl:part name="parameters" element="tns:opCobrarComisionSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarComisionInstrumentoRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarComisionInstrumentoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarNotaCreditoRespuesta">
+    <wsdl:part name="parameters" element="tns:opRealizarNotaCreditoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarRecargaCelularSolicitud">
+    <wsdl:part name="parameters" element="tns:opRealizarRecargaCelularSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBloquearFondosRespuesta">
+    <wsdl:part name="parameters" element="tns:opBloquearFondosRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBloquearFondosSolicitud">
+    <wsdl:part name="parameters" element="tns:opBloquearFondosSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarDesbloqueoNotaDebitoSolicitud">
+    <wsdl:part name="parameters" element="tns:opRealizarDesbloqueoNotaDebitoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpValidarTarjetaDebitoSolicitud">
+    <wsdl:part name="parameters" element="tns:opValidarTarjetaDebitoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpValidarDiaTransaccionRespuesta">
+    <wsdl:part name="parameters" element="tns:opValidarDiaTransaccionRespuesta" />
+  </wsdl:message>
+  <wsdl:portType name="SrvAplCobisTransaccion">
+    <wsdl:operation name="OpBloquearFondos">
+      <wsdl:input message="S1:MsjOpBloquearFondosSolicitud" />
+      <wsdl:output message="S1:MsjOpBloquearFondosRespuesta" />
+      <wsdl:fault name="OpBloquearFondosError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarComisionInstrumento">
+      <wsdl:input message="S1:MsjOpBuscarComisionInstrumentoSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarComisionInstrumentoRespuesta" />
+      <wsdl:fault name="OpBuscarComisionInstrumentoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTarifaCanal">
+      <wsdl:input message="S1:MsjOpBuscarTarifaCanalSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarTarifaCanalRespuesta" />
+      <wsdl:fault name="OpBuscarTarifaCanalError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpCalcularImpuestosNotaDebito">
+      <wsdl:input message="S1:MsjOpCalcularImpuestosNotaDebitoSolicitud" />
+      <wsdl:output message="S1:MsjOpCalcularImpuestosNotaDebitoRespuesta" />
+      <wsdl:fault name="OpCalcularImpuestosNotaDebitoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpCobrarComision">
+      <wsdl:input message="S1:MsjOpCobrarComisionSolicitud" />
+      <wsdl:output message="S1:MsjOpCobrarComisionRespuesta" />
+      <wsdl:fault name="OpCobrarComisionError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpGenerarClaveTransaccional">
+      <wsdl:input message="S1:MsjOpGenerarClaveTransaccionalSolicitud" />
+      <wsdl:output message="S1:MsjOpGenerarClaveTransaccionalRespuesta" />
+      <wsdl:fault name="OpGenerarClaveTransaccionalError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarDesbloqueo">
+      <wsdl:input message="S1:MsjOpRealizarDesbloqueoSolicitud" />
+      <wsdl:output message="S1:MsjOpRealizarDesbloqueoRespuesta" />
+      <wsdl:fault name="OpRealizarDesbloqueoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarDesbloqueoNotaDebito">
+      <wsdl:input message="S1:MsjOpRealizarDesbloqueoNotaDebitoSolicitud" />
+      <wsdl:output message="S1:MsjOpRealizarDesbloqueoNotaDebitoRespuesta" />
+      <wsdl:fault name="OpRealizarDesbloqueoNotaDebitoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarNotaCredito">
+      <wsdl:input message="S1:MsjOpRealizarNotaCreditoSolicitud" />
+      <wsdl:output message="S1:MsjOpRealizarNotaCreditoRespuesta" />
+      <wsdl:fault name="OpRealizarNotaCreditoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarNotaDebito">
+      <wsdl:input message="S1:MsjOpRealizarNotaDebitoSolicitud" />
+      <wsdl:output message="S1:MsjOpRealizarNotaDebitoRespuesta" />
+      <wsdl:fault name="OpRealizarNotaDebitoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarRecargaCelular">
+      <wsdl:input message="S1:MsjOpRealizarRecargaCelularSolicitud" />
+      <wsdl:output message="S1:MsjOpRealizarRecargaCelularRespuesta" />
+      <wsdl:fault name="OpRealizarRecargaCelularError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpRegistrarMovimientoContableTesoreriaBAC">
+      <wsdl:input message="S1:MsjOpRegistrarMovimientoContableTesoreriaBACSolicitud" />
+      <wsdl:output message="S1:MsjOpRegistrarMovimientoContableTesoreriaBACRespuesta" />
+      <wsdl:fault name="OpRegistrarMovimientoContableTesoreriaBACError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarClaveTransaccional">
+      <wsdl:input message="S1:MsjOpValidarClaveTransaccionalSolicitud" />
+      <wsdl:output message="S1:MsjOpValidarClaveTransaccionalRespuesta" />
+      <wsdl:fault name="OpValidarClaveTransaccionalError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarDiaTransaccion">
+      <wsdl:input message="S1:MsjOpValidarDiaTransaccionSolicitud" />
+      <wsdl:output message="S1:MsjOpValidarDiaTransaccionRespuesta" />
+      <wsdl:fault name="OpValidarDiaTransaccionError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarPrenotificacion">
+      <wsdl:input message="S1:MsjOpValidarPrenotificacionSolicitud" />
+      <wsdl:output message="S1:MsjOpValidarPrenotificacionRespuesta" />
+      <wsdl:fault name="OpValidarPrenotificacionError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarTarjetaDebito">
+      <wsdl:input message="S1:MsjOpValidarTarjetaDebitoSolicitud" />
+      <wsdl:output message="S1:MsjOpValidarTarjetaDebitoRespuesta" />
+      <wsdl:fault name="OpValidarTarjetaDebitoError" message="S1:MsjError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvAplCobisTransaccionBindingSOAP11" type="S1:SrvAplCobisTransaccion">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpBloquearFondos">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpBloquearFondos" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBloquearFondosError">
+        <soap:fault use="literal" name="OpBloquearFondosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarComisionInstrumento">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpBuscarComisionInstrumento" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarComisionInstrumentoError">
+        <soap:fault use="literal" name="OpBuscarComisionInstrumentoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTarifaCanal">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpBuscarTarifaCanal" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarTarifaCanalError">
+        <soap:fault use="literal" name="OpBuscarTarifaCanalError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCalcularImpuestosNotaDebito">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpCalcularImpuestosNotaDebito" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCalcularImpuestosNotaDebitoError">
+        <soap:fault use="literal" name="OpCalcularImpuestosNotaDebitoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCobrarComision">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpCobrarComision" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCobrarComisionError">
+        <soap:fault use="literal" name="OpCobrarComisionError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpGenerarClaveTransaccional">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpGenerarClaveTransaccional" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpGenerarClaveTransaccionalError">
+        <soap:fault use="literal" name="OpGenerarClaveTransaccionalError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarDesbloqueo">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarDesbloqueo" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarDesbloqueoError">
+        <soap:fault use="literal" name="OpRealizarDesbloqueoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarDesbloqueoNotaDebito">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarDesbloqueoNotaDebito" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarDesbloqueoNotaDebitoError">
+        <soap:fault use="literal" name="OpRealizarDesbloqueoNotaDebitoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarNotaCredito">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarNotaCredito" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarNotaCreditoError">
+        <soap:fault use="literal" name="OpRealizarNotaCreditoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarNotaDebito">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarNotaDebito" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarNotaDebitoError">
+        <soap:fault use="literal" name="OpRealizarNotaDebitoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarRecargaCelular">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarRecargaCelular" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarRecargaCelularError">
+        <soap:fault use="literal" name="OpRealizarRecargaCelularError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRegistrarMovimientoContableTesoreriaBAC">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRegistrarMovimientoContableTesoreriaBAC" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRegistrarMovimientoContableTesoreriaBACError">
+        <soap:fault use="literal" name="OpRegistrarMovimientoContableTesoreriaBACError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarClaveTransaccional">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpValidarClaveTransaccional" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpValidarClaveTransaccionalError">
+        <soap:fault use="literal" name="OpValidarClaveTransaccionalError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarDiaTransaccion">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpValidarDiaTransaccion" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpValidarDiaTransaccionError">
+        <soap:fault use="literal" name="OpValidarDiaTransaccionError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarPrenotificacion">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpValidarPrenotificacion" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpValidarPrenotificacionError">
+        <soap:fault use="literal" name="OpValidarPrenotificacionError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarTarjetaDebito">
+      <soap:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpValidarTarjetaDebito" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpValidarTarjetaDebitoError">
+        <soap:fault use="literal" name="OpValidarTarjetaDebitoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SrvAplCobisTransaccionBindingSOAP12" type="S1:SrvAplCobisTransaccion">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpBloquearFondos">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpBloquearFondos" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBloquearFondosError">
+        <soap12:fault use="literal" name="OpBloquearFondosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarComisionInstrumento">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpBuscarComisionInstrumento" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarComisionInstrumentoError">
+        <soap12:fault use="literal" name="OpBuscarComisionInstrumentoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTarifaCanal">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpBuscarTarifaCanal" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarTarifaCanalError">
+        <soap12:fault use="literal" name="OpBuscarTarifaCanalError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCalcularImpuestosNotaDebito">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpCalcularImpuestosNotaDebito" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCalcularImpuestosNotaDebitoError">
+        <soap12:fault use="literal" name="OpCalcularImpuestosNotaDebitoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCobrarComision">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpCobrarComision" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCobrarComisionError">
+        <soap12:fault use="literal" name="OpCobrarComisionError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpGenerarClaveTransaccional">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpGenerarClaveTransaccional" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpGenerarClaveTransaccionalError">
+        <soap12:fault use="literal" name="OpGenerarClaveTransaccionalError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarDesbloqueo">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarDesbloqueo" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarDesbloqueoError">
+        <soap12:fault use="literal" name="OpRealizarDesbloqueoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarDesbloqueoNotaDebito">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarDesbloqueoNotaDebito" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarDesbloqueoNotaDebitoError">
+        <soap12:fault use="literal" name="OpRealizarDesbloqueoNotaDebitoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarNotaCredito">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarNotaCredito" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarNotaCreditoError">
+        <soap12:fault use="literal" name="OpRealizarNotaCreditoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarNotaDebito">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarNotaDebito" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarNotaDebitoError">
+        <soap12:fault use="literal" name="OpRealizarNotaDebitoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarRecargaCelular">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRealizarRecargaCelular" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarRecargaCelularError">
+        <soap12:fault use="literal" name="OpRealizarRecargaCelularError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRegistrarMovimientoContableTesoreriaBAC">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpRegistrarMovimientoContableTesoreriaBAC" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpRegistrarMovimientoContableTesoreriaBACError">
+        <soap12:fault use="literal" name="OpRegistrarMovimientoContableTesoreriaBACError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarClaveTransaccional">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpValidarClaveTransaccional" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpValidarClaveTransaccionalError">
+        <soap12:fault use="literal" name="OpValidarClaveTransaccionalError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarDiaTransaccion">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpValidarDiaTransaccion" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpValidarDiaTransaccionError">
+        <soap12:fault use="literal" name="OpValidarDiaTransaccionError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarPrenotificacion">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpValidarPrenotificacion" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpValidarPrenotificacionError">
+        <soap12:fault use="literal" name="OpValidarPrenotificacionError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpValidarTarjetaDebito">
+      <soap12:operation soapAction="http://service.srvaplcobistransaccion.ecobis.cobiscorp.ws/SrvAplCobisTransaccion/OpValidarTarjetaDebito" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpValidarTarjetaDebitoError">
+        <soap12:fault use="literal" name="OpValidarTarjetaDebitoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvAplCobisTransaccion">
+    <wsdl:port name="SrvAplCobisTransaccionBindingSOAP11" binding="S1:SrvAplCobisTransaccionBindingSOAP11">
+      <soap:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisTransaccion.Service/SrvAplCobisTransaccion" />
+    </wsdl:port>
+    <wsdl:port name="SrvAplCobisTransaccionBindingSOAP12" binding="S1:SrvAplCobisTransaccionBindingSOAP12">
+      <soap12:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisTransaccion.Service/SrvAplCobisTransaccion" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

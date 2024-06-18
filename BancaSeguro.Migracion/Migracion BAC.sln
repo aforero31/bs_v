@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Migracion BAC", "Migracion BAC\Migracion BAC.dtproj", "{8242D802-CDFC-41A3-8383-C1FA12253A0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8242D802-CDFC-41A3-8383-C1FA12253A0E}.Development|Default.ActiveCfg = Development
+		{8242D802-CDFC-41A3-8383-C1FA12253A0E}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

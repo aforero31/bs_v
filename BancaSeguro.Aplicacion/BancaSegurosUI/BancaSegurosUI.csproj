@@ -1,0 +1,943 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BancaSegurosUI</RootNamespace>
+    <AssemblyName>BancaSegurosUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Requerimientos\UnitTests, archivos de reglas y GhostDoc\Intergrupo.Rules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="GhostscriptSharp">
+      <HintPath>..\packages\GhostScriptSharp.1.3.1.4\lib\net40\GhostscriptSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administracion\EjecucionManualETL.aspx" />
+    <Content Include="Administracion\ParametrizacionVariablesProducto.aspx" />
+    <Content Include="Administracion\ParametrizacionPlanoDemanda.aspx" />
+    <Content Include="Administracion\ParametrizacionMaestras.aspx" />
+    <Content Include="Administracion\ParametrizacionPlanos.aspx" />
+    <Content Include="Global.asax" />
+    <None Include="Parameters.xml" />
+    <Content Include="scripts\aplicacion\Administracion\EjecucionManualETL.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionVariablesProducto.js" />
+    <Content Include="css\controles\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="scripts\controles\confirm\jquery.confirm.js" />
+    <Content Include="scripts\controles\confirm\jquery.confirm.min.js" />
+    <Content Include="scripts\controles\daterangepicker\daterangepicker.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionMaestra.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionPlanoDemanda.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionPlanos.js" />
+    <Content Include="scripts\controles\jAlert\src\jAlert-FB.css" />
+    <Content Include="scripts\controles\jAlert\src\jAlert-FB.js" />
+    <Content Include="scripts\controles\jAlert\src\jAlert-functions.js" />
+    <Content Include="scripts\controles\jAlert\src\jAlert-functions.min.js" />
+    <Content Include="scripts\controles\jAlert\src\jAlert-v3.css" />
+    <Content Include="scripts\controles\jAlert\src\jAlert-v3.js" />
+    <Content Include="scripts\controles\jAlert\src\jAlert-v3.min.js" />
+    <Content Include="scripts\controles\jAlert\src\test.html" />
+    <Content Include="scripts\controles\jAlert\vendor\animate.css" />
+    <Content Include="scripts\controles\jAlert\vendor\animate.min.css" />
+    <Content Include="scripts\controles\jAlert\vendor\jquery-1.11.3.min.js" />
+    <Content Include="seguridad\AprobarControlDual.aspx" />
+    <Content Include="Administracion\ConsultarLog.aspx" />
+    <Content Include="Administracion\ParametrizacionAseguradora.aspx" />
+    <Content Include="Administracion\ParametrizacionCanalVenta.aspx" />
+    <Content Include="Administracion\ParametrizacionGeneral.aspx" />
+    <Content Include="Administracion\ParametrizacionIPC.aspx" />
+    <Content Include="Administracion\ParametrizacionMensajes.aspx" />
+    <Content Include="Administracion\ParametrizacionNovedad.aspx" />
+    <Content Include="Administracion\ParametrizacionPlantilla.aspx" />
+    <Content Include="Administracion\ParametrizacionProducto.aspx" />
+    <Content Include="Administracion\ParametrizarCausalNovedad.aspx" />
+    <Content Include="App_GlobalResources\XML_Ejemplo.xml" />
+    <Content Include="css\controles\images\back_disabled.png" />
+    <Content Include="css\controles\images\back_enabled.png" />
+    <Content Include="css\controles\images\back_enabled_hover.png" />
+    <Content Include="css\controles\images\favicon.ico" />
+    <Content Include="css\controles\images\forward_disabled.png" />
+    <Content Include="css\controles\images\forward_enabled.png" />
+    <Content Include="css\controles\images\forward_enabled_hover.png" />
+    <Content Include="css\controles\images\sort_asc.png" />
+    <Content Include="css\controles\images\sort_asc_disabled.png" />
+    <Content Include="css\controles\images\sort_both.png" />
+    <Content Include="css\controles\images\sort_desc.png" />
+    <Content Include="css\controles\images\sort_desc_disabled.png" />
+    <Content Include="css\jquery\images\arrow-down-01.png" />
+    <Content Include="css\jquery\images\arrow-Up-01.png" />
+    <Content Include="css\jquery\jquery.fileupload.css" />
+    <Content Include="DocumentosPolizas\Vacio.txt" />
+    <Content Include="imagenes\Accept-icon.png" />
+    <Content Include="imagenes\alert-icon.png" />
+    <Content Include="imagenes\Close-icon.png" />
+    <Content Include="imagenes\imprimir.jpg" />
+    <Content Include="scripts\aplicacion\seguridad\AprobarControlDual.js" />
+    <Content Include="scripts\aplicacion\Administracion\ConsultarLog.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionAseguradora.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionCanalVenta.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionCausalNovedad.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionIPC.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionMensajes.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionNovedad.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionProducto.js" />
+    <Content Include="scripts\aplicacion\Alertas.js" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionGeneral.js" />
+    <Content Include="scripts\aplicacion\Fin.js" />
+    <Content Include="scripts\aplicacion\seguridad\AdministracionControlDual.js" />
+    <Content Include="scripts\aplicacion\seguridad\Autenticacion.js" />
+    <Content Include="scripts\aplicacion\Venta\ReImpresionPoliza.js" />
+    <Content Include="css\controles\dataTables\jquery.dataTables.min.css" />
+    <Content Include="scripts\controles\nicescroll\jquery.nicescroll.min.js" />
+    <Content Include="scripts\jquery\jquery.fileupload.js" />
+    <Content Include="scripts\jquery\jquery.iframe-transport.js" />
+    <Content Include="scripts\jquery\jquery.ui.widget.js" />
+    <Content Include="seguridad\AdministracionControlDual.aspx" />
+    <Content Include="seguridad\Autenticacion.aspx" />
+    <Content Include="css\controles\animate\animate.min.css" />
+    <Content Include="css\controles\bootstrap-multiselect\bootstrap-multiselect.css" />
+    <Content Include="css\controles\bootstrap-select\bootstrap-select.css" />
+    <Content Include="css\controles\bootstrap-select\bootstrap-select.min.css" />
+    <Content Include="css\bootstrap\v3.3.6\bootstrap-theme.css" />
+    <Content Include="css\bootstrap\v3.3.6\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap\v3.3.6\bootstrap.css" />
+    <Content Include="css\bootstrap\v3.3.6\bootstrap.min.css" />
+    <Content Include="css\controles\calendar\fullcalendar.css" />
+    <Content Include="css\controles\calendar\fullcalendar.min.css" />
+    <Content Include="css\controles\calendar\fullcalendar.print.css" />
+    <Content Include="css\controles\colorpicker\alpha-horizontal.png" />
+    <Content Include="css\controles\colorpicker\alpha.png" />
+    <Content Include="css\controles\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="css\controles\colorpicker\hue-horizontal.png" />
+    <Content Include="css\controles\colorpicker\hue.png" />
+    <Content Include="css\controles\colorpicker\saturation.png" />
+    <Content Include="css\controles\custom\custom.css" />
+    <Content Include="css\controles\dataTables\demo_page.css" />
+    <Content Include="css\controles\dataTables\demo_table.css" />
+    <Content Include="css\controles\dataTables\demo_table_jui.css" />
+    <Content Include="css\controles\editor\external\google-code-prettify\prettify.css" />
+    <Content Include="css\controles\editor\index.css" />
+    <Content Include="css\controles\icheck\flat\aero%402x.png" />
+    <Content Include="css\controles\icheck\flat\aero.css" />
+    <Content Include="css\controles\icheck\flat\aero.png" />
+    <Content Include="css\controles\icheck\flat\blue%402x.png" />
+    <Content Include="css\controles\icheck\flat\blue.css" />
+    <Content Include="css\controles\icheck\flat\blue.png" />
+    <Content Include="css\controles\icheck\flat\flat%402x.png" />
+    <Content Include="css\controles\icheck\flat\flat.css" />
+    <Content Include="css\controles\icheck\flat\flat.png" />
+    <Content Include="css\controles\icheck\flat\green%402x.png" />
+    <Content Include="css\controles\icheck\flat\green.css" />
+    <Content Include="css\controles\icheck\flat\green.png" />
+    <Content Include="css\controles\icheck\flat\grey%402x.png" />
+    <Content Include="css\controles\icheck\flat\grey.css" />
+    <Content Include="css\controles\icheck\flat\grey.png" />
+    <Content Include="css\controles\icheck\flat\orange%402x.png" />
+    <Content Include="css\controles\icheck\flat\orange.css" />
+    <Content Include="css\controles\icheck\flat\orange.png" />
+    <Content Include="css\controles\icheck\flat\pink%402x.png" />
+    <Content Include="css\controles\icheck\flat\pink.css" />
+    <Content Include="css\controles\icheck\flat\pink.png" />
+    <Content Include="css\controles\icheck\flat\purple%402x.png" />
+    <Content Include="css\controles\icheck\flat\purple.css" />
+    <Content Include="css\controles\icheck\flat\purple.png" />
+    <Content Include="css\controles\icheck\flat\red%402x.png" />
+    <Content Include="css\controles\icheck\flat\red.css" />
+    <Content Include="css\controles\icheck\flat\red.png" />
+    <Content Include="css\controles\icheck\flat\yellow%402x.png" />
+    <Content Include="css\controles\icheck\flat\yellow.css" />
+    <Content Include="css\controles\icheck\flat\yellow.png" />
+    <Content Include="css\controles\icheck\flat\_all.css" />
+    <Content Include="css\controles\maps\jquery-jvectormap-2.0.1.css" />
+    <Content Include="css\controles\progressbar\bootstrap-progressbar-3.3.0.css" />
+    <Content Include="css\controles\select\select2.min.css" />
+    <Content Include="css\controles\switchery\switchery.min.css" />
+    <Content Include="css\controles\treeview\jquery.checkboxtree.css" />
+    <Content Include="css\controles\treeview\jquery.checkboxtree.min.css" />
+    <Content Include="css\aplicacion\EstilosPrueba.css" />
+    <Content Include="css\jquery\images\delete.png" />
+    <Content Include="css\jquery\images\edit.jpg" />
+    <Content Include="css\jquery\images\ui-anim_basic_16x16.gif" />
+    <Content Include="css\jquery\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\jquery\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="css\jquery\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="css\jquery\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\jquery\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="css\jquery\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="css\jquery\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="css\jquery\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\jquery\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="css\jquery\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\jquery\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\jquery\images\ui-icons_454545_256x240.png" />
+    <Content Include="css\jquery\images\ui-icons_888888_256x240.png" />
+    <Content Include="css\jquery\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\jquery\jquery-ui-1.7.2.custom.css" />
+    <Content Include="css\jquery\jquery-ui.min.css" />
+    <Content Include="fonts\css\font-awesome.css" />
+    <Content Include="fonts\css\font-awesome.min.css" />
+    <Content Include="imagenes\1370981652_refresh.png" />
+    <Content Include="imagenes\arrow_down1.png" />
+    <Content Include="imagenes\arrow_down2.png" />
+    <Content Include="imagenes\arrow_left1.png" />
+    <Content Include="imagenes\arrow_left2.png" />
+    <Content Include="imagenes\arrow_right1.png" />
+    <Content Include="imagenes\arrow_right2.png" />
+    <Content Include="imagenes\back_disabled.jpg" />
+    <Content Include="imagenes\back_disabled.png" />
+    <Content Include="imagenes\back_enabled.jpg" />
+    <Content Include="imagenes\back_enabled.png" />
+    <Content Include="imagenes\back_enabled_hover.png" />
+    <Content Include="imagenes\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="imagenes\bootstrap-colorpicker\alpha.png" />
+    <Content Include="imagenes\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="imagenes\bootstrap-colorpicker\hue.png" />
+    <Content Include="imagenes\bootstrap-colorpicker\saturation.png" />
+    <Content Include="imagenes\buscar.gif" />
+    <Content Include="imagenes\cross-error.png" />
+    <Content Include="imagenes\Editing-Edit-icon.png" />
+    <Content Include="imagenes\favicon.ico" />
+    <Content Include="imagenes\favorite.png" />
+    <Content Include="imagenes\fianzas.png" />
+    <Content Include="imagenes\flickr.png" />
+    <Content Include="imagenes\forward_disabled.jpg" />
+    <Content Include="imagenes\forward_disabled.png" />
+    <Content Include="imagenes\forward_enabled.jpg" />
+    <Content Include="imagenes\forward_enabled.png" />
+    <Content Include="imagenes\forward_enabled_hover.png" />
+    <Content Include="imagenes\help.gif" />
+    <Content Include="imagenes\help.png" />
+    <Content Include="imagenes\icons.png" />
+    <Content Include="imagenes\important.gif" />
+    <Content Include="imagenes\info.gif" />
+    <Content Include="imagenes\loader.gif" />
+    <Content Include="imagenes\log.png" />
+    <Content Include="imagenes\logo-banco-agrario-colombia.png" />
+    <Content Include="imagenes\logo.jpg" />
+    <Content Include="imagenes\lupa.gif" />
+    <Content Include="imagenes\mail.png" />
+    <Content Include="imagenes\minus.png" />
+    <Content Include="imagenes\plus.png" />
+    <Content Include="imagenes\plus_dark.png" />
+    <Content Include="imagenes\propiedad.png" />
+    <Content Include="imagenes\search.jpg" />
+    <Content Include="imagenes\sort_asc.png" />
+    <Content Include="imagenes\sort_asc_disabled.png" />
+    <Content Include="imagenes\sort_both.png" />
+    <Content Include="imagenes\sort_desc.png" />
+    <Content Include="imagenes\sort_desc_disabled.png" />
+    <Content Include="imagenes\sprite-skin-flat.png" />
+    <Content Include="imagenes\sprite-skin-modern.png" />
+    <Content Include="imagenes\sprite-skin-nice.png" />
+    <Content Include="imagenes\sprite-skin-simple.png" />
+    <Content Include="imagenes\title.gif" />
+    <Content Include="imagenes\top-search-icon.gif" />
+    <Content Include="imagenes\user.png" />
+    <Content Include="imagenes\vehiculo.png" />
+    <Content Include="imagenes\Visto_Bueno.png" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="scripts\aplicacion\Administracion\ParametrizacionPlantilla.js" />
+    <Content Include="scripts\aplicacion\Utilidades.js" />
+    <Content Include="scripts\aplicacion\Venta\ConsultarVenta.js" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\introLoader.css" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\introLoader.min.css" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-bub_dark.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-bub_fluoGreen.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-bub_fluoMagenta.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-bub_fluoYellow.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-bub_forest.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-bub_light.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-bub_ocean.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-simple_dark.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-simple_fluoGreen.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-simple_fluoMagenta.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-simple_fluoYellow.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-simple_forest.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-simple_light.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\spinners\circle-simple_ocean.gif" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\helpers\jquery.easing.1.3.js" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\helpers\spin.min.js" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\jquery.introLoader.js" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\jquery.introLoader.min.js" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\jquery.introLoader.pack.min.js" />
+    <Content Include="imagenes\calender.png" />
+    <Content Include="imagenes\delete.png" />
+    <Content Include="imagenes\edit.jpg" />
+    <Content Include="imagenes\encabezado.png" />
+    <Content Include="scripts\aplicacion\Inicio.js" />
+    <Content Include="scripts\aplicacion\Principal.js" />
+    <Content Include="scripts\aplicacion\seguridad\Roles.js" />
+    <Content Include="scripts\aplicacion\Venta\RegistrarVenta.js" />
+    <Content Include="scripts\bootstrap\v3.3.6\bootstrap.js" />
+    <Content Include="scripts\bootstrap\v3.3.6\bootstrap.min.js" />
+    <Content Include="scripts\bootstrap\v3.3.6\npm.js" />
+    <Content Include="scripts\controles\autocomplete\countries.js" />
+    <Content Include="scripts\controles\autocomplete\jquery.autocomplete.js" />
+    <Content Include="scripts\controles\custom\custom.js" />
+    <Content Include="scripts\controles\datatables\images\back_disabled.png" />
+    <Content Include="scripts\controles\datatables\images\back_enabled.png" />
+    <Content Include="scripts\controles\datatables\images\back_enabled_hover.png" />
+    <Content Include="scripts\controles\datatables\images\favicon.ico" />
+    <Content Include="scripts\controles\datatables\images\forward_disabled.png" />
+    <Content Include="scripts\controles\datatables\images\forward_enabled.png" />
+    <Content Include="scripts\controles\datatables\images\forward_enabled_hover.png" />
+    <Content Include="scripts\controles\datatables\images\sort_asc.png" />
+    <Content Include="scripts\controles\datatables\images\sort_asc_disabled.png" />
+    <Content Include="scripts\controles\datatables\images\sort_both.png" />
+    <Content Include="scripts\controles\datatables\images\sort_desc.png" />
+    <Content Include="scripts\controles\datatables\images\sort_desc_disabled.png" />
+    <Content Include="scripts\controles\datatables\js\jquery.dataTables.js" />
+    <Content Include="scripts\controles\datatables\js\jquery.js" />
+    <Content Include="scripts\controles\datepicker\daterangepicker.js" />
+    <Content Include="scripts\controles\moment\moment.min.js" />
+    <Content Include="scripts\controles\moment\moment.min2.js" />
+    <Content Include="scripts\controles\nprogress\nprogress.js" />
+    <Content Include="scripts\controles\parsley\parsley.min.js" />
+    <Content Include="scripts\controles\Storage\jstorage.js" />
+    <Content Include="scripts\jquery\jquery-ui.min.js" />
+    <Content Include="scripts\jquery\jquery.linq.js" />
+    <Content Include="scripts\jquery\jquery.linq.min.js" />
+    <Content Include="scripts\jquery\jquery.min.js" />
+    <Content Include="scripts\jquery\linq.js" />
+    <Content Include="scripts\jquery\linq.min.js" />
+    <Content Include="seguridad\Roles.aspx" />
+    <Content Include="Properties\DataSources\BAC.EntidadesSeguridad.Menu.datasource" />
+    <Content Include="Properties\DataSources\BAC.EntidadesSeguridad.Rol.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Venta.Usuario.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Venta.Cliente.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.DtoCatalogo.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Venta.Asesor.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguro.Seguro1.datasource" />
+    <Content Include="css\bootstrap\v3.3.6\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap\v3.3.6\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap\v3.3.6\bootstrap.css.map" />
+    <Content Include="css\bootstrap\v3.3.6\bootstrap.min.css.map" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguro.PlanPorIdSeguro.datasource" />
+    <Content Include="scripts\controles\datatables\images\Sorting icons.psd" />
+    <Content Include="imagenes\Sorting icons.psd" />
+    <Content Include="Principal.Master" />
+    <Content Include="fonts\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\less\bordered-pulled.less" />
+    <Content Include="fonts\less\core.less" />
+    <Content Include="fonts\less\fixed-width.less" />
+    <Content Include="fonts\less\font-awesome.less" />
+    <Content Include="fonts\less\icons.less" />
+    <Content Include="fonts\less\larger.less" />
+    <Content Include="fonts\less\list.less" />
+    <Content Include="fonts\less\mixins.less" />
+    <Content Include="fonts\less\path.less" />
+    <Content Include="fonts\less\rotated-flipped.less" />
+    <Content Include="fonts\less\spinning.less" />
+    <Content Include="fonts\less\stacked.less" />
+    <Content Include="fonts\less\variables.less" />
+    <Content Include="fonts\scss\font-awesome.scss" />
+    <Content Include="fonts\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\scss\_core.scss" />
+    <Content Include="fonts\scss\_fixed-width.scss" />
+    <Content Include="fonts\scss\_icons.scss" />
+    <Content Include="fonts\scss\_larger.scss" />
+    <Content Include="fonts\scss\_list.scss" />
+    <Content Include="fonts\scss\_mixins.scss" />
+    <Content Include="fonts\scss\_path.scss" />
+    <Content Include="fonts\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\scss\_spinning.scss" />
+    <Content Include="fonts\scss\_stacked.scss" />
+    <Content Include="fonts\scss\_variables.scss" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguro.Plan.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Venta.ProductoBancario.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.Oficina.datasource" />
+    <Content Include="scripts\controles\jqueryIntroLoader\dist\css\introLoaderLess.less" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Venta.ProductoNoPermitido.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.General.ManejoExcepcion.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Venta.ResultadoVentaPoliza.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Venta.ResultadoDocumentoPoliza.datasource" />
+    <Content Include="packages.config" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Venta.ConsultarVenta.datasource" />
+    <Content Include="Properties\DataSources\BAC.EntidadesSeguridad.AutenticacionUsuario.datasource" />
+    <Content Include="Properties\DataSources\BAC.EntidadesSeguridad.Oficina.datasource" />
+    <Content Include="css\controles\images\Sorting icons.psd" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.General.Resultado.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguro.Aseguradora.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguro.DocumentoPoliza.datasource" />
+    <Content Include="Properties\DataSources\BAC.EntidadesSeguridad.GrupoBAC.datasource" />
+    <Content Include="Recurso\XML_Ejemplo.xml" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.SubProducto.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguro.Convenio.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.CanalVenta.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.Periodicidad.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.Producto.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.Categoria.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguro.CodigoPlan.datasource" />
+    <Content Include="Administracion\FileUploadHandler.ashx" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.IPC.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.General.Auditoria.datasource" />
+    <Content Include="Administracion\Plantillas\TBSD.docx" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.General.Mensaje.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Administracion.AprobacionDual.datasource" />
+    <Content Include="Properties\DataSources\BAC.EntidadesSeguridad.Resultado.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguridad.AdministracionControlDual.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Administracion.ParametrizacionSeguro.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Seguro.VariableProducto.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.ItemMaestra.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.Maestra.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Planos.CamposPoliza.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.ItemMaestra1.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.Maestra1.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.ItemMaestra.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.Maestra.datasource" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioControlDual\ServicioControlDual.wsdl" />
+    <None Include="Service References\ServicioControlDual\ServicioControlDual.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioControlDual\ServicioControlDual1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioControlDual\ServicioControlDual2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioControlDual\ServicioControlDual3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioGenerico\ServicioGenerico.disco" />
+    <None Include="Service References\ServicioGenerico\configuration91.svcinfo" />
+    <None Include="Service References\ServicioGenerico\configuration.svcinfo" />
+    <None Include="Service References\ServicioGenerico\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServicioControlDual\ServicioControlDual.disco" />
+    <None Include="Service References\ServicioControlDual\configuration91.svcinfo" />
+    <None Include="Service References\ServicioControlDual\configuration.svcinfo" />
+    <None Include="Service References\ServicioControlDual\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServicioAdministracion\ServicioAdministracion.disco" />
+    <None Include="Service References\ServicioAdministracion\configuration91.svcinfo" />
+    <None Include="Service References\ServicioAdministracion\configuration.svcinfo" />
+    <None Include="Service References\ServicioAdministracion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.Novedad.datasource" />
+    <Content Include="Properties\DataSources\BancaSeguros.Entidades.Catalogo.CausalNovedad.datasource" />
+    <None Include="Properties\PublishProfiles\LocalAC.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalCAP.pubxml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\ServidorDesarrollo.pubxml" />
+    <None Include="Service References\ServicioGenerico\ServicioGenerico.wsdl" />
+    <None Include="Service References\ServicioGenerico\ServicioGenerico.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioGenerico\ServicioGenerico1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioGenerico\ServicioGenerico2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioGenerico\ServicioGenerico3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioGenerico\ServicioGenerico42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioSeguridad\ServicioSeguridad.disco" />
+    <None Include="Service References\ServicioSeguridad\configuration91.svcinfo" />
+    <None Include="Service References\ServicioSeguridad\configuration.svcinfo" />
+    <None Include="Service References\ServicioSeguridad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServicioSeguridad\ServicioSeguridad3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioSeguridad\ServicioSeguridad4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioSeguridad\ServicioSeguridad5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioVenta\configuration91.svcinfo" />
+    <None Include="Service References\ServicioVenta\configuration.svcinfo" />
+    <None Include="Service References\ServicioVenta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Venta\ConsultarVenta.aspx" />
+    <Content Include="Venta\RegistrarVenta.aspx" />
+    <Content Include="Venta\ReImpresionPoliza.aspx" />
+    <None Include="Service References\ServicioVenta\ServicioVenta5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioVenta\ServicioVenta6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioVenta\ServicioVenta7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.a.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ServidorDesarrollo.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\EjecucionManualETL.aspx.cs">
+      <DependentUpon>EjecucionManualETL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EjecucionManualETL.aspx.designer.cs">
+      <DependentUpon>EjecucionManualETL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionVariablesProducto.aspx.cs">
+      <DependentUpon>ParametrizacionVariablesProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionVariablesProducto.aspx.designer.cs">
+      <DependentUpon>ParametrizacionVariablesProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionPlanoDemanda.aspx.cs">
+      <DependentUpon>ParametrizacionPlanoDemanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionPlanoDemanda.aspx.designer.cs">
+      <DependentUpon>ParametrizacionPlanoDemanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionMaestras.aspx.cs">
+      <DependentUpon>ParametrizacionMaestras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionMaestras.aspx.designer.cs">
+      <DependentUpon>ParametrizacionMaestras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionPlanos.aspx.cs">
+      <DependentUpon>ParametrizacionPlanos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionPlanos.aspx.designer.cs">
+      <DependentUpon>ParametrizacionPlanos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\LlavesUI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LlavesUI.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="seguridad\AprobarControlDual.aspx.cs">
+      <DependentUpon>AprobarControlDual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="seguridad\AprobarControlDual.aspx.designer.cs">
+      <DependentUpon>AprobarControlDual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ConsultarLog.aspx.cs">
+      <DependentUpon>ConsultarLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ConsultarLog.aspx.designer.cs">
+      <DependentUpon>ConsultarLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionAseguradora.aspx.cs">
+      <DependentUpon>ParametrizacionAseguradora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionAseguradora.aspx.designer.cs">
+      <DependentUpon>ParametrizacionAseguradora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionCanalVenta.aspx.cs">
+      <DependentUpon>ParametrizacionCanalVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionCanalVenta.aspx.designer.cs">
+      <DependentUpon>ParametrizacionCanalVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionGeneral.aspx.cs">
+      <DependentUpon>ParametrizacionGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionGeneral.aspx.designer.cs">
+      <DependentUpon>ParametrizacionGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionIPC.aspx.cs">
+      <DependentUpon>ParametrizacionIPC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionIPC.aspx.designer.cs">
+      <DependentUpon>ParametrizacionIPC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionMensajes.aspx.cs">
+      <DependentUpon>ParametrizacionMensajes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionMensajes.aspx.designer.cs">
+      <DependentUpon>ParametrizacionMensajes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionNovedad.aspx.cs">
+      <DependentUpon>ParametrizacionNovedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionNovedad.aspx.designer.cs">
+      <DependentUpon>ParametrizacionNovedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionPlantilla.aspx.cs">
+      <DependentUpon>ParametrizacionPlantilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionPlantilla.aspx.designer.cs">
+      <DependentUpon>ParametrizacionPlantilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionProducto.aspx.cs">
+      <DependentUpon>ParametrizacionProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizacionProducto.aspx.designer.cs">
+      <DependentUpon>ParametrizacionProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ParametrizarCausalNovedad.aspx.cs">
+      <DependentUpon>ParametrizarCausalNovedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ParametrizarCausalNovedad.aspx.designer.cs">
+      <DependentUpon>ParametrizarCausalNovedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\AdministradorProxy.cs" />
+    <Compile Include="App_GlobalResources\Mensajes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensajes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Parametros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Parametros.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\FileUploadHandler.ashx.cs">
+      <DependentUpon>FileUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="seguridad\AdministracionControlDual.aspx.cs">
+      <DependentUpon>AdministracionControlDual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seguridad\AdministracionControlDual.aspx.designer.cs">
+      <DependentUpon>AdministracionControlDual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seguridad\Autenticacion.aspx.cs">
+      <DependentUpon>Autenticacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seguridad\Autenticacion.aspx.designer.cs">
+      <DependentUpon>Autenticacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="seguridad\Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service References\ServicioAdministracion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioControlDual\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioGenerico\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioSeguridad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioVenta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\ConsultarVenta.aspx.cs">
+      <DependentUpon>ConsultarVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venta\ConsultarVenta.aspx.designer.cs">
+      <DependentUpon>ConsultarVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\RegistrarVenta.aspx.cs">
+      <DependentUpon>RegistrarVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venta\RegistrarVenta.aspx.designer.cs">
+      <DependentUpon>RegistrarVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\ReImpresionPoliza.aspx.cs">
+      <DependentUpon>ReImpresionPoliza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Venta\ReImpresionPoliza.aspx.designer.cs">
+      <DependentUpon>ReImpresionPoliza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\controles\bootstrap-select\bootstrap-select.css.map" />
+    <None Include="Service References\ServicioSeguridad\ServicioSeguridad.wsdl" />
+    <None Include="Service References\ServicioSeguridad\ServicioSeguridad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioSeguridad\ServicioSeguridad1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioSeguridad\ServicioSeguridad2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioVenta\ServicioVenta.wsdl" />
+    <None Include="Service References\ServicioVenta\ServicioVenta.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioVenta\ServicioVenta1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioVenta\ServicioVenta2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioVenta\ServicioVenta3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioVenta\ServicioVenta4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Parametros.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Parametros.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Mensajes.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAC.EntidadesSeguridad\BAC.EntidadesSeguridad.csproj">
+      <Project>{7238aac9-a13e-4b45-a3e8-b67db99e7c21}</Project>
+      <Name>BAC.EntidadesSeguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Aplicacion\BancaSeguros.Aplicacion.csproj">
+      <Project>{d8b4ff96-d255-4bba-b48a-b4d0ea822668}</Project>
+      <Name>BancaSeguros.Aplicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Entidades\BancaSeguros.Entidades.csproj">
+      <Project>{0b8ff5bf-867e-41b6-a901-d4aa8aff028a}</Project>
+      <Name>BancaSeguros.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Infraestructura\BancaSeguros.Infraestructura.csproj">
+      <Project>{16b8b311-24f8-430a-874d-98065bcceb12}</Project>
+      <Name>BancaSeguros.Infraestructura</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_LocalResources\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Plantillas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServicioAdministracion\" />
+    <WCFMetadataStorage Include="Service References\ServicioControlDual\" />
+    <WCFMetadataStorage Include="Service References\ServicioGenerico\" />
+    <WCFMetadataStorage Include="Service References\ServicioSeguridad\" />
+    <WCFMetadataStorage Include="Service References\ServicioVenta\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\LlavesUI.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LlavesUI.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ServidorDesarrollo|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'a|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60572</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60572/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "ls '$(SolutionDir)\packages\GhostScriptSharp.*\Tools\gsdll32.dll' | Sort -Descending | Select -First 1 | cp -Destination '$(TargetDir)'; exit 0"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

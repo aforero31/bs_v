@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAC.Seguridad</RootNamespace>
+    <AssemblyName>BAC.Seguridad</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Requerimientos\UnitTests, archivos de reglas y GhostDoc\Intergrupo.Rules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ServidorDesarrollo|AnyCPU'">
+    <OutputPath>bin\ServidorDesarrollo\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'a|AnyCPU'">
+    <OutputPath>bin\a\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GhostscriptSharp">
+      <HintPath>..\packages\GhostScriptSharp.1.3.1.4\lib\net40\GhostscriptSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autenticacion\GestionAutenticacion.cs" />
+    <Compile Include="Autenticacion\GestionToken.cs" />
+    <Compile Include="Autenticacion\IGestionToken.cs" />
+    <Compile Include="Autenticacion\RestToken.cs" />
+    <Compile Include="Configuraciones\LlavesAplicacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LlavesAplicacion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Mensajes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensajes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Parametros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Parametros.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorioActivo\DirectorioActivo.cs" />
+    <Compile Include="Mensaje\ControlMensajes.cs" />
+    <Compile Include="Mensaje\GestionLog.cs" />
+    <Compile Include="Mensaje\GestionMensaje.cs" />
+    <Compile Include="Mensaje\IGestionLog.cs" />
+    <Compile Include="Mensaje\IGestionMensaje.cs" />
+    <Compile Include="Seguridad\GestionGrupoBAC.cs" />
+    <Compile Include="Seguridad\GestionSeguridad.cs" />
+    <Compile Include="Autenticacion\IGestionAutenticacion.cs" />
+    <Compile Include="Seguridad\IGestionGrupoBAC.cs" />
+    <Compile Include="Seguridad\IGestionSeguridad.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAC.EntidadesSeguridad\BAC.EntidadesSeguridad.csproj">
+      <Project>{7238aac9-a13e-4b45-a3e8-b67db99e7c21}</Project>
+      <Name>BAC.EntidadesSeguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Entidades\BancaSeguros.Entidades.csproj">
+      <Project>{0b8ff5bf-867e-41b6-a901-d4aa8aff028a}</Project>
+      <Name>BancaSeguros.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Repositorio\BancaSeguros.Repositorio.csproj">
+      <Project>{56c03caf-c67c-4a90-9f76-75e2b5343075}</Project>
+      <Name>BancaSeguros.Repositorio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuraciones\LlavesAplicacion.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LlavesAplicacion.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Mensajes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Parametros.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Parametros.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "ls '$(SolutionDir)\packages\GhostScriptSharp.*\Tools\gsdll32.dll' | Sort -Descending | Select -First 1 | cp -Destination '$(TargetDir)'; exit 0"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

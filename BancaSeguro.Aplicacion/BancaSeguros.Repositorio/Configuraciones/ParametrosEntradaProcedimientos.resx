@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="fechaDeNacimientoCliente" xml:space="preserve">
+    <value>fechaDeNacimientoCliente</value>
+  </data>
+  <data name="genero" xml:space="preserve">
+    <value>genero</value>
+  </data>
+  <data name="identificacion" xml:space="preserve">
+    <value>identificacion</value>
+  </data>
+  <data name="idPlan" xml:space="preserve">
+    <value>idPlan</value>
+  </data>
+  <data name="idSeguro" xml:space="preserve">
+    <value>idSeguro</value>
+  </data>
+  <data name="idTipoDeIdentificacion" xml:space="preserve">
+    <value>idTipoDeIdentificacion</value>
+  </data>
+  <data name="actividadEconomica" xml:space="preserve">
+    <value>actividadEconomica</value>
+  </data>
+  <data name="ciudadNacimiento" xml:space="preserve">
+    <value>ciudadNacimiento</value>
+  </data>
+  <data name="idAsesor" xml:space="preserve">
+    <value>idAsesor</value>
+  </data>
+  <data name="idOficina" xml:space="preserve">
+    <value>idOficina</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="idPoliza" xml:space="preserve">
+    <value>idPoliza</value>
+  </data>
+  <data name="Consecutivo" xml:space="preserve">
+    <value>@Consecutivo</value>
+  </data>
+  <data name="Plantilla" xml:space="preserve">
+    <value>@Plantilla</value>
+  </data>
+  <data name="Activa" xml:space="preserve">
+    <value>Activa</value>
+  </data>
+  <data name="CamposPlantilla" xml:space="preserve">
+    <value>CamposPlantilla</value>
+  </data>
+  <data name="Eliminado" xml:space="preserve">
+    <value>@Eliminado</value>
+  </data>
+  <data name="FechaCreacion" xml:space="preserve">
+    <value>FechaCreacion</value>
+  </data>
+  <data name="IdDocumentoPoliza" xml:space="preserve">
+    <value>@idDocumentoPoliza</value>
+  </data>
+  <data name="NombreArchivo" xml:space="preserve">
+    <value>NombreArchivo</value>
+  </data>
+  <data name="UsuarioCreacion" xml:space="preserve">
+    <value>UsuarioCreacion</value>
+  </data>
+  <data name="VersionDocumento" xml:space="preserve">
+    <value>VersionDocumento</value>
+  </data>
+  <data name="idRol" xml:space="preserve">
+    <value>idRol</value>
+  </data>
+  <data name="PlantillaXML" xml:space="preserve">
+    <value>PlantillaXML</value>
+  </data>
+  <data name="idDocumentoPlantilla" xml:space="preserve">
+    <value>idDocumentoPlantilla</value>
+  </data>
+  <data name="Activo" xml:space="preserve">
+    <value>activo</value>
+  </data>
+  <data name="Codigo" xml:space="preserve">
+    <value>codigo</value>
+  </data>
+  <data name="IdCanalVenta" xml:space="preserve">
+    <value>idCanalVenta</value>
+  </data>
+  <data name="idTipoIdentificacion" xml:space="preserve">
+    <value>idTipoIdentificacion</value>
+  </data>
+  <data name="idAseguradora" xml:space="preserve">
+    <value>idAseguradora</value>
+  </data>
+  <data name="contacto" xml:space="preserve">
+    <value>contacto</value>
+  </data>
+  <data name="correo" xml:space="preserve">
+    <value>correo</value>
+  </data>
+  <data name="existe" xml:space="preserve">
+    <value>existe</value>
+  </data>
+  <data name="telefono" xml:space="preserve">
+    <value>telefono</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>descripcion</value>
+  </data>
+  <data name="IdParametro" xml:space="preserve">
+    <value>idParametro</value>
+  </data>
+  <data name="IdTipoDato" xml:space="preserve">
+    <value>idTipoDato</value>
+  </data>
+  <data name="Valor" xml:space="preserve">
+    <value>valor</value>
+  </data>
+  <data name="consecutivoActual" xml:space="preserve">
+    <value>consecutivoActual</value>
+  </data>
+  <data name="consecutivoInicial" xml:space="preserve">
+    <value>consecutivoInicial</value>
+  </data>
+  <data name="actualizaConsecutivo" xml:space="preserve">
+    <value>actualizaConsecutivo</value>
+  </data>
+  <data name="IdSubProducto" xml:space="preserve">
+    <value>@idSubProducto</value>
+  </data>
+  <data name="IdCategoria" xml:space="preserve">
+    <value>IdCategoria</value>
+  </data>
+  <data name="esDual" xml:space="preserve">
+    <value>esDual</value>
+  </data>
+  <data name="idAccion" xml:space="preserve">
+    <value>idAccion</value>
+  </data>
+  <data name="idMenu" xml:space="preserve">
+    <value>idMenu</value>
+  </data>
+  <data name="CodigoProducto" xml:space="preserve">
+    <value>CodigoProducto</value>
+  </data>
+  <data name="idGrupo" xml:space="preserve">
+    <value>idGrupo</value>
+  </data>
+  <data name="nuevoId" xml:space="preserve">
+    <value>nuevoId</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>vP_UserName</value>
+  </data>
+  <data name="horaRequest" xml:space="preserve">
+    <value>@horaRequest</value>
+  </data>
+  <data name="horaResponse" xml:space="preserve">
+    <value>@horaResponse</value>
+  </data>
+  <data name="tipoTransaccion" xml:space="preserve">
+    <value>@tipoTrans</value>
+  </data>
+  <data name="xmlRequest" xml:space="preserve">
+    <value>@xmlRequest</value>
+  </data>
+  <data name="xmlResponse" xml:space="preserve">
+    <value>@xmlResponse</value>
+  </data>
+  <data name="Beneficiario" xml:space="preserve">
+    <value>beneficiario</value>
+  </data>
+  <data name="CodigoConvenio" xml:space="preserve">
+    <value>codigoConvenio</value>
+  </data>
+  <data name="Conyuge" xml:space="preserve">
+    <value>conyuge</value>
+  </data>
+  <data name="EdadMaximaConyugue" xml:space="preserve">
+    <value>edadMaximaConyugue</value>
+  </data>
+  <data name="EdadMaximaHombre" xml:space="preserve">
+    <value>edadMaximaHombre</value>
+  </data>
+  <data name="EdadMaximaMujer" xml:space="preserve">
+    <value>edadMaximaMujer</value>
+  </data>
+  <data name="EdadMinimaConyugue" xml:space="preserve">
+    <value>edadMinimaConyugue</value>
+  </data>
+  <data name="EdadMinimaHombre" xml:space="preserve">
+    <value>edadMinimaHombre</value>
+  </data>
+  <data name="EdadMinimaMujer" xml:space="preserve">
+    <value>edadMinimaMujer</value>
+  </data>
+  <data name="MaximoBeneficiarios" xml:space="preserve">
+    <value>MaximoBeneficiarios</value>
+  </data>
+  <data name="NumeroMaximoSegurosPorCliente" xml:space="preserve">
+    <value>numeroMaximoSegurosPorCliente</value>
+  </data>
+  <data name="idPeriodicidad" xml:space="preserve">
+    <value>idPeriodicidad</value>
+  </data>
+  <data name="ValorIVA" xml:space="preserve">
+    <value>valorIva</value>
+  </data>
+  <data name="ValorSinIva" xml:space="preserve">
+    <value>valorSinIva</value>
+  </data>
+  <data name="NumeroMaximoVentaSegurosPorCuentaCliente" xml:space="preserve">
+    <value>numeroMaximoVentaSegurosPorCuentaCliente</value>
+  </data>
+  <data name="codigoCategoria" xml:space="preserve">
+    <value>codigoCategoria</value>
+  </data>
+  <data name="CodigoSubProducto" xml:space="preserve">
+    <value>codigoSubProducto</value>
+  </data>
+  <data name="campo" xml:space="preserve">
+    <value>campo</value>
+  </data>
+  <data name="campoLlave" xml:space="preserve">
+    <value>campoLlave</value>
+  </data>
+  <data name="fechaFinal" xml:space="preserve">
+    <value>fechaFinal</value>
+  </data>
+  <data name="fechaInicial" xml:space="preserve">
+    <value>fechaInicial</value>
+  </data>
+  <data name="nombreTabla" xml:space="preserve">
+    <value>nombreTabla</value>
+  </data>
+  <data name="nuevoValor" xml:space="preserve">
+    <value>nuevoValor</value>
+  </data>
+  <data name="tipo" xml:space="preserve">
+    <value>tipo</value>
+  </data>
+  <data name="usuario" xml:space="preserve">
+    <value>usuario</value>
+  </data>
+  <data name="valorAnterior" xml:space="preserve">
+    <value>valorAnterior</value>
+  </data>
+  <data name="valorLlave" xml:space="preserve">
+    <value>valorLlave</value>
+  </data>
+  <data name="AñoIPC" xml:space="preserve">
+    <value>@añoIPC</value>
+  </data>
+  <data name="ValorIPC" xml:space="preserve">
+    <value>@valorIPC</value>
+  </data>
+  <data name="CodigoNovedad" xml:space="preserve">
+    <value>@codTipoNovedad</value>
+  </data>
+  <data name="EstadoNovedad" xml:space="preserve">
+    <value>@estadoTipoNovedad</value>
+  </data>
+  <data name="IdNovedad" xml:space="preserve">
+    <value>@idTipoNovedad</value>
+  </data>
+  <data name="NombreNovedad" xml:space="preserve">
+    <value>@nombreTipoNovedad</value>
+  </data>
+  <data name="IdCodigoPlan" xml:space="preserve">
+    <value>idCodigoPlan</value>
+  </data>
+  <data name="CodigoCausalNovedad" xml:space="preserve">
+    <value>@codCausalNovedad</value>
+  </data>
+  <data name="estadoCausalNovedad" xml:space="preserve">
+    <value>@estadoCausalNovedad</value>
+  </data>
+  <data name="NombreCausalNovedad" xml:space="preserve">
+    <value>@nombreCausalNovedad</value>
+  </data>
+  <data name="IdCausalNovedad" xml:space="preserve">
+    <value>@idCausalNovedad</value>
+  </data>
+  <data name="idMensaje" xml:space="preserve">
+    <value>idMensaje</value>
+  </data>
+  <data name="idEvento" xml:space="preserve">
+    <value>@idEvento</value>
+  </data>
+  <data name="idTipoMensaje" xml:space="preserve">
+    <value>idTipoMensaje</value>
+  </data>
+  <data name="Llave" xml:space="preserve">
+    <value>Llave</value>
+  </data>
+  <data name="Mensaje" xml:space="preserve">
+    <value>Mensaje</value>
+  </data>
+  <data name="accion" xml:space="preserve">
+    <value>accion</value>
+  </data>
+  <data name="datosObjeto" xml:space="preserve">
+    <value>datosObjeto</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>estado</value>
+  </data>
+  <data name="fechaAprobacion" xml:space="preserve">
+    <value>fechaAprobacion</value>
+  </data>
+  <data name="fechaSolicitud" xml:space="preserve">
+    <value>fechaSolicitud</value>
+  </data>
+  <data name="nombreObjeto" xml:space="preserve">
+    <value>nombreObjeto</value>
+  </data>
+  <data name="usuarioAprueba" xml:space="preserve">
+    <value>usuarioAprueba</value>
+  </data>
+  <data name="usuarioEnvia" xml:space="preserve">
+    <value>usuarioEnvia</value>
+  </data>
+  <data name="autoriza" xml:space="preserve">
+    <value>@autoriza</value>
+  </data>
+  <data name="requiere" xml:space="preserve">
+    <value>@requiere</value>
+  </data>
+  <data name="idAprobacionDual" xml:space="preserve">
+    <value>idAprobacionDual</value>
+  </data>
+  <data name="IdControlDual" xml:space="preserve">
+    <value>@idControlDual</value>
+  </data>
+  <data name="aseguradora" xml:space="preserve">
+    <value>aseguradora</value>
+  </data>
+  <data name="CodigoPlan" xml:space="preserve">
+    <value>codigoPlan</value>
+  </data>
+  <data name="idVariableProducto" xml:space="preserve">
+    <value>idVariableProducto</value>
+  </data>
+  <data name="idVariableVenta" xml:space="preserve">
+    <value>idVariableVenta</value>
+  </data>
+  <data name="idVenta" xml:space="preserve">
+    <value>idVenta</value>
+  </data>
+  <data name="longitud" xml:space="preserve">
+    <value>longitud</value>
+  </data>
+  <data name="nombreCampo" xml:space="preserve">
+    <value>nombreCampo</value>
+  </data>
+  <data name="idMaestra" xml:space="preserve">
+    <value>idMaestra</value>
+  </data>
+  <data name="orden" xml:space="preserve">
+    <value>orden</value>
+  </data>
+  <data name="IdConvenio" xml:space="preserve">
+    <value>idConvenio</value>
+  </data>
+  <data name="opcion" xml:space="preserve">
+    <value>@opcion</value>
+  </data>
+  <data name="TablaPlan" xml:space="preserve">
+    <value>tablaPlan</value>
+  </data>
+  <data name="TablaProductos" xml:space="preserve">
+    <value>tablaProductos</value>
+  </data>
+  <data name="TablaSeguroTipoI" xml:space="preserve">
+    <value>tablaSeguroTipoI</value>
+  </data>
+  <data name="CamposArchivoPlano" xml:space="preserve">
+    <value>@camposConsulta</value>
+  </data>
+  <data name="CodigoFiltroArchivoPlano" xml:space="preserve">
+    <value>@codigoFiltro</value>
+  </data>
+  <data name="CriterioFiltroArchivoPlano" xml:space="preserve">
+    <value>@criterioFiltro</value>
+  </data>
+  <data name="FechaFinArchivoPlano" xml:space="preserve">
+    <value>@fechaFinArchivo</value>
+  </data>
+  <data name="FechaInicioArchivoPlano" xml:space="preserve">
+    <value>@fechaInicioArchivo</value>
+  </data>
+  <data name="FrecuenciaArchivoPlano" xml:space="preserve">
+    <value>@tipoProgramacionArchivo</value>
+  </data>
+  <data name="NombreArchivoPlano" xml:space="preserve">
+    <value>@nombreArchivo</value>
+  </data>
+  <data name="ObjetivoArchivoPlano" xml:space="preserve">
+    <value>@descripcionArchivo</value>
+  </data>
+  <data name="ProgramacionArchivoPlano" xml:space="preserve">
+    <value>@programacion</value>
+  </data>
+  <data name="RutaFTPArchivoPlano" xml:space="preserve">
+    <value>@rutaDestinoFTP</value>
+  </data>
+  <data name="SeparadorArchivoPlano" xml:space="preserve">
+    <value>@separador</value>
+  </data>
+  <data name="codigoTipoCuenta" xml:space="preserve">
+    <value>codigoTipoCuenta</value>
+  </data>
+  <data name="numeroCuenta" xml:space="preserve">
+    <value>numeroCuenta</value>
+  </data>
+  <data name="IdProgramacion" xml:space="preserve">
+    <value>@idProgramacion</value>
+  </data>
+  <data name="codigoAseguradora" xml:space="preserve">
+    <value>codigoAseguradora</value>
+  </data>
+  <data name="codigoSeguro" xml:space="preserve">
+    <value>codigoSeguro</value>
+  </data>
+  <data name="fecha" xml:space="preserve">
+    <value>fecha</value>
+  </data>
+  <data name="Datos" xml:space="preserve">
+    <value>datos</value>
+  </data>
+</root>

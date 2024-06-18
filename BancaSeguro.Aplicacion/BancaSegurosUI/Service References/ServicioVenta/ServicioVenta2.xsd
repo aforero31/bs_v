@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" />
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" />
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" />
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" />
+  <xs:complexType name="Cliente">
+    <xs:sequence>
+      <xs:element name="actividadEconomica" nillable="true" type="xs:string" />
+      <xs:element name="celular" nillable="true" type="xs:string" />
+      <xs:element name="ciudadNacimiento" nillable="true" type="xs:string" />
+      <xs:element name="ciudadResidencia" nillable="true" type="xs:string" />
+      <xs:element name="codigoDANE" nillable="true" type="xs:string" />
+      <xs:element name="codigoSeguro" type="xs:int" />
+      <xs:element name="correo" nillable="true" type="xs:string" />
+      <xs:element name="correoElectronico" nillable="true" type="xs:string" />
+      <xs:element name="departamentoResidencia" nillable="true" type="xs:string" />
+      <xs:element name="direccion" nillable="true" type="xs:string" />
+      <xs:element name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element name="genero" nillable="true" type="xs:string" />
+      <xs:element name="identificacion" nillable="true" type="xs:string" />
+      <xs:element name="idgenero" type="xs:int" />
+      <xs:element name="nacionalidad" nillable="true" type="xs:string" />
+      <xs:element name="numeroMaximoSegurosPorCliente" type="xs:int" />
+      <xs:element name="numeroMaximoVentaSegurosPorCuentaCliente" type="xs:int" />
+      <xs:element name="primerApellido" nillable="true" type="xs:string" />
+      <xs:element name="primerNombre" nillable="true" type="xs:string" />
+      <xs:element name="productoBancario" nillable="true" type="tns:ProductoBancario" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" name="resultado" nillable="true" type="q1:Resultado" />
+      <xs:element name="segundoApellido" nillable="true" type="xs:string" />
+      <xs:element name="segundoNombre" nillable="true" type="xs:string" />
+      <xs:element name="telefono" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" name="tipoIdentificacion" nillable="true" type="q2:TipoIdentificacion" />
+      <xs:element name="tipocliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="ProductoBancario">
+    <xs:sequence>
+      <xs:element name="codigoCategoria" nillable="true" type="xs:string" />
+      <xs:element name="codigoProducto" nillable="true" type="xs:string" />
+      <xs:element name="codigoSubProducto" nillable="true" type="xs:string" />
+      <xs:element name="descripcion" nillable="true" type="xs:string" />
+      <xs:element name="idNumeroCuenta" type="xs:int" />
+      <xs:element name="idProductoBancario" type="xs:int" />
+      <xs:element name="nombreProducto" nillable="true" type="xs:string" />
+      <xs:element name="numeroCuenta" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" name="resultado" nillable="true" type="q3:Resultado" />
+      <xs:element name="saldo" type="xs:double" />
+      <xs:element name="saldoFormatoMoneda" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoBancario" nillable="true" type="tns:ProductoBancario" />
+  <xs:complexType name="ArrayOfProductoBancario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoBancario" nillable="true" type="tns:ProductoBancario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoBancario" nillable="true" type="tns:ArrayOfProductoBancario" />
+  <xs:complexType name="RegistrarVenta">
+    <xs:sequence>
+      <xs:element name="asesor" nillable="true" type="tns:Asesor" />
+      <xs:element name="beneficiario" nillable="true" type="tns:ArrayOfBeneficiario" />
+      <xs:element name="cliente" nillable="true" type="tns:Cliente" />
+      <xs:element name="codigoConvenio" type="xs:int" />
+      <xs:element name="consecutivo" nillable="true" type="xs:string" />
+      <xs:element name="conyuge" nillable="true" type="tns:Conyuge" />
+      <xs:element name="idPlan" type="xs:int" />
+      <xs:element name="idSeguro" type="xs:int" />
+      <xs:element name="idVenta" type="xs:int" />
+      <xs:element name="productoBancario" nillable="true" type="tns:ProductoBancario" />
+      <xs:element name="variablesVenta" nillable="true" type="tns:ArrayOfVariableVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegistrarVenta" nillable="true" type="tns:RegistrarVenta" />
+  <xs:complexType name="Asesor">
+    <xs:sequence>
+      <xs:element name="idAsesor" nillable="true" type="xs:string" />
+      <xs:element name="idTipoIdentificacion" type="xs:int" />
+      <xs:element name="identificacion" type="xs:int" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" name="oficina" nillable="true" type="q4:Oficina" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Asesor" nillable="true" type="tns:Asesor" />
+  <xs:complexType name="ArrayOfBeneficiario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Beneficiario" nillable="true" type="tns:Beneficiario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBeneficiario" nillable="true" type="tns:ArrayOfBeneficiario" />
+  <xs:complexType name="Beneficiario">
+    <xs:sequence>
+      <xs:element name="apellidos" nillable="true" type="xs:string" />
+      <xs:element name="idBeneficiario" type="xs:int" />
+      <xs:element name="idParentesco" type="xs:int" />
+      <xs:element name="idTipoIdentificacion" type="xs:int" />
+      <xs:element name="idVenta" type="xs:int" />
+      <xs:element name="identificacion" nillable="true" type="xs:string" />
+      <xs:element name="nombres" nillable="true" type="xs:string" />
+      <xs:element name="porcentaje" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Beneficiario" nillable="true" type="tns:Beneficiario" />
+  <xs:complexType name="Conyuge">
+    <xs:sequence>
+      <xs:element name="fechaEmisionDocumento" type="xs:dateTime" />
+      <xs:element name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element name="genero" nillable="true" type="xs:string" />
+      <xs:element name="idConyuge" type="xs:int" />
+      <xs:element name="idTipoIdentificacion" type="xs:int" />
+      <xs:element name="idVenta" type="xs:int" />
+      <xs:element name="identificacion" nillable="true" type="xs:string" />
+      <xs:element name="idgenero" nillable="true" type="xs:string" />
+      <xs:element name="primerApellido" nillable="true" type="xs:string" />
+      <xs:element name="primerNombre" nillable="true" type="xs:string" />
+      <xs:element name="segundoApellido" nillable="true" type="xs:string" />
+      <xs:element name="segundoNombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Conyuge" nillable="true" type="tns:Conyuge" />
+  <xs:complexType name="ArrayOfVariableVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VariableVenta" nillable="true" type="tns:VariableVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariableVenta" nillable="true" type="tns:ArrayOfVariableVenta" />
+  <xs:complexType name="VariableVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConsecutivoPoliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdVariableProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdVariableVenta" type="xs:int" />
+      <xs:element minOccurs="0" name="IdVenta" type="xs:int" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreValor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orden" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorMaestra" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariableVenta" nillable="true" type="tns:VariableVenta" />
+  <xs:complexType name="ResultadoVentaPoliza">
+    <xs:sequence>
+      <xs:element name="consecutivo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" name="resultado" nillable="true" type="q5:Resultado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoVentaPoliza" nillable="true" type="tns:ResultadoVentaPoliza" />
+  <xs:complexType name="ResultadoDocumentoPoliza">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_ArchivoPolizaPdf_x003E_k__BackingField" nillable="true" type="q6:ArrayOfunsignedByte" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_ImagenPoliza_x003E_k__BackingField" nillable="true" type="q7:ArrayOfunsignedByte" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" name="_x003C_Resultado_x003E_k__BackingField" nillable="true" type="q8:Resultado" />
+      <xs:element name="_x003C_RutaArchivo_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoDocumentoPoliza" nillable="true" type="tns:ResultadoDocumentoPoliza" />
+  <xs:complexType name="ArrayOfProductoNoPermitido">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoNoPermitido" nillable="true" type="tns:ProductoNoPermitido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoNoPermitido" nillable="true" type="tns:ArrayOfProductoNoPermitido" />
+  <xs:complexType name="ProductoNoPermitido">
+    <xs:sequence>
+      <xs:element name="_x003C_Login_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" name="categoria" nillable="true" type="q9:Categoria" />
+      <xs:element name="idSeguro" type="xs:int" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" name="producto" nillable="true" type="q10:Producto" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" name="subProducto" nillable="true" type="q11:SubProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoNoPermitido" nillable="true" type="tns:ProductoNoPermitido" />
+  <xs:complexType name="ArrayOfConsultarVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultarVenta" nillable="true" type="tns:ConsultarVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultarVenta" nillable="true" type="tns:ArrayOfConsultarVenta" />
+  <xs:complexType name="ConsultarVenta">
+    <xs:sequence>
+      <xs:element name="datosVenta" nillable="true" type="tns:RegistrarVenta" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" name="detalleCancelacionPoliza" nillable="true" type="q12:DetalleCancelacionPoliza" />
+      <xs:element name="fechaCobroExitoso" type="xs:dateTime" />
+      <xs:element name="fechaCreacion" type="xs:dateTime" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" name="resultado" nillable="true" type="q13:Resultado" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" name="seguro" nillable="true" type="q14:Seguro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarVenta" nillable="true" type="tns:ConsultarVenta" />
+</xs:schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Resultado">
+    <xs:sequence>
+      <xs:element name="error" type="xs:boolean" />
+      <xs:element name="ex" nillable="true" type="xs:string" />
+      <xs:element name="idTipoMensaje" type="xs:int" />
+      <xs:element name="mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Resultado" nillable="true" type="tns:Resultado" />
+  <xs:complexType name="Auditoria">
+    <xs:sequence>
+      <xs:element name="campo" nillable="true" type="xs:string" />
+      <xs:element name="campoLlave" nillable="true" type="xs:string" />
+      <xs:element name="fechaActualizacion" type="xs:dateTime" />
+      <xs:element name="fechaFinActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element name="fechaIniActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element name="idAuditoria" type="xs:int" />
+      <xs:element name="nombreTabla" nillable="true" type="xs:string" />
+      <xs:element name="nuevoValor" nillable="true" type="xs:string" />
+      <xs:element name="tipo" nillable="true" type="xs:string" />
+      <xs:element name="usuario" nillable="true" type="xs:string" />
+      <xs:element name="valorAnterior" nillable="true" type="xs:string" />
+      <xs:element name="valorLlave" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Auditoria" nillable="true" type="tns:Auditoria" />
+  <xs:complexType name="ArrayOfAuditoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Auditoria" nillable="true" type="tns:Auditoria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuditoria" nillable="true" type="tns:ArrayOfAuditoria" />
+  <xs:complexType name="Mensaje">
+    <xs:sequence>
+      <xs:element name="eventos" nillable="true" type="xs:string" />
+      <xs:element name="idEvento" type="xs:int" />
+      <xs:element name="idMensaje" type="xs:int" />
+      <xs:element name="idTipoMensaje" type="xs:int" />
+      <xs:element name="llave" nillable="true" type="xs:string" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="mensaje" nillable="true" type="xs:string" />
+      <xs:element name="resultado" nillable="true" type="tns:Resultado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mensaje" nillable="true" type="tns:Mensaje" />
+  <xs:complexType name="ArrayOfMensaje">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mensaje" nillable="true" type="tns:Mensaje" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMensaje" nillable="true" type="tns:ArrayOfMensaje" />
+</xs:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:Q1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:tns2="http://dto2.sdf.cts.cobis.cobiscorp.com" elementFormDefault="qualified" targetNamespace="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="commonDTO2.xsd" namespace="http://dto2.sdf.cts.cobis.cobiscorp.com" />
+  <import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+  <element name="opBuscarCuentaAhorrosSolicitud" type="Q1:OpBuscarCuentaAhorrosSolicitud" />
+  <element name="opBuscarCuentaAhorrosRespuesta" type="Q1:OpBuscarCuentaAhorrosRespuesta" />
+  <element name="opBuscarExtractoEncabezadoCuentaAhorroSolicitud" type="Q1:OpBuscarExtractoEncabezadoCuentaAhorroSolicitud" />
+  <element name="opBuscarExtractoEncabezadoCuentaAhorroRespuesta" type="Q1:OpBuscarExtractoEncabezadoCuentaAhorroRespuesta" />
+  <element name="opBuscarExtractoMovimientoCuentaAhorrosSolicitud" type="Q1:OpBuscarExtractoMovimientoCuentaAhorrosSolicitud" />
+  <element name="opBuscarExtractoMovimientoCuentaAhorrosRespuesta" type="Q1:OpBuscarExtractoMovimientoCuentaAhorrosRespuesta" />
+  <element name="opBuscarExtractoSaldoCuentaAhorrosSolicitud" type="Q1:OpBuscarExtractoSaldoCuentaAhorrosSolicitud" />
+  <element name="opBuscarExtractoSaldoCuentaAhorrosRespuesta" type="Q1:OpBuscarExtractoSaldoCuentaAhorrosRespuesta" />
+</schema>

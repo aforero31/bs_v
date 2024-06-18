@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TipoIdentificacion">
+    <xs:sequence>
+      <xs:element name="abreviatura" nillable="true" type="xs:string" />
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="codigoCardif" nillable="true" type="xs:string" />
+      <xs:element name="idTipoIdentificacion" type="xs:int" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element name="tipoPersona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoIdentificacion" nillable="true" type="tns:TipoIdentificacion" />
+  <xs:complexType name="Periodicidad">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idPeriodicidad" type="xs:int" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element name="numeroMesesPeriodicidad" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Periodicidad" nillable="true" type="tns:Periodicidad" />
+  <xs:complexType name="ArrayOfCategoria">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Categoria" nillable="true" type="tns:Categoria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoria" nillable="true" type="tns:ArrayOfCategoria" />
+  <xs:complexType name="Categoria">
+    <xs:sequence>
+      <xs:element name="_x003C_Activo_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Codigo_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_IdCategoria_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdProducto_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Nombre_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Categoria" nillable="true" type="tns:Categoria" />
+  <xs:complexType name="Producto">
+    <xs:sequence>
+      <xs:element name="_x003C_Activo_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_CodigoCardif_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Codigo_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdProductos_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Nombre_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Producto" nillable="true" type="tns:Producto" />
+  <xs:complexType name="SubProducto">
+    <xs:sequence>
+      <xs:element name="_x003C_Activo_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Codigo_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdProducto_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdSubProductos_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Nombre_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubProducto" nillable="true" type="tns:SubProducto" />
+  <xs:complexType name="ArrayOfSubProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubProducto" nillable="true" type="tns:SubProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubProducto" nillable="true" type="tns:ArrayOfSubProducto" />
+  <xs:complexType name="ArrayOfProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Producto" nillable="true" type="tns:Producto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProducto" nillable="true" type="tns:ArrayOfProducto" />
+</xs:schema>

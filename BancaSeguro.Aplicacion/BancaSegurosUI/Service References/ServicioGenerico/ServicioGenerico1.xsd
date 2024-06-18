@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60524/Generico/ServicioGenerico.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" />
+  <xs:complexType name="ArrayOfPlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Plan" nillable="true" type="tns:Plan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlan" nillable="true" type="tns:ArrayOfPlan" />
+  <xs:complexType name="Plan">
+    <xs:sequence>
+      <xs:element name="_x003C_Login_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="codigoConvenio" type="xs:int" />
+      <xs:element name="codigoPlan" type="xs:int" />
+      <xs:element name="descripcion" nillable="true" type="xs:string" />
+      <xs:element name="idPeriodicidad" type="xs:int" />
+      <xs:element name="idPlan" type="xs:int" />
+      <xs:element name="idSeguro" type="xs:int" />
+      <xs:element name="nombrePeriodicidad" nillable="true" type="xs:string" />
+      <xs:element name="nombrePlan" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" name="periodicidad" nillable="true" type="q1:Periodicidad" />
+      <xs:element name="valor" type="xs:decimal" />
+      <xs:element name="valorIVA" type="xs:decimal" />
+      <xs:element name="valorMoneda" nillable="true" type="xs:string" />
+      <xs:element name="valorSinIVA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plan" nillable="true" type="tns:Plan" />
+</xs:schema>

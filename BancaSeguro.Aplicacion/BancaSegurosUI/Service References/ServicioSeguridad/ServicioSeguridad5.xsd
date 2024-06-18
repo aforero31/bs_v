@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguridad" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguridad" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAdministracionControlDual">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdministracionControlDual" nillable="true" type="tns:AdministracionControlDual" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdministracionControlDual" nillable="true" type="tns:ArrayOfAdministracionControlDual" />
+  <xs:complexType name="AdministracionControlDual">
+    <xs:sequence>
+      <xs:element name="autoriza" type="xs:boolean" />
+      <xs:element name="idControlDual" type="xs:int" />
+      <xs:element name="idMenu" type="xs:int" />
+      <xs:element name="idRol" type="xs:int" />
+      <xs:element name="nombreRol" nillable="true" type="xs:string" />
+      <xs:element name="requiere" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdministracionControlDual" nillable="true" type="tns:AdministracionControlDual" />
+</xs:schema>

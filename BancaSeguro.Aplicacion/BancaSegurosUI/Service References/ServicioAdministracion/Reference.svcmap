@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8246f40a-a5a3-4987-8fa2-5e9a8f29d5ab" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="BAC.EntidadesSeguridad" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Aplicacion" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Entidades" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Infraestructura" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60524/Administracion/ServicioAdministracion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioAdministracion.xsd" MetadataType="Schema" ID="2c4e656a-5a67-4e5b-bbcc-53cf5094121a" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioAdministracion.wsdl" MetadataType="Wsdl" ID="6514e779-2bf5-4f33-8e9b-b303bfaba4d0" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?wsdl" />
+    <MetadataFile FileName="ServicioAdministracion.disco" MetadataType="Disco" ID="fae0540e-b9ed-4a5d-a353-269026899b2e" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?disco" />
+    <MetadataFile FileName="ServicioAdministracion1.xsd" MetadataType="Schema" ID="ff29bd92-fde1-4428-a5e8-e92539a6f386" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServicioAdministracion2.xsd" MetadataType="Schema" ID="b5c187d8-9bd5-4d74-8d8a-ff45f91d4131" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServicioAdministracion8.xsd" MetadataType="Schema" ID="2fc110cb-dbff-453c-a4c6-35795813e450" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd8" />
+    <MetadataFile FileName="ServicioAdministracion3.xsd" MetadataType="Schema" ID="6328571f-b35b-4126-a70d-bf2676db2056" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd7" />
+    <MetadataFile FileName="ServicioAdministracion4.xsd" MetadataType="Schema" ID="8c362af6-9edb-49de-948e-4216d2008a6c" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd6" />
+    <MetadataFile FileName="ServicioAdministracion5.xsd" MetadataType="Schema" ID="68285c5f-77e7-4cb3-8a29-3a241c169985" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServicioAdministracion6.xsd" MetadataType="Schema" ID="5ecbc273-41a4-4775-8d73-b1bc7cd50c7c" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioAdministracion7.xsd" MetadataType="Schema" ID="8956ab7a-b873-4877-80fa-bb83ce7653af" SourceId="1" SourceUrl="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

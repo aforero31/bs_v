@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CanalVenta">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="codigo" type="xs:int" />
+      <xs:element name="idCanalVenta" type="xs:int" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CanalVenta" nillable="true" type="tns:CanalVenta" />
+  <xs:complexType name="TipoIdentificacion">
+    <xs:sequence>
+      <xs:element name="abreviatura" nillable="true" type="xs:string" />
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="codigoCardif" nillable="true" type="xs:string" />
+      <xs:element name="idTipoIdentificacion" type="xs:int" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element name="tipoPersona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoIdentificacion" nillable="true" type="tns:TipoIdentificacion" />
+  <xs:complexType name="Parametro">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="descripcion" nillable="true" type="xs:string" />
+      <xs:element name="idParametro" type="xs:int" />
+      <xs:element name="idTipoDato" type="xs:int" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Parametro" nillable="true" type="tns:Parametro" />
+  <xs:complexType name="Periodicidad">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idPeriodicidad" type="xs:int" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element name="numeroMesesPeriodicidad" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Periodicidad" nillable="true" type="tns:Periodicidad" />
+  <xs:complexType name="Categoria">
+    <xs:sequence>
+      <xs:element name="_x003C_Activo_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Codigo_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_IdCategoria_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdProducto_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Nombre_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Categoria" nillable="true" type="tns:Categoria" />
+  <xs:complexType name="Producto">
+    <xs:sequence>
+      <xs:element name="_x003C_Activo_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_CodigoCardif_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Codigo_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdProductos_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Nombre_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Producto" nillable="true" type="tns:Producto" />
+  <xs:complexType name="SubProducto">
+    <xs:sequence>
+      <xs:element name="_x003C_Activo_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Codigo_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdProducto_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_IdSubProductos_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Nombre_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubProducto" nillable="true" type="tns:SubProducto" />
+  <xs:complexType name="ArrayOfTipoIdentificacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoIdentificacion" nillable="true" type="tns:TipoIdentificacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoIdentificacion" nillable="true" type="tns:ArrayOfTipoIdentificacion" />
+  <xs:complexType name="ArrayOfCanalVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CanalVenta" nillable="true" type="tns:CanalVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCanalVenta" nillable="true" type="tns:ArrayOfCanalVenta" />
+  <xs:complexType name="ArrayOfPeriodicidad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Periodicidad" nillable="true" type="tns:Periodicidad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPeriodicidad" nillable="true" type="tns:ArrayOfPeriodicidad" />
+  <xs:complexType name="IPC">
+    <xs:sequence>
+      <xs:element name="ano" type="xs:int" />
+      <xs:element name="anoActual" type="xs:int" />
+      <xs:element name="idIPC" type="xs:int" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="valor" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IPC" nillable="true" type="tns:IPC" />
+  <xs:complexType name="Novedad">
+    <xs:sequence>
+      <xs:element name="codigoTipoNovedad" type="xs:int" />
+      <xs:element name="estadoNovedad" type="xs:boolean" />
+      <xs:element name="idTipoNovedad" type="xs:int" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="nombreTipoNovedad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Novedad" nillable="true" type="tns:Novedad" />
+  <xs:complexType name="ArrayOfNovedad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Novedad" nillable="true" type="tns:Novedad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNovedad" nillable="true" type="tns:ArrayOfNovedad" />
+  <xs:complexType name="CausalNovedad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoCausalNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoCausalNovedad" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdCausalNovedad" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTipoNovedad" type="xs:int" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCausalNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreTipoNovedad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CausalNovedad" nillable="true" type="tns:CausalNovedad" />
+  <xs:complexType name="ArrayOfCausalNovedad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CausalNovedad" nillable="true" type="tns:CausalNovedad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCausalNovedad" nillable="true" type="tns:ArrayOfCausalNovedad" />
+  <xs:complexType name="ArrayOfItemMaestra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemMaestra" nillable="true" type="tns:ItemMaestra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemMaestra" nillable="true" type="tns:ArrayOfItemMaestra" />
+  <xs:complexType name="ItemMaestra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdMaestra" type="xs:int" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemMaestra" nillable="true" type="tns:ItemMaestra" />
+  <xs:complexType name="Maestra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdMaestra" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfItemMaestra" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Maestra" nillable="true" type="tns:Maestra" />
+  <xs:complexType name="ArrayOfMaestra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Maestra" nillable="true" type="tns:Maestra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaestra" nillable="true" type="tns:ArrayOfMaestra" />
+</xs:schema>

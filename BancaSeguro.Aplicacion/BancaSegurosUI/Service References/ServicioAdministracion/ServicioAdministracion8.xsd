@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Planos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Planos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCamposPoliza">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CamposPoliza" nillable="true" type="tns:CamposPoliza" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCamposPoliza" nillable="true" type="tns:ArrayOfCamposPoliza" />
+  <xs:complexType name="CamposPoliza">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanalVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadNacimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadResidencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoProducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoTipoCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Consecutivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Convenio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartamentoResidencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoPoliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Genero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificacionAseguradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificacionAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MesesPeriodicidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAseguradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCanalVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombrePlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreTipoCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Periodicidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimoIPC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorPoliza" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CamposPoliza" nillable="true" type="tns:CamposPoliza" />
+  <xs:complexType name="ArrayOfCamposCobros">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CamposCobros" nillable="true" type="tns:CamposCobros" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCamposCobros" nillable="true" type="tns:ArrayOfCamposCobros" />
+  <xs:complexType name="CamposCobros">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanalVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CausalNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadNacimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadResidencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoProducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoSuperAseguradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoTipoCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoTipoNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Convenio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartamentoResidencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoPoliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Genero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificacionAseguradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificacionAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntentosCobro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MesesPeriodicidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAseguradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCanalVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombrePlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreTipoCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreTipoNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroPoliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Periodicidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PeriodoCobro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorPoliza" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CamposCobros" nillable="true" type="tns:CamposCobros" />
+  <xs:complexType name="ArrayOfCamposCancelaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CamposCancelaciones" nillable="true" type="tns:CamposCancelaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCamposCancelaciones" nillable="true" type="tns:ArrayOfCamposCancelaciones" />
+  <xs:complexType name="CamposCancelaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Campos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanalVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CausalNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadNacimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CiudadResidencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoProducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoSuperAseguradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoTipoCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoTipoNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Convenio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartamentoResidencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoPoliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Genero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCausalNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificacionAseguradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificacionAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MesesPeriodicidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAseguradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAsesor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCanalVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreOficina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombrePlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreTipoCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreTipoNovedad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroCuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroPoliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Periodicidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorPoliza" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CamposCancelaciones" nillable="true" type="tns:CamposCancelaciones" />
+  <xs:complexType name="ArchivoPlano">
+    <xs:sequence>
+      <xs:element name="campos" nillable="true" type="xs:string" />
+      <xs:element name="codigofiltro" nillable="true" type="xs:string" />
+      <xs:element name="diamensual" nillable="true" type="xs:string" />
+      <xs:element name="diasemana" nillable="true" type="xs:string" />
+      <xs:element name="diasemanal" nillable="true" type="xs:string" />
+      <xs:element name="estado" nillable="true" type="xs:string" />
+      <xs:element name="fechaejec" nillable="true" type="xs:string" />
+      <xs:element name="fechaejecucion" nillable="true" type="xs:string" />
+      <xs:element name="fechafin" nillable="true" type="xs:dateTime" />
+      <xs:element name="fechafinal" nillable="true" type="xs:string" />
+      <xs:element name="fechaini" nillable="true" type="xs:string" />
+      <xs:element name="fechainicio" type="xs:dateTime" />
+      <xs:element name="filtros" nillable="true" type="xs:string" />
+      <xs:element name="frecuenciatipoprogramacion" nillable="true" type="xs:string" />
+      <xs:element name="idaseguradora" nillable="true" type="xs:string" />
+      <xs:element name="idprogramacion" type="xs:int" />
+      <xs:element name="nombrearchivo" nillable="true" type="xs:string" />
+      <xs:element name="numerosemana" nillable="true" type="xs:string" />
+      <xs:element name="objetivo" nillable="true" type="xs:string" />
+      <xs:element name="programacion" nillable="true" type="xs:string" />
+      <xs:element name="proximaejecucion" nillable="true" type="xs:string" />
+      <xs:element name="rutaftp" nillable="true" type="xs:string" />
+      <xs:element name="separador" nillable="true" type="xs:string" />
+      <xs:element name="ultimaejecucion" nillable="true" type="xs:string" />
+      <xs:element name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArchivoPlano" nillable="true" type="tns:ArchivoPlano" />
+  <xs:complexType name="ArrayOfArchivoPlano">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArchivoPlano" nillable="true" type="tns:ArchivoPlano" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArchivoPlano" nillable="true" type="tns:ArrayOfArchivoPlano" />
+</xs:schema>

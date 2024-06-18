@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Usuario">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="apellidos" nillable="true" type="xs:string" />
+      <xs:element name="contrasena" nillable="true" type="xs:string" />
+      <xs:element name="email" nillable="true" type="xs:string" />
+      <xs:element name="expiracion" type="xs:long" />
+      <xs:element name="fechaExpiracionToken" type="xs:dateTime" />
+      <xs:element name="grupo" nillable="true" type="tns:ArrayOfGrupoBAC" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element name="identificacion" type="xs:int" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="nombres" nillable="true" type="xs:string" />
+      <xs:element name="oficina" nillable="true" type="tns:Oficina" />
+      <xs:element name="roles" nillable="true" type="tns:ArrayOfRol" />
+      <xs:element name="token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
+  <xs:complexType name="ArrayOfGrupoBAC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GrupoBAC" nillable="true" type="tns:GrupoBAC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGrupoBAC" nillable="true" type="tns:ArrayOfGrupoBAC" />
+  <xs:complexType name="GrupoBAC">
+    <xs:sequence>
+      <xs:element name="activo" nillable="true" type="xs:boolean" />
+      <xs:element name="codigoGrupo" nillable="true" type="xs:string" />
+      <xs:element name="idGrupo" type="xs:int" />
+      <xs:element name="nombreGrupo" nillable="true" type="xs:string" />
+      <xs:element name="roles" nillable="true" type="tns:ArrayOfRol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GrupoBAC" nillable="true" type="tns:GrupoBAC" />
+  <xs:complexType name="ArrayOfRol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rol" nillable="true" type="tns:Rol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRol" nillable="true" type="tns:ArrayOfRol" />
+  <xs:complexType name="Rol">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="gruposBAC" nillable="true" type="tns:ArrayOfGrupoBAC" />
+      <xs:element name="idRol" type="xs:int" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+      <xs:element name="menus" nillable="true" type="tns:ArrayOfMenu" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rol" nillable="true" type="tns:Rol" />
+  <xs:complexType name="ArrayOfMenu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Menu" nillable="true" type="tns:Menu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenu" nillable="true" type="tns:ArrayOfMenu" />
+  <xs:complexType name="Menu">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idMenu" type="xs:int" />
+      <xs:element name="idPadre" type="xs:int" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element name="posicion" type="xs:int" />
+      <xs:element name="url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Menu" nillable="true" type="tns:Menu" />
+  <xs:complexType name="Oficina">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="codigo" nillable="true" type="xs:string" />
+      <xs:element name="idOficina" type="xs:int" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Oficina" nillable="true" type="tns:Oficina" />
+  <xs:complexType name="AutenticacionUsuario">
+    <xs:sequence>
+      <xs:element name="autenticado" type="xs:boolean" />
+      <xs:element name="mensaje" nillable="true" type="xs:string" />
+      <xs:element name="resultado" nillable="true" type="tns:Resultado" />
+      <xs:element name="usuario" nillable="true" type="tns:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutenticacionUsuario" nillable="true" type="tns:AutenticacionUsuario" />
+  <xs:complexType name="Resultado">
+    <xs:sequence>
+      <xs:element name="error" type="xs:boolean" />
+      <xs:element name="mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Resultado" nillable="true" type="tns:Resultado" />
+  <xs:complexType name="RefreshTokenResultado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaExpiracionToken" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Resultado" nillable="true" type="tns:Resultado" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RefreshTokenResultado" nillable="true" type="tns:RefreshTokenResultado" />
+  <xs:complexType name="Permisos">
+    <xs:sequence>
+      <xs:element name="activo" nillable="true" type="xs:boolean" />
+      <xs:element name="idMenu" type="xs:int" />
+      <xs:element name="idRol" type="xs:int" />
+      <xs:element name="login" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Permisos" nillable="true" type="tns:Permisos" />
+</xs:schema>

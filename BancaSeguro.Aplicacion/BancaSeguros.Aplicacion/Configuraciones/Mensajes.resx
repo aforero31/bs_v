@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrorInsertarSeguro" xml:space="preserve">
+    <value>No se ingresó el seguro, por favor intente de nuevo. Detalle: {0}</value>
+  </data>
+  <data name="ErrorInterno" xml:space="preserve">
+    <value>Error Interno {0}</value>
+  </data>
+  <data name="ErrorNoConfiguradoRutaServicioTransaccion" xml:space="preserve">
+    <value>No se ha configurado la ruta del servicio de Transaccion</value>
+  </data>
+  <data name="ExitoInsertarSeguro" xml:space="preserve">
+    <value>Se ingreso el seguro con éxito.</value>
+  </data>
+  <data name="ParametrizacionSeguroCanalesVenta" xml:space="preserve">
+    <value>Debe asociar por lo menos un canal de venta&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroCodigo" xml:space="preserve">
+    <value>Debe ingresar un código para el seguro&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroConvenio" xml:space="preserve">
+    <value>Debe seleccionar un convenio de la aseguradora&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroDescripcion" xml:space="preserve">
+    <value>Debe ingresar una descripción para el seguro&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroEdadMaximaConyuge" xml:space="preserve">
+    <value>La edad máxima del conyuge debe estar entre 1 y 66&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroEdadMinimaConyuge" xml:space="preserve">
+    <value>La edad mínima del conyuge debe estar entre 1 y 66&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroEdadMinimaMaximaConyuge" xml:space="preserve">
+    <value>La edad mínima no debe ser mayor a la edad maxíma parametrizada para el conyuge&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroIdAseguradora" xml:space="preserve">
+    <value>Debe seleccionar una aseguradora&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroNombreSeguro" xml:space="preserve">
+    <value>Debe ingresar un nombre para el seguro&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroNumeroBeneficiarios" xml:space="preserve">
+    <value>Los beneficiarios no puede ser cero&lt;/br&gt; </value>
+  </data>
+  <data name="ParametrizacionSeguroNumeroMaximoSegurosCliente" xml:space="preserve">
+    <value>El número máximo de ventas de este seguro por cliente no debe ser cero&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroNumeroMaximoSegurosPorCuentaCliente" xml:space="preserve">
+    <value>El número máximo de ventas de este seguro por cada cuenta de cliente no debe ser cero&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroPlanes" xml:space="preserve">
+    <value>Debe agregar por lo menos un plan&lt;/br&gt;</value>
+  </data>
+  <data name="ParametrizacionSeguroTiposIdentificacion" xml:space="preserve">
+    <value>Debe seleccionar por lo menos uno de los tipos de identificacion&lt;/br&gt;</value>
+  </data>
+  <data name="PolizaGuardarError" xml:space="preserve">
+    <value>Problemas Generando la Poliza</value>
+  </data>
+  <data name="PolizaGuardarExito" xml:space="preserve">
+    <value>Se Genero con exito la Poliza {0}</value>
+  </data>
+  <data name="SubtituloErroresCanalesVentaSeguro" xml:space="preserve">
+    <value>&lt;h4&gt;Errores en los canales de venta&lt;/h4&gt;&lt;/br&gt;</value>
+  </data>
+  <data name="SubtituloErroresPlanesSeguro" xml:space="preserve">
+    <value>&lt;h4&gt;Errores en los planes&lt;/h4&gt;&lt;/br&gt;</value>
+  </data>
+  <data name="SubtituloErroresProductosNoPermitidosSeguro" xml:space="preserve">
+    <value>&lt;h4&gt;Errores en los productos no permitidos&lt;/h4&gt;&lt;/br&gt;</value>
+  </data>
+  <data name="SubtituloErroresTiposIdentificacionSeguro" xml:space="preserve">
+    <value>&lt;h4&gt;Errores en los tipos de identificación&lt;/h4&gt;&lt;/br&gt;</value>
+  </data>
+  <data name="COBIS" xml:space="preserve">
+    <value>COBIS</value>
+  </data>
+  <data name="MensajeNoParametrizado" xml:space="preserve">
+    <value>Mensaje no parametrizado</value>
+  </data>
+  <data name="NumeroCuentas" xml:space="preserve">
+    <value>El número de ventas excede las permitidas para diferentes cuentas</value>
+  </data>
+  <data name="NumeroVentas" xml:space="preserve">
+    <value>El número de ventas excede las permitidas para una misma cuenta</value>
+  </data>
+  <data name="CodigoSeguroExiste" xml:space="preserve">
+    <value>El código del producto ya existe en el sistema</value>
+  </data>
+  <data name="SinCumplimientoParametros" xml:space="preserve">
+    <value>Hoy {0} mas los dias de anticipo {1} es igual al {2} la cual no es la fecha control {3}</value>
+  </data>
+  <data name="ErrorCobis" xml:space="preserve">
+    <value>Error en Cobis - {0} - {1}</value>
+  </data>
+  <data name="SinDTO" xml:space="preserve">
+    <value>Sin datos en la consulta a Cobis {0} </value>
+  </data>
+  <data name="SincronizacionCatalogos" xml:space="preserve">
+    <value>Sincronización Catalogos: </value>
+  </data>
+  <data name="SincronizacionDias" xml:space="preserve">
+    <value>Sincronización Dias Habiles: </value>
+  </data>
+  <data name="ErrorConvenio" xml:space="preserve">
+    <value>Error al consultar servicio COBIS</value>
+  </data>
+</root>

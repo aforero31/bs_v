@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioSeguridad" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" />
+      <xsd:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" />
+      <xsd:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" />
+      <xsd:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguridad" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioSeguridad_AutenticarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_AutenticarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerRefreshToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRefreshToken" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerRefreshToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRefreshTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarAsesor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAsesor" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarAsesor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAsesorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_InsertarRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarRol" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_InsertarRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ActualizarRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarRol" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ActualizarRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRoles" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerRolesCompletos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRolesCompletos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerRolesCompletos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRolesCompletosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenu" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerMenuPorRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuPorRol" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerMenuPorRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMenuPorRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerFuncionesMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFuncionesMenu" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerFuncionesMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFuncionesMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerFuncionesMenuPorRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFuncionesMenuPorRol" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ObtenerFuncionesMenuPorRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFuncionesMenuPorRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarMenusAprobacionDualPorRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMenusAprobacionDualPorRoles" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarMenusAprobacionDualPorRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMenusAprobacionDualPorRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarMenusRequiereDualPorRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMenusRequiereDualPorRoles" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarMenusRequiereDualPorRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMenusRequiereDualPorRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarOficinaPorCodigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarOficinaPorCodigo" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarOficinaPorCodigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarOficinaPorCodigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_AsignarPermiso_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarPermiso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_AsignarPermiso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_EliminarPermiso_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPermiso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_EliminarPermiso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarGruposBAC_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarGruposBAC" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarGruposBAC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarGruposBACResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarGrupoPorRol_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarGrupoPorRol" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarGrupoPorRol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarGrupoPorRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarMenuControlDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMenuControlDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarMenuControlDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarMenuControlDualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarAdmonControlDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAdmonControlDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarAdmonControlDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAdmonControlDualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarAdmonControlDualIdMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAdmonControlDualIdMenu" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ConsultarAdmonControlDualIdMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAdmonControlDualIdMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_InsertarAdmonControlDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAdmonControlDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_InsertarAdmonControlDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAdmonControlDualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ActualizarAdmonControlDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAdmonControlDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ActualizarAdmonControlDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAdmonControlDualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_RequiereAutorizacionDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequiereAutorizacionDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_RequiereAutorizacionDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequiereAutorizacionDualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ValidarAutorizadorDual_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarAutorizadorDual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioSeguridad_ValidarAutorizadorDual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarAutorizadorDualResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioSeguridad">
+    <wsdl:operation name="AutenticarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/AutenticarUsuario" message="tns:IServicioSeguridad_AutenticarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/AutenticarUsuarioResponse" message="tns:IServicioSeguridad_AutenticarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRefreshToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerRefreshToken" message="tns:IServicioSeguridad_ObtenerRefreshToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerRefreshTokenResponse" message="tns:IServicioSeguridad_ObtenerRefreshToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAsesor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarAsesor" message="tns:IServicioSeguridad_ConsultarAsesor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarAsesorResponse" message="tns:IServicioSeguridad_ConsultarAsesor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/InsertarRol" message="tns:IServicioSeguridad_InsertarRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/InsertarRolResponse" message="tns:IServicioSeguridad_InsertarRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ActualizarRol" message="tns:IServicioSeguridad_ActualizarRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ActualizarRolResponse" message="tns:IServicioSeguridad_ActualizarRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerRoles" message="tns:IServicioSeguridad_ObtenerRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerRolesResponse" message="tns:IServicioSeguridad_ObtenerRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRolesCompletos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerRolesCompletos" message="tns:IServicioSeguridad_ObtenerRolesCompletos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerRolesCompletosResponse" message="tns:IServicioSeguridad_ObtenerRolesCompletos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerMenu" message="tns:IServicioSeguridad_ObtenerMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerMenuResponse" message="tns:IServicioSeguridad_ObtenerMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuPorRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerMenuPorRol" message="tns:IServicioSeguridad_ObtenerMenuPorRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerMenuPorRolResponse" message="tns:IServicioSeguridad_ObtenerMenuPorRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFuncionesMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerFuncionesMenu" message="tns:IServicioSeguridad_ObtenerFuncionesMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerFuncionesMenuResponse" message="tns:IServicioSeguridad_ObtenerFuncionesMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFuncionesMenuPorRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerFuncionesMenuPorRol" message="tns:IServicioSeguridad_ObtenerFuncionesMenuPorRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ObtenerFuncionesMenuPorRolResponse" message="tns:IServicioSeguridad_ObtenerFuncionesMenuPorRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMenusAprobacionDualPorRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarMenusAprobacionDualPorRoles" message="tns:IServicioSeguridad_ConsultarMenusAprobacionDualPorRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarMenusAprobacionDualPorRolesResponse" message="tns:IServicioSeguridad_ConsultarMenusAprobacionDualPorRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMenusRequiereDualPorRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarMenusRequiereDualPorRoles" message="tns:IServicioSeguridad_ConsultarMenusRequiereDualPorRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarMenusRequiereDualPorRolesResponse" message="tns:IServicioSeguridad_ConsultarMenusRequiereDualPorRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarOficinaPorCodigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarOficinaPorCodigo" message="tns:IServicioSeguridad_ConsultarOficinaPorCodigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarOficinaPorCodigoResponse" message="tns:IServicioSeguridad_ConsultarOficinaPorCodigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarPermiso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/AsignarPermiso" message="tns:IServicioSeguridad_AsignarPermiso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/AsignarPermisoResponse" message="tns:IServicioSeguridad_AsignarPermiso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPermiso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/EliminarPermiso" message="tns:IServicioSeguridad_EliminarPermiso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/EliminarPermisoResponse" message="tns:IServicioSeguridad_EliminarPermiso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarGruposBAC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarGruposBAC" message="tns:IServicioSeguridad_ConsultarGruposBAC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarGruposBACResponse" message="tns:IServicioSeguridad_ConsultarGruposBAC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarGrupoPorRol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarGrupoPorRol" message="tns:IServicioSeguridad_ConsultarGrupoPorRol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarGrupoPorRolResponse" message="tns:IServicioSeguridad_ConsultarGrupoPorRol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMenuControlDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarMenuControlDual" message="tns:IServicioSeguridad_ConsultarMenuControlDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarMenuControlDualResponse" message="tns:IServicioSeguridad_ConsultarMenuControlDual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAdmonControlDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarAdmonControlDual" message="tns:IServicioSeguridad_ConsultarAdmonControlDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarAdmonControlDualResponse" message="tns:IServicioSeguridad_ConsultarAdmonControlDual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAdmonControlDualIdMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarAdmonControlDualIdMenu" message="tns:IServicioSeguridad_ConsultarAdmonControlDualIdMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ConsultarAdmonControlDualIdMenuResponse" message="tns:IServicioSeguridad_ConsultarAdmonControlDualIdMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAdmonControlDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/InsertarAdmonControlDual" message="tns:IServicioSeguridad_InsertarAdmonControlDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/InsertarAdmonControlDualResponse" message="tns:IServicioSeguridad_InsertarAdmonControlDual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAdmonControlDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ActualizarAdmonControlDual" message="tns:IServicioSeguridad_ActualizarAdmonControlDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ActualizarAdmonControlDualResponse" message="tns:IServicioSeguridad_ActualizarAdmonControlDual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequiereAutorizacionDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/RequiereAutorizacionDual" message="tns:IServicioSeguridad_RequiereAutorizacionDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/RequiereAutorizacionDualResponse" message="tns:IServicioSeguridad_RequiereAutorizacionDual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarAutorizadorDual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioSeguridad/ValidarAutorizadorDual" message="tns:IServicioSeguridad_ValidarAutorizadorDual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioSeguridad/ValidarAutorizadorDualResponse" message="tns:IServicioSeguridad_ValidarAutorizadorDual_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioSeguridad" type="tns:IServicioSeguridad">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutenticarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/AutenticarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRefreshToken">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ObtenerRefreshToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAsesor">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarAsesor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarRol">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/InsertarRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRol">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ActualizarRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRoles">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ObtenerRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRolesCompletos">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ObtenerRolesCompletos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenu">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ObtenerMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMenuPorRol">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ObtenerMenuPorRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFuncionesMenu">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ObtenerFuncionesMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFuncionesMenuPorRol">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ObtenerFuncionesMenuPorRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMenusAprobacionDualPorRoles">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarMenusAprobacionDualPorRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMenusRequiereDualPorRoles">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarMenusRequiereDualPorRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarOficinaPorCodigo">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarOficinaPorCodigo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarPermiso">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/AsignarPermiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPermiso">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/EliminarPermiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarGruposBAC">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarGruposBAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarGrupoPorRol">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarGrupoPorRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarMenuControlDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarMenuControlDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAdmonControlDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarAdmonControlDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAdmonControlDualIdMenu">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ConsultarAdmonControlDualIdMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAdmonControlDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/InsertarAdmonControlDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAdmonControlDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ActualizarAdmonControlDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequiereAutorizacionDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/RequiereAutorizacionDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarAutorizadorDual">
+      <soap:operation soapAction="http://tempuri.org/IServicioSeguridad/ValidarAutorizadorDual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioSeguridad">
+    <wsdl:port name="BasicHttpBinding_IServicioSeguridad" binding="tns:BasicHttpBinding_IServicioSeguridad">
+      <soap:address location="http://localhost:60524/Seguridad/ServicioSeguridad.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

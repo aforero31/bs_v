@@ -1,0 +1,65 @@
+﻿CREATE VIEW [dbo].[VW_SEG_DetalleNovPoliza]
+AS
+SELECT	RTRIM(LTRIM(ISNULL(ven.consecutivo,''))) AS NUMERO_POLIZA, 
+		FORMAT(ven.fechaCreacion ,'yyyyMMdd') AS FECHA_CREACION, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nacionalidad, '')))) AS NACIONALIDAD, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreIdentificacion, '')))) AS NOMBRE_TIPO_IDENTIFICACION, 
+		RTRIM(LTRIM(ISNULL(ven.identificacion,''))) AS NUMERO_IDENTIFICACION, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreGenero, '')))) AS GENERO, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.primerNombre, '')))) AS PRIMER_NOMBRE, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.segundoNombre, '')))) AS SEGUNDO_NOMBRE, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.primerApellido, '')))) AS PRIMER_APELLIDO, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.segundoApellido, '')))) AS SEGUNDO_APELLIDO, 
+		ISNULL(FORMAT(ven.fechaNacimiento,'yyyyMMdd'),'') AS FECHA_NACIMIENTO, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.ciudadNacimiento, '')))) AS CIUDAD_NACIMIENTO, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.departamentoResidencia, '')))) AS DEPARTAMENTO_RESIDENCIA, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.ciudadResidencia, '')))) AS CIUDAD_RESIDENCIA, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.direccion, '')))) AS DIRECCION, 
+		RTRIM(LTRIM(ISNULL(ven.telefono,''))) AS TELEFONO, 
+		RTRIM(LTRIM(ISNULL(ven.celular,''))) AS CELULAR, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.correo, '')))) AS CORREO, 
+		RTRIM(LTRIM(ISNULL(seg.codigoSuperintendencia,''))) AS CODIGO_SUPER_ASEGURADORA, 
+		RTRIM(LTRIM(ISNULL(ven.identificacionAseguradora,''))) AS IDENTIFICACION_ASEGURADORA, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreAseguradora, '')))) AS NOMBRE_ASEGURADORA, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(30),ven.valorPoliza),''))) AS VALOR_POLIZA, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(30),ven.codigoPlan),''))) AS CODIGO_PLAN, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombrePlan, '')))) AS NOMBRE_PLAN, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(30),ven.codigoSeguro),''))) AS CODIGO_PRODUCTO, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreSeguro, '')))) AS NOMBRE_PRODUCTO, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(4),ven.codigoTipoCuenta),''))) AS CODIGO_TIPO_CUENTA, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreTipoCuenta, '')))) AS NOMBRE_TIPO_CUENTA, 
+		RTRIM(LTRIM(ISNULL(ven.numeroCuenta,''))) AS NUMERO_CUENTA, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(30),ven.codigoCanalVenta),''))) AS CANAL_VENTA, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreCanalVenta, '')))) AS NOMBRE_CANAL_VENTA, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(30),ven.codigoConvenio),''))) AS CONVENIO, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombrePeriodicidad, '')))) AS PERIODICIDAD, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(2),ven.numMesesPeriodicidad),''))) AS MESE_PERIODICIDAD, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(30),ven.idOficina),''))) AS CODIGO_OFICINA, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreCiudadOficina, '')))) AS CIUDAD_OFICINA, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreOficina, '')))) AS NOMBRE_OFICINA, 
+		RTRIM(LTRIM(ISNULL(ven.idAsesor,''))) AS CODIGO_ASESOR, 
+		RTRIM(LTRIM(ISNULL(ven.identificacionAsesor,''))) AS IDENTIFICACION_ASESOR, 
+		UPPER(RTRIM(LTRIM(ISNULL(ven.nombreAsesor, '')))) AS NOMBRE_ASESOR, 
+		UPPER(RTRIM(LTRIM(ISNULL(estPol.descripcionEstadoPoliza, '')))) AS ESTADO_POLIZA, 
+		RTRIM(LTRIM(ISNULL(CONVERT(VARCHAR(30),tipNov.codigoTipoNovedad),''))) AS CODIGO_TIPO_NOVEDAD, 
+		UPPER(RTRIM(LTRIM(ISNULL(tipNov.nombreTipoNovedad, '')))) AS NOMBRE_TIPO_NOVEDAD, 
+		UPPER(RTRIM(LTRIM(ISNULL(cauNov.nombreNovedad, '')))) AS CAUSAL_NOVEDAD,
+		ISNULL(FORMAT(detNovPol.fechaNovedad,'yyyyMMdd'),'') AS FECHA_NOVEDAD, 
+		ISNULL(FORMAT(detNovPol.fechaUltimoPeriodoPago,'yyyyMMdd'),'') AS FECHA_COBRO, 
+		ISNULL ((SELECT        SEG_Recobro.contador
+				FROM            SEG_Recobro
+				WHERE        SEG_Recobro.consecutivoPoliza = ven.consecutivo AND SEG_Recobro.fechaUltimoPeriodo = detNovPol.fechaUltimoPeriodoPago), 1) 
+		AS INTENTOS_COBRO, 
+		(ven.altura + 1)  -  ROW_NUMBER() OVER(PARTITION BY ven.idVenta ORDER BY ven.idVenta,detNovPol.fechaNovedad DESC) AS ALTURACALCULADA, 
+		ven.altura AS ALTURAREAL, 
+		tipNov.idTipoNovedad AS filtroTipoNovedad, 
+		cauNov.idCausalNovedad AS filtroCausal, 
+		CAST(detNovPol.fechaNovedad AS DATE)AS filtroFecha,
+		seg.idAseguradora AS filtroAseguradora, 
+		CASE WHEN tipNov.codigoTipoNovedad = 3 THEN 1 ELSE 0 END AS filtroCobro 
+FROM            dbo.SEG_Venta AS ven INNER JOIN
+                         dbo.SEG_EstadoPoliza AS estPol ON ven.codigoEstadoPoliza = estPol.codigoEstadoPoliza INNER JOIN
+                         SEG_DetalleNovedadPoliza detNovPol ON detNovPol.idVenta = ven.idVenta INNER JOIN
+                         SEG_CausalNovedad cauNov ON cauNov.idCausalNovedad = detNovPol.idCausalNovedad INNER JOIN
+                         SEG_TipoNovedad tipNov ON tipNov.idTipoNovedad = cauNov.idTipoNovedad INNER JOIN
+                         SEG_Aseguradora seg ON seg.identificacion = ven.identificacionAseguradora

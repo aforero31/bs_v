@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CobisCodigoCausalTransaccion" xml:space="preserve">
+    <value>253</value>
+  </data>
+  <data name="CobisEstadoCuentas" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="CobisNumeroAprobacionExterno" xml:space="preserve">
+    <value>444100400017</value>
+  </data>
+  <data name="CobisProcesoOriginadorGenerarDebito" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CobisRespuestaSatisfactoria" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CobisTipoCuentaAhorros" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CodigoCanalOriginador" xml:space="preserve">
+    <value>CodigoCanalOriginador</value>
+  </data>
+  <data name="CodigoFuncionalidadOriginador" xml:space="preserve">
+    <value>CodigoFuncionalidadOriginador</value>
+  </data>
+  <data name="CodigoProcesoOriginador" xml:space="preserve">
+    <value>CodigoProcesoOriginador</value>
+  </data>
+  <data name="ConsultarProductosBancarios" xml:space="preserve">
+    <value>ConsultarProductosBancarios</value>
+  </data>
+  <data name="CreacionRapidaCliente" xml:space="preserve">
+    <value>CreacionRapidaCliente</value>
+  </data>
+  <data name="DatosPolizaDocumento" xml:space="preserve">
+    <value>DatosPolizaDocumento</value>
+  </data>
+  <data name="EstadoActivoCobis" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="Formatohhmmss" xml:space="preserve">
+    <value>hh:mm:ss</value>
+  </data>
+  <data name="IdentificadorTransaccional" xml:space="preserve">
+    <value>IdentificadorTransaccional</value>
+  </data>
+  <data name="ipConsumidor" xml:space="preserve">
+    <value>ipConsumidor</value>
+  </data>
+  <data name="MetodoOpRealizarNotaDebito" xml:space="preserve">
+    <value>OpRealizarNotaDebito</value>
+  </data>
+  <data name="NumeroTres" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="POST" xml:space="preserve">
+    <value>POST</value>
+  </data>
+  <data name="RegristroGuardadoBD" xml:space="preserve">
+    <value>INSERT</value>
+  </data>
+  <data name="RutaServicioTransaccion" xml:space="preserve">
+    <value>RutaServicioTransaccion</value>
+  </data>
+  <data name="VersionDocumento" xml:space="preserve">
+    <value>{0}.{1}</value>
+  </data>
+  <data name="CreditoAseguradoraCodigoProducto" xml:space="preserve">
+    <value>CreditoAseguradoraCodigoProducto</value>
+  </data>
+  <data name="CreditoAseguradoraIdentificacion" xml:space="preserve">
+    <value>CreditoAseguradoraIdentificacion</value>
+  </data>
+  <data name="CreditoAseguradoraNumeroCuenta" xml:space="preserve">
+    <value>CreditoAseguradoraNumeroCuenta</value>
+  </data>
+  <data name="CreditoAseguradoraTipoIdentificacion" xml:space="preserve">
+    <value>CreditoAseguradoraTipoIdentificacion</value>
+  </data>
+  <data name="GenerarDebitoACuentaCliente" xml:space="preserve">
+    <value>GenerarDebitoACuentaCliente</value>
+  </data>
+  <data name="OpRealizarNotaCredito" xml:space="preserve">
+    <value>OpRealizarNotaCredito</value>
+  </data>
+  <data name="COBISConsultarInformacionCliente" xml:space="preserve">
+    <value>COBISConsultarInformacionCliente</value>
+  </data>
+  <data name="codTipoRespuesta" xml:space="preserve">
+    <value>codTipoRespuesta</value>
+  </data>
+  <data name="fecTransaccion" xml:space="preserve">
+    <value>fecTransaccion</value>
+  </data>
+  <data name="GenerarCreditoACuentaAseguradora" xml:space="preserve">
+    <value>GenerarCreditoACuentaAseguradora</value>
+  </data>
+  <data name="identificadorTransaccion" xml:space="preserve">
+    <value>identificadorTransaccion</value>
+  </data>
+  <data name="valDescripcionRespuesta" xml:space="preserve">
+    <value>valDescripcionRespuesta</value>
+  </data>
+  <data name="ClienteSinDatosActualizados" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Nacionalidad" xml:space="preserve">
+    <value>Colombiana</value>
+  </data>
+  <data name="CodigoCanalRecaudo" xml:space="preserve">
+    <value>CodigoCanalRecaudo</value>
+  </data>
+  <data name="CodigoFormaPagoAHO" xml:space="preserve">
+    <value>CodigoFormaPagoAHO</value>
+  </data>
+  <data name="CodigoFormaPagoCTE" xml:space="preserve">
+    <value>CodigoFormaPagoCTE</value>
+  </data>
+  <data name="CodigoTipoProductoAHO" xml:space="preserve">
+    <value>CodigoTipoProductoAHO</value>
+  </data>
+  <data name="CodigoTipoProductoCTE" xml:space="preserve">
+    <value>CodigoTipoProductoCTE</value>
+  </data>
+  <data name="CodigoProductoAhorro" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CodigoProductoCorriente" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GenerarRecaudo" xml:space="preserve">
+    <value>GenerarRecaudo</value>
+  </data>
+  <data name="DiasAAnticipar" xml:space="preserve">
+    <value>DiasAAnticipar</value>
+  </data>
+  <data name="DiasALlenar" xml:space="preserve">
+    <value>DiasALlenar</value>
+  </data>
+  <data name="FechaControlSistema" xml:space="preserve">
+    <value>FechaControlSistema</value>
+  </data>
+  <data name="TamanoPaginacionCobis" xml:space="preserve">
+    <value>Paginacion</value>
+  </data>
+  <data name="ParametroPaginacionCobis" xml:space="preserve">
+    <value>1200</value>
+  </data>
+  <data name="IdMensajerError" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CodigoCardifDefecto" xml:space="preserve">
+    <value>"9"</value>
+  </data>
+  <data name="EstadoCatalogo" xml:space="preserve">
+    <value>V</value>
+  </data>
+  <data name="CodigoCanalOriginadorAPI" xml:space="preserve">
+    <value>CodigoCanalOriginadorAPI</value>
+  </data>
+  <data name="CodigoFuncionalidadOriginadorAPI" xml:space="preserve">
+    <value>CodigoFuncionalidadOriginadorAPI</value>
+  </data>
+  <data name="CodigoProcesoOriginadorAPI" xml:space="preserve">
+    <value>CodigoProcesoOriginadorAPI</value>
+  </data>
+  <data name="FecTransaccionAPI" xml:space="preserve">
+    <value>FecTransaccionAPI</value>
+  </data>
+  <data name="IdentificadorTransaccionalAPI" xml:space="preserve">
+    <value>IdentificadorTransaccionalAPI</value>
+  </data>
+  <data name="ipConsumidorAPI" xml:space="preserve">
+    <value>ipConsumidorAPI</value>
+  </data>
+</root>

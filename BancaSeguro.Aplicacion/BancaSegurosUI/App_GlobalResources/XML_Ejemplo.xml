@@ -1,0 +1,65 @@
+<DatosPolizaDocumento>
+  <EncabezadoPoliza>
+    <FechaSolicitud>20160309</FechaSolicitud>
+    <PrimerNombreCliente>JORGE</PrimerNombreCliente>
+    <SegundoNombreCliente />
+    <PrimerApellidoCliente>PRIETO</PrimerApellidoCliente>
+    <SegundoApellidoCliente>OTALORA</SegundoApellidoCliente>
+    <NumeroIdentificacionCliente>53879652</NumeroIdentificacionCliente>
+    <TipoIdentificacionAbreviadoCliente>CC</TipoIdentificacionAbreviadoCliente>
+    <TipoIdentificacionDescripcionCliente>CEDULA DE CIUDADANIA</TipoIdentificacionDescripcionCliente>
+    <FechaNacimientoCliente>19280812</FechaNacimientoCliente>
+    <CiudadNacimientoCliente>CUNDINAMARCA</CiudadNacimientoCliente>
+    <GeneroCliente>Masculino</GeneroCliente>
+    <ActividadEconomicaCliente />
+    <DireccionCliente>CALLE 3 NO 8 45</DireccionCliente>
+    <TelefonoCliente>8356974</TelefonoCliente>
+    <CiudadResidenciaCliente>CIRCASIA</CiudadResidenciaCliente>
+    <DepartamenoCliente />
+    <NacionalidadCliente>Colombiana</NacionalidadCliente>
+    <CelularCliente />
+    <TipoCuentaCliente>CUENTA DE AHORROS</TipoCuentaCliente>
+    <NumeroCuentaCliente>487654923171</NumeroCuentaCliente>
+    <FechaVencimientoTarjetaCliente />
+    <ConsecutivoPoliza>183353879652168</ConsecutivoPoliza>
+    <ValorPolizaSinIva>706896.55</ValorPolizaSinIva>
+    <ValorIvaPoliza>113103.44</ValorIvaPoliza>
+    <ValorPrimaConIva>820000.00</ValorPrimaConIva>
+    <Periodicidad>Mensual</Periodicidad>
+    <PlanPoliza>Plan A</PlanPoliza>
+  </EncabezadoPoliza>
+  <ConyugePolizaDocumento>
+    <PrimerNombreConyuge>MIGUEL</PrimerNombreConyuge>
+    <SegundoNombreConyuge>ANTONIO</SegundoNombreConyuge>
+    <PrimerApellidoConyuge>PEREZ</PrimerApellidoConyuge>
+    <SegundoApellidoConyuge>MANRIQUE</SegundoApellidoConyuge>
+    <TipoIdentificacionAbreviaturaConyuge>CC</TipoIdentificacionAbreviaturaConyuge>
+    <NumeroIdentificacionConyuge>1023852147</NumeroIdentificacionConyuge>
+    <FechaNacimientoConyuge>20000201</FechaNacimientoConyuge>
+    <CiudadNacimientoConyuge />
+    <GeneroConyuge>Masculino</GeneroConyuge>
+    <DireccionConyuge />
+    <CiudadResidenciaConyuge />
+    <TelefonoConyuge />
+  </ConyugePolizaDocumento>
+  <BeneficiariosPolizaDocumento>
+    <BeneficiariosPolizaDocumento>
+      <NombreCompletoBeneficiario>MARIO TORRES</NombreCompletoBeneficiario>
+      <NombreBeneficiario>MARIO</NombreBeneficiario>
+      <ApellidoBeneficiario>TORRES</ApellidoBeneficiario>
+      <TipoNumeroIdentificacionBeneficiario>CC 1021244</TipoNumeroIdentificacionBeneficiario>
+      <TipoIdentificacionAbreviaturaBeneficiario>CC</TipoIdentificacionAbreviaturaBeneficiario>
+      <NumeroIdentificacionBeneficiario>1021244</NumeroIdentificacionBeneficiario>
+      <PorcentajeParticipacion>60</PorcentajeParticipacion>
+    </BeneficiariosPolizaDocumento>
+    <BeneficiariosPolizaDocumento>
+      <NombreCompletoBeneficiario>JUAN TORRES</NombreCompletoBeneficiario>
+      <NombreBeneficiario>JUAN</NombreBeneficiario>
+      <ApellidoBeneficiario>TORRES</ApellidoBeneficiario>
+      <TipoNumeroIdentificacionBeneficiario>CC 1021232</TipoNumeroIdentificacionBeneficiario>
+      <TipoIdentificacionAbreviaturaBeneficiario>CC</TipoIdentificacionAbreviaturaBeneficiario>
+      <NumeroIdentificacionBeneficiario>1021232</NumeroIdentificacionBeneficiario>
+      <PorcentajeParticipacion>40</PorcentajeParticipacion>
+    </BeneficiariosPolizaDocumento>
+  </BeneficiariosPolizaDocumento>
+</DatosPolizaDocumento>

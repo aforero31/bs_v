@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" />
+  <xs:complexType name="Asesor">
+    <xs:sequence>
+      <xs:element name="idAsesor" nillable="true" type="xs:string" />
+      <xs:element name="idTipoIdentificacion" type="xs:int" />
+      <xs:element name="identificacion" type="xs:int" />
+      <xs:element name="nombre" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" name="oficina" nillable="true" type="q1:Oficina" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Asesor" nillable="true" type="tns:Asesor" />
+</xs:schema>

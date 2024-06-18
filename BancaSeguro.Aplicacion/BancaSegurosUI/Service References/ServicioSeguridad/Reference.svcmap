@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3902eb96-a210-4761-929b-dc01e1cddb58" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="BAC.EntidadesSeguridad" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Aplicacion" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Entidades" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Infraestructura" />
+      <ReferencedAssembly AssemblyName="System" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60524/Seguridad/ServicioSeguridad.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioSeguridad.wsdl" MetadataType="Wsdl" ID="2e6a8a53-9f24-4e95-a903-792eb107c27f" SourceId="1" SourceUrl="http://localhost:60524/Seguridad/ServicioSeguridad.svc?wsdl" />
+    <MetadataFile FileName="ServicioSeguridad5.xsd" MetadataType="Schema" ID="45d6be9c-c9cd-4eea-ad86-844ff8d2b68b" SourceId="1" SourceUrl="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServicioSeguridad1.xsd" MetadataType="Schema" ID="757faeb5-60c9-4dae-9f79-c8dee5ea61ef" SourceId="1" SourceUrl="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioSeguridad4.xsd" MetadataType="Schema" ID="cde6cd26-110a-4584-84a0-2f640844f5de" SourceId="1" SourceUrl="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServicioSeguridad.xsd" MetadataType="Schema" ID="4313f262-23dc-484f-af13-dfdfa8de0d38" SourceId="1" SourceUrl="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioSeguridad.disco" MetadataType="Disco" ID="072428be-329e-4a93-8c6d-7324ba8cbda4" SourceId="1" SourceUrl="http://localhost:60524/Seguridad/ServicioSeguridad.svc?disco" />
+    <MetadataFile FileName="ServicioSeguridad3.xsd" MetadataType="Schema" ID="dfc078e2-dabb-441b-8790-57cd43c40970" SourceId="1" SourceUrl="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServicioSeguridad2.xsd" MetadataType="Schema" ID="4f12e095-0c70-4bf2-b3ec-71d719539296" SourceId="1" SourceUrl="http://localhost:60524/Seguridad/ServicioSeguridad.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

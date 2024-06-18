@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BancaSeguros.Entidades</RootNamespace>
+    <AssemblyName>BancaSeguros.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Requerimientos\UnitTests, archivos de reglas y GhostDoc\Intergrupo.Rules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ServidorDesarrollo|AnyCPU'">
+    <OutputPath>bin\ServidorDesarrollo\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'a|AnyCPU'">
+    <OutputPath>bin\a\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\AprobacionDual.cs" />
+    <Compile Include="Administracion\EntradaPrevisualizacionDocumentoPoliza.cs" />
+    <Compile Include="Administracion\ParametrizacionSeguro.cs" />
+    <Compile Include="Catalogo\CanalVenta.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Catalogo\Categoria.cs" />
+    <Compile Include="Catalogo\CausalNovedad.cs" />
+    <Compile Include="Catalogo\DiaHabil.cs" />
+    <Compile Include="Catalogo\DtoCatalogo.cs" />
+    <Compile Include="Catalogo\ItemMaestra.cs" />
+    <Compile Include="Catalogo\ListaOficinas.cs" />
+    <Compile Include="Catalogo\Maestra.cs" />
+    <Compile Include="Catalogo\Oficina.cs" />
+    <Compile Include="General\ContextoTransaccionalAPI.cs" />
+    <Compile Include="General\EnumEstadoDual.cs" />
+    <Compile Include="General\EnumAccionDual.cs" />
+    <Compile Include="Catalogo\EnumCatalogo.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Catalogo\EnumTipoParametro.cs" />
+    <Compile Include="Catalogo\Evento.cs" />
+    <Compile Include="Catalogo\Genero.cs" />
+    <Compile Include="Catalogo\IPC.cs" />
+    <Compile Include="Catalogo\Novedad.cs" />
+    <Compile Include="Catalogo\Parametro.cs" />
+    <Compile Include="Catalogo\ParametrosConsultas.cs" />
+    <Compile Include="Catalogo\Producto.cs" />
+    <Compile Include="Catalogo\SubProducto.cs" />
+    <Compile Include="Catalogo\TablaAuditada.cs" />
+    <Compile Include="Catalogo\TipoDato.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Catalogo\TipoValidacion.cs" />
+    <Compile Include="General\Auditoria.cs" />
+    <Compile Include="General\ManejoExcepcion.cs" />
+    <Compile Include="Catalogo\Parentesco.cs" />
+    <Compile Include="Catalogo\Periodicidad.cs" />
+    <Compile Include="General\Mensaje.cs" />
+    <Compile Include="Planos\ArchivoPlano.cs" />
+    <Compile Include="Planos\CamposCancelaciones.cs" />
+    <Compile Include="Planos\CamposCobros.cs" />
+    <Compile Include="Planos\CamposPoliza.cs" />
+    <Compile Include="Planos\Filtros.cs" />
+    <Compile Include="Planos\Programacion.cs" />
+    <Compile Include="Seguridad\AdministracionControlDual.cs" />
+    <Compile Include="Seguro\VariableVentaPolizaDocumento.cs" />
+    <Compile Include="Seguro\BeneficiariosPolizaDocumento.cs" />
+    <Compile Include="Seguro\CausalRechazo.cs" />
+    <Compile Include="Seguro\CodigoPlan.cs" />
+    <Compile Include="Seguro\Convenio.cs" />
+    <Compile Include="Seguro\ConyugePolizaDocumento.cs" />
+    <Compile Include="Seguro\DatosPolizaDocumento.cs" />
+    <Compile Include="Seguro\DetalleCancelacionPoliza.cs" />
+    <Compile Include="Seguro\DocumentoPoliza.cs" />
+    <Compile Include="Seguro\EstadoPoliza.cs" />
+    <Compile Include="Seguro\Plan.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Catalogo\TipoProducto.cs" />
+    <Compile Include="Seguro\Aseguradora.cs" />
+    <Compile Include="Seguro\EncabezadoPolizaDocumento.cs" />
+    <Compile Include="Seguro\ResultadoSeguro.cs" />
+    <Compile Include="Seguro\VariableProducto.cs" />
+    <Compile Include="Tipos\TipoProductoNoPermitido.cs" />
+    <Compile Include="Tipos\TipoSeguroTipoIdenti.cs" />
+    <Compile Include="Tipos\TipoPlan.cs" />
+    <Compile Include="Venta\Asesor.cs" />
+    <Compile Include="Venta\Beneficiario.cs" />
+    <Compile Include="Venta\Consecutivo.cs" />
+    <Compile Include="Venta\ConsultarVenta.cs" />
+    <Compile Include="Venta\Conyuge.cs" />
+    <Compile Include="Seguro\Seguro.cs" />
+    <Compile Include="Catalogo\TipoIdentificacion.cs" />
+    <Compile Include="Venta\Cliente.cs" />
+    <Compile Include="Venta\LogCobis.cs" />
+    <Compile Include="Venta\ProductoBancario.cs" />
+    <Compile Include="Venta\ProductoNoPermitido.cs" />
+    <Compile Include="Venta\RegistrarVenta.cs" />
+    <Compile Include="General\Resultado.cs" />
+    <Compile Include="Venta\ResultadoDocumentoPoliza.cs" />
+    <Compile Include="Venta\ResultadoVentaPoliza.cs" />
+    <Compile Include="Venta\VariableVenta.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAC.EntidadesSeguridad\BAC.EntidadesSeguridad.csproj">
+      <Project>{7238aac9-a13e-4b45-a3e8-b67db99e7c21}</Project>
+      <Name>BAC.EntidadesSeguridad</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BancaSeguros.Aplicacion</RootNamespace>
+    <AssemblyName>BancaSeguros.Aplicacion</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Requerimientos\UnitTests, archivos de reglas y GhostDoc\Intergrupo.Rules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ServidorDesarrollo|AnyCPU'">
+    <OutputPath>bin\ServidorDesarrollo\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'a|AnyCPU'">
+    <OutputPath>bin\a\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\GestionAprobacionDual.cs" />
+    <Compile Include="Administracion\GestionAuditoria.cs" />
+    <Compile Include="Administracion\GestionAseguradora.cs" />
+    <Compile Include="Administracion\GestionCategoria.cs" />
+    <Compile Include="Administracion\GestionCausalNovedad.cs" />
+    <Compile Include="Administracion\GestionConvenios.cs" />
+    <Compile Include="Administracion\GestionDocumentoPoliza.cs" />
+    <Compile Include="Administracion\GestionIPC.cs" />
+    <Compile Include="Administracion\GestionItemMaestra.cs" />
+    <Compile Include="Administracion\GestionMensaje.cs" />
+    <Compile Include="Administracion\GestionNovedad.cs" />
+    <Compile Include="Administracion\GestionParametrizacionPlanos.cs" />
+    <Compile Include="Administracion\GestionPeriodicidad.cs" />
+    <Compile Include="Administracion\GestionSeguro.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Administracion\GestionTipoIdentificacionSeguro.cs" />
+    <Compile Include="Administracion\GestionMaestra.cs" />
+    <Compile Include="Administracion\GestionVariableProducto.cs" />
+    <Compile Include="Administracion\IGestionAdministracion.cs" />
+    <Compile Include="Administracion\GestionAdministracion.cs" />
+    <Compile Include="Administracion\IGestionAprobacionDual.cs" />
+    <Compile Include="Administracion\IGestionAuditoria.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Administracion\IGestionAseguradora.cs" />
+    <Compile Include="Administracion\IGestionCategoria.cs" />
+    <Compile Include="Administracion\IGestionCausalNovedad.cs" />
+    <Compile Include="Administracion\IGestionConvenios.cs" />
+    <Compile Include="Administracion\IGestionDocumentoPoliza.cs" />
+    <Compile Include="Administracion\IGestionIPC.cs" />
+    <Compile Include="Administracion\IGestionItemMaestra.cs" />
+    <Compile Include="Administracion\IGestionMensaje.cs" />
+    <Compile Include="Administracion\IGestionNovedad.cs" />
+    <Compile Include="Administracion\IGestionParametrizacionPlanos.cs" />
+    <Compile Include="Administracion\IGestionPeriodicidad.cs" />
+    <Compile Include="Administracion\IGestionSeguro.cs" />
+    <Compile Include="Administracion\IGestionTipoIdentificacionSeguro.cs" />
+    <Compile Include="Administracion\IGestionMaestra.cs" />
+    <Compile Include="Administracion\IGestionVariableProducto.cs" />
+    <Compile Include="Cobis\catalogo.cs" />
+    <Compile Include="Cobis\catalogoResult.cs" />
+    <Compile Include="Cobis\contextoTransaccional.cs" />
+    <Compile Include="Cobis\GestionCatalogos.cs" />
+    <Compile Include="Cobis\GestionCobis.cs" />
+    <Compile Include="Cobis\GestionConvenio.cs" />
+    <Compile Include="Cobis\GestionOficinas.cs" />
+    <Compile Include="Cobis\GestionTransaccion.cs" />
+    <Compile Include="Cobis\IGestionCatalogos.cs" />
+    <Compile Include="Cobis\IGestionCobis.cs" />
+    <Compile Include="Cobis\IGestionConvenio.cs" />
+    <Compile Include="Cobis\IGestionOficinas.cs" />
+    <Compile Include="Cobis\IGestionTransaccion.cs" />
+    <Compile Include="Cobis\Mapeador.cs" />
+    <Compile Include="Cobis\MessageInspectorBehavior.cs" />
+    <Compile Include="Cobis\municipioResult.cs" />
+    <Compile Include="Cobis\oficinaResult.cs" />
+    <Compile Include="Cobis\OficinasCobisSingle.cs" />
+    <Compile Include="Cobis\OficinasCobis.cs" />
+    <Compile Include="Cobis\OficinasResultSingle.cs" />
+    <Compile Include="Cobis\OficinasResult.cs" />
+    <Compile Include="Cobis\OpBuscarCatalogoSolicitud.cs" />
+    <Compile Include="Cobis\paginacion.cs" />
+    <Compile Include="Cobis\REST.cs" />
+    <Compile Include="Configuraciones\LlavesAplicacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LlavesAplicacion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\Parametros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Parametros.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\ListaGenero.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListaGenero.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\ListasPublicas.cs" />
+    <Compile Include="Configuraciones\Mensajes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensajes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones\XML_RequestCobis.Designer.cs" />
+    <Compile Include="Generico\GestionGenerico.cs" />
+    <Compile Include="Generico\IGestionGenerico.cs" />
+    <Compile Include="ListasInhibitorias\ContextoRespuesta.cs" />
+    <Compile Include="ListasInhibitorias\GestionListaInhibitoria.cs" />
+    <Compile Include="ListasInhibitorias\IGestionListaInhibitoria.cs" />
+    <Compile Include="ListasInhibitorias\RequestListaInhibitoria.cs" />
+    <Compile Include="ListasInhibitorias\ResponseListaInhibitoria.cs" />
+    <Compile Include="ListasInhibitorias\RestListasInhibitorias.cs" />
+    <Compile Include="ListasInhibitorias\ResultDataListaInhibitoria.cs" />
+    <Compile Include="Service References\ServicioCobisCatalogos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioCobisCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioCobisConvenio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioCobisCuentaAhorros\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioCobisCuentaCorriente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioCobisListasInhibitorias\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicioCobisTransaccion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sincronizacion\GestionSincronizacion.cs" />
+    <Compile Include="Sincronizacion\IGestionSincronizacion.cs" />
+    <Compile Include="Venta\GestionProductoNoPermitido.cs" />
+    <Compile Include="Venta\GestionProducto.cs" />
+    <Compile Include="Venta\GestionVenta.cs" />
+    <Compile Include="Venta\IGestionProducto.cs" />
+    <Compile Include="Venta\IGestionProductoNoPermitido.cs" />
+    <Compile Include="Venta\IGestionVenta.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAC.EntidadesSeguridad\BAC.EntidadesSeguridad.csproj">
+      <Project>{7238aac9-a13e-4b45-a3e8-b67db99e7c21}</Project>
+      <Name>BAC.EntidadesSeguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BAC.Seguridad\BAC.Seguridad.csproj">
+      <Project>{afae1c57-cc5a-4c09-9f1d-8eacd2f9c535}</Project>
+      <Name>BAC.Seguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Entidades\BancaSeguros.Entidades.csproj">
+      <Project>{0b8ff5bf-867e-41b6-a901-d4aa8aff028a}</Project>
+      <Name>BancaSeguros.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Infraestructura\BancaSeguros.Infraestructura.csproj">
+      <Project>{16b8b311-24f8-430a-874d-98065bcceb12}</Project>
+      <Name>BancaSeguros.Infraestructura</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Repositorio\BancaSeguros.Repositorio.csproj">
+      <Project>{56c03caf-c67c-4a90-9f76-75e2b5343075}</Project>
+      <Name>BancaSeguros.Repositorio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuraciones\LlavesAplicacion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LlavesAplicacion.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Parametros.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Parametros.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\ListaGenero.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ListaGenero.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\Mensajes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\XML_RequestCobis.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Catalogo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.ContextoRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Cuenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Departamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.ExtractoAnualCostos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.ExtractoFisico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.MensajeRechazo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Municipio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Oficina.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpActivarEntregaExtractoFisicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpBuscarCatalogoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpBuscarDepartamentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpBuscarExtractoAnualCostosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpBuscarMunicipioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpBuscarOficinaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpBuscarPaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpBuscarPorIdParametroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpBuscarTramiteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpInscripcionMulticashResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.OpSolicitarProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Pais.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Parametro.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Tramite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\BancaSeguros.Aplicacion.ServicioCobisCatalogos.Transaccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\cobiscorp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\commonDTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\commonDTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCatalogos\SrvAplCobisGenerales.wsdl" />
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.Balance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.ContextoRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.IdentidadPersona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpActualizarDireccionPorClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpActualizarTerceroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpBuscarBalancePorClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpBuscarPorIdClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpBuscarProductosPorClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpBuscarTerceroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpCrearBalancePorClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpCrearClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpCrearTerceroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.OpEliminarTerceroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.ProductoResumen.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\BancaSeguros.Aplicacion.ServicioCobisCliente.Tercero.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\cobiscorp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\commonDTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\commonDTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCliente\SrvAplCobisCliente.wsdl" />
+    <None Include="Service References\ServicioCobisConvenio\BancaSeguros.Aplicacion.ServicioCobisConvenio.ContextoRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\BancaSeguros.Aplicacion.ServicioCobisConvenio.Convenio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\BancaSeguros.Aplicacion.ServicioCobisConvenio.MovimientoConvenio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\BancaSeguros.Aplicacion.ServicioCobisConvenio.OpBuscarConvenioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\BancaSeguros.Aplicacion.ServicioCobisConvenio.OpBuscarMovimientoConvenioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\BancaSeguros.Aplicacion.ServicioCobisConvenio.OpRealizarRecaudoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\BancaSeguros.Aplicacion.ServicioCobisConvenio.Recaudo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\BancaSeguros.Aplicacion.ServicioCobisConvenio.Transaccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\cobiscorp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\commonDTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\commonDTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisConvenio\SrvAplCobisConvenio.wsdl" />
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.ContextoRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.Cuenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.ExtractoDetalle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.ExtractoEncabezado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.ExtractoMovimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.OpBuscarCuentaAhorrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.OpBuscarExtractoEncabezadoCuentaAhorroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.OpBuscarExtractoMovimientoCuentaAhorrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\BancaSeguros.Aplicacion.ServicioCobisCuentaAhorros.OpBuscarExtractoSaldoCuentaAhorrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\cobiscorp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\commonDTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\commonDTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaAhorros\SrvAplCobisCuentaAhorros.wsdl" />
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.Cheque.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.Chequera.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.ContextoRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.CostoChequera.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.CuentaCorriente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.ExtractoDetalle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.ExtractoEncabezado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.ExtractoMovimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.Movimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpActivarChequeraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarChequeraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarChequeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarCostoChequeraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarCuentaCorrienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarExtractoEncabezadoCuentaCorrienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarExtractoMovimientoCuentaCorrienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarExtractoSaldoCuentaCorrienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarMovimientoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpBuscarNoPagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpCrearOrdenNoPagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OpSolicitarChequeraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.OrdenNoPago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\BancaSeguros.Aplicacion.ServicioCobisCuentaCorriente.Transaccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\cobiscorp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\commonDTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\commonDTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisCuentaCorriente\SrvAplCobisCuentaCorriente.wsdl" />
+    <None Include="Service References\ServicioCobisListasInhibitorias\BancaSeguros.Aplicacion.ServicioCobisListasInhibitorias.ContextoRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\BancaSeguros.Aplicacion.ServicioCobisListasInhibitorias.Inhibitoria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\BancaSeguros.Aplicacion.ServicioCobisListasInhibitorias.OpBuscarListasInhibitoriasOperacionBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\BancaSeguros.Aplicacion.ServicioCobisListasInhibitorias.OpBuscarListasInhibitoriasOperacionQResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\BancaSeguros.Aplicacion.ServicioCobisListasInhibitorias.OpBuscarListasInhibitoriasOperacionSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\cobiscorp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\commonDTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\commonDTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisListasInhibitorias\SrvAplCobisListasInhibitorias.wsdl" />
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.BloqueoFondos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.ClaveTransaccional.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.ComisionInstrumento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.ContextoRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.ContextoTransaccional.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.DebitoFondos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.DetalleDebito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.DiaTransaccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.Impuestos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpBloquearFondosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpBuscarComisionInstrumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpBuscarTarifaCanalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpCalcularImpuestosNotaDebitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpCobrarComisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpGenerarClaveTransaccionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpRealizarDesbloqueoNotaDebitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpRealizarDesbloqueoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpRealizarNotaCreditoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpRealizarNotaDebitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpRealizarRecargaCelularResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpRegistrarMovimientoContableTesoreriaBACResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpValidarClaveTransaccionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpValidarDiaTransaccionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpValidarPrenotificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.OpValidarTarjetaDebitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.TarifaCanal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.TarjetaDebito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.Transaccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\BancaSeguros.Aplicacion.ServicioCobisTransaccion.TransaccionContable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\cobiscorp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\commonDTO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\commonDTO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCobisTransaccion\SrvAplCobisTransaccion.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServicioCobisCatalogos\" />
+    <WCFMetadataStorage Include="Service References\ServicioCobisCliente\" />
+    <WCFMetadataStorage Include="Service References\ServicioCobisConvenio\" />
+    <WCFMetadataStorage Include="Service References\ServicioCobisCuentaAhorros\" />
+    <WCFMetadataStorage Include="Service References\ServicioCobisCuentaCorriente\" />
+    <WCFMetadataStorage Include="Service References\ServicioCobisListasInhibitorias\" />
+    <WCFMetadataStorage Include="Service References\ServicioCobisTransaccion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCliente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCliente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCuentaAhorros\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCuentaAhorros\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCuentaAhorros\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCuentaCorriente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCuentaCorriente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCuentaCorriente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisListasInhibitorias\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisListasInhibitorias\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisListasInhibitorias\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisTransaccion\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisTransaccion\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisTransaccion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisConvenio\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisConvenio\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisConvenio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCatalogos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCatalogos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicioCobisCatalogos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

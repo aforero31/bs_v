@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns3="http://dto2.commons.ecobis.cobiscorp" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:tns2="http://dto2.sdf.cts.cobis.cobiscorp.com" elementFormDefault="qualified" targetNamespace="http://dto2.sdf.cts.cobis.cobiscorp.com" jxb:version="2.0" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="commonDTO1.xsd" namespace="http://dto2.commons.ecobis.cobiscorp" />
+  <complexType name="CTSServiceResponseTO">
+    <sequence>
+      <element minOccurs="0" name="success" type="boolean" />
+      <element minOccurs="0" maxOccurs="unbounded" name="messages" nillable="true" type="tns3:MessageTO">
+        <annotation>
+          <appinfo>
+            <jxb:property collectionType="indexed" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" />
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:Q1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:tns2="http://dto2.sdf.cts.cobis.cobiscorp.com" elementFormDefault="qualified" targetNamespace="http://service.srvaplcobisconvenio.ecobis.cobiscorp" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="commonDTO2.xsd" namespace="http://dto2.sdf.cts.cobis.cobiscorp.com" />
+  <import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+  <element name="opBuscarConvenioSolicitud" type="Q1:OpBuscarConvenioSolicitud" />
+  <element name="opBuscarConvenioRespuesta" type="Q1:OpBuscarConvenioRespuesta" />
+  <element name="opBuscarMovimientoConvenioSolicitud" type="Q1:OpBuscarMovimientoConvenioSolicitud" />
+  <element name="opBuscarMovimientoConvenioRespuesta" type="Q1:OpBuscarMovimientoConvenioRespuesta" />
+  <element name="opRealizarRecaudoSolicitud" type="Q1:OpRealizarRecaudoSolicitud" />
+  <element name="opRealizarRecaudoRespuesta" type="Q1:OpRealizarRecaudoRespuesta" />
+</schema>

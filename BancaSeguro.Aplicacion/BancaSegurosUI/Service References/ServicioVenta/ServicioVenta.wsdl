@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioVenta" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" />
+      <xsd:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" />
+      <xsd:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" />
+      <xsd:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BAC.EntidadesSeguridad" />
+      <xsd:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" />
+      <xsd:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioVenta_ConsultarInformacionCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarInformacionCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ClienteEstaEnListasInhibitorias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClienteEstaEnListasInhibitorias" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ClienteEstaEnListasInhibitorias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClienteEstaEnListasInhibitoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarProductosBancarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProductosBancarios" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarProductosBancarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProductosBancariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_CreacionRapidaCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreacionRapidaCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_CreacionRapidaCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreacionRapidaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_GenerarDebitoACuentaCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarDebitoACuentaCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_GenerarDebitoACuentaCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarDebitoACuentaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_GenerarCreditoACuentaAseguradora_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarCreditoACuentaAseguradora" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_GenerarCreditoACuentaAseguradora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarCreditoACuentaAseguradoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarInformacionClienteActual_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionClienteActual" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarInformacionClienteActual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionClienteActualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarLosSegurosAVender_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarLosSegurosAVender" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarLosSegurosAVender_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarLosSegurosAVenderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarSegurosPorCodigoYAseguradora_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSegurosPorCodigoYAseguradora" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarSegurosPorCodigoYAseguradora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSegurosPorCodigoYAseguradoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarPlanesPorIdSeguro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPlanesPorIdSeguro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarPlanesPorIdSeguro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPlanesPorIdSeguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_GenerarProcesoFinalDeLaVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarProcesoFinalDeLaVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_GenerarProcesoFinalDeLaVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarProcesoFinalDeLaVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ObtenerDocumentoVentaPoliza_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentoVentaPoliza" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ObtenerDocumentoVentaPoliza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentoVentaPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarAseguradorasActivas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAseguradorasActivas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarAseguradorasActivas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAseguradorasActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ObtenerCategoriasPorIdSubProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCategoriasPorIdSubProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ObtenerCategoriasPorIdSubProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCategoriasPorIdSubProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarProductosNoPermitidosPorSeguro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProductosNoPermitidosPorSeguro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarProductosNoPermitidosPorSeguro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProductosNoPermitidosPorSeguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ObtenerSubProductosPorCodigoProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubProductosPorCodigoProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ObtenerSubProductosPorCodigoProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSubProductosPorCodigoProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ObtenerProductosBancariosActivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductosBancariosActivos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ObtenerProductosBancariosActivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductosBancariosActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarVentaPorCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVentaPorCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarVentaPorCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVentaPorClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarVentaPorClienteDiaHabil_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVentaPorClienteDiaHabil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarVentaPorClienteDiaHabil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVentaPorClienteDiaHabilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarPolizaReimpresion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPolizaReimpresion" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarPolizaReimpresion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPolizaReimpresionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarVentasCuentasPorCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVentasCuentasPorCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVenta_ConsultarVentasCuentasPorCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarVentasCuentasPorClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioVenta">
+    <wsdl:operation name="ConsultarInformacionCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarInformacionCliente" message="tns:IServicioVenta_ConsultarInformacionCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarInformacionClienteResponse" message="tns:IServicioVenta_ConsultarInformacionCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClienteEstaEnListasInhibitorias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ClienteEstaEnListasInhibitorias" message="tns:IServicioVenta_ClienteEstaEnListasInhibitorias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ClienteEstaEnListasInhibitoriasResponse" message="tns:IServicioVenta_ClienteEstaEnListasInhibitorias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProductosBancarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarProductosBancarios" message="tns:IServicioVenta_ConsultarProductosBancarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarProductosBancariosResponse" message="tns:IServicioVenta_ConsultarProductosBancarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreacionRapidaCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/CreacionRapidaCliente" message="tns:IServicioVenta_CreacionRapidaCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/CreacionRapidaClienteResponse" message="tns:IServicioVenta_CreacionRapidaCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDebitoACuentaCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/GenerarDebitoACuentaCliente" message="tns:IServicioVenta_GenerarDebitoACuentaCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/GenerarDebitoACuentaClienteResponse" message="tns:IServicioVenta_GenerarDebitoACuentaCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarCreditoACuentaAseguradora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/GenerarCreditoACuentaAseguradora" message="tns:IServicioVenta_GenerarCreditoACuentaAseguradora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/GenerarCreditoACuentaAseguradoraResponse" message="tns:IServicioVenta_GenerarCreditoACuentaAseguradora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionClienteActual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarInformacionClienteActual" message="tns:IServicioVenta_ConsultarInformacionClienteActual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarInformacionClienteActualResponse" message="tns:IServicioVenta_ConsultarInformacionClienteActual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarLosSegurosAVender">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarLosSegurosAVender" message="tns:IServicioVenta_ConsultarLosSegurosAVender_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarLosSegurosAVenderResponse" message="tns:IServicioVenta_ConsultarLosSegurosAVender_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSegurosPorCodigoYAseguradora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarSegurosPorCodigoYAseguradora" message="tns:IServicioVenta_ConsultarSegurosPorCodigoYAseguradora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarSegurosPorCodigoYAseguradoraResponse" message="tns:IServicioVenta_ConsultarSegurosPorCodigoYAseguradora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPlanesPorIdSeguro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarPlanesPorIdSeguro" message="tns:IServicioVenta_ConsultarPlanesPorIdSeguro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarPlanesPorIdSeguroResponse" message="tns:IServicioVenta_ConsultarPlanesPorIdSeguro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarProcesoFinalDeLaVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/GenerarProcesoFinalDeLaVenta" message="tns:IServicioVenta_GenerarProcesoFinalDeLaVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/GenerarProcesoFinalDeLaVentaResponse" message="tns:IServicioVenta_GenerarProcesoFinalDeLaVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentoVentaPoliza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ObtenerDocumentoVentaPoliza" message="tns:IServicioVenta_ObtenerDocumentoVentaPoliza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ObtenerDocumentoVentaPolizaResponse" message="tns:IServicioVenta_ObtenerDocumentoVentaPoliza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAseguradorasActivas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarAseguradorasActivas" message="tns:IServicioVenta_ConsultarAseguradorasActivas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarAseguradorasActivasResponse" message="tns:IServicioVenta_ConsultarAseguradorasActivas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCategoriasPorIdSubProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ObtenerCategoriasPorIdSubProducto" message="tns:IServicioVenta_ObtenerCategoriasPorIdSubProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ObtenerCategoriasPorIdSubProductoResponse" message="tns:IServicioVenta_ObtenerCategoriasPorIdSubProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProductosNoPermitidosPorSeguro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarProductosNoPermitidosPorSeguro" message="tns:IServicioVenta_ConsultarProductosNoPermitidosPorSeguro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarProductosNoPermitidosPorSeguroResponse" message="tns:IServicioVenta_ConsultarProductosNoPermitidosPorSeguro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubProductosPorCodigoProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ObtenerSubProductosPorCodigoProducto" message="tns:IServicioVenta_ObtenerSubProductosPorCodigoProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ObtenerSubProductosPorCodigoProductoResponse" message="tns:IServicioVenta_ObtenerSubProductosPorCodigoProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductosBancariosActivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ObtenerProductosBancariosActivos" message="tns:IServicioVenta_ObtenerProductosBancariosActivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ObtenerProductosBancariosActivosResponse" message="tns:IServicioVenta_ObtenerProductosBancariosActivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVentaPorCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarVentaPorCliente" message="tns:IServicioVenta_ConsultarVentaPorCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarVentaPorClienteResponse" message="tns:IServicioVenta_ConsultarVentaPorCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVentaPorClienteDiaHabil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarVentaPorClienteDiaHabil" message="tns:IServicioVenta_ConsultarVentaPorClienteDiaHabil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarVentaPorClienteDiaHabilResponse" message="tns:IServicioVenta_ConsultarVentaPorClienteDiaHabil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPolizaReimpresion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarPolizaReimpresion" message="tns:IServicioVenta_ConsultarPolizaReimpresion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarPolizaReimpresionResponse" message="tns:IServicioVenta_ConsultarPolizaReimpresion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVentasCuentasPorCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarVentasCuentasPorCliente" message="tns:IServicioVenta_ConsultarVentasCuentasPorCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVenta/ConsultarVentasCuentasPorClienteResponse" message="tns:IServicioVenta_ConsultarVentasCuentasPorCliente_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioVenta" type="tns:IServicioVenta">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarInformacionCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarInformacionCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClienteEstaEnListasInhibitorias">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ClienteEstaEnListasInhibitorias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProductosBancarios">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarProductosBancarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreacionRapidaCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/CreacionRapidaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarDebitoACuentaCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/GenerarDebitoACuentaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarCreditoACuentaAseguradora">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/GenerarCreditoACuentaAseguradora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionClienteActual">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarInformacionClienteActual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarLosSegurosAVender">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarLosSegurosAVender" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSegurosPorCodigoYAseguradora">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarSegurosPorCodigoYAseguradora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPlanesPorIdSeguro">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarPlanesPorIdSeguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarProcesoFinalDeLaVenta">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/GenerarProcesoFinalDeLaVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentoVentaPoliza">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ObtenerDocumentoVentaPoliza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarAseguradorasActivas">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarAseguradorasActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCategoriasPorIdSubProducto">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ObtenerCategoriasPorIdSubProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProductosNoPermitidosPorSeguro">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarProductosNoPermitidosPorSeguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubProductosPorCodigoProducto">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ObtenerSubProductosPorCodigoProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductosBancariosActivos">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ObtenerProductosBancariosActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVentaPorCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarVentaPorCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVentaPorClienteDiaHabil">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarVentaPorClienteDiaHabil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPolizaReimpresion">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarPolizaReimpresion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVentasCuentasPorCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioVenta/ConsultarVentasCuentasPorCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioVenta">
+    <wsdl:port name="BasicHttpBinding_IServicioVenta" binding="tns:BasicHttpBinding_IServicioVenta">
+      <soap:address location="http://localhost:60524/Venta/ServicioVenta.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

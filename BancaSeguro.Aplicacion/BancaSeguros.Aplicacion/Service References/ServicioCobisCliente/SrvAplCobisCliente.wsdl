@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://service.srvaplcobiscliente.ecobis.cobiscorp" xmlns:dto1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S1="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/" name="SrvAplCobisCliente" targetNamespace="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/">
+      <xsd:import schemaLocation="services.xsd" namespace="http://service.srvaplcobiscliente.ecobis.cobiscorp" />
+      <xsd:import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+      <xsd:element name="ContextoRespuesta" type="dto1:ContextoRespuesta" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MsjOpBuscarPorIdClienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarPorIdClienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCrearClienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opCrearClienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarTerceroSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarTerceroSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCrearBalancePorClienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opCrearBalancePorClienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarBalancePorClienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarBalancePorClienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjError">
+    <wsdl:part name="parameters" element="S1:ContextoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpActualizarDireccionPorClienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opActualizarDireccionPorClienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpActualizarTerceroRespuesta">
+    <wsdl:part name="parameters" element="tns:opActualizarTerceroRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpEliminarTerceroSolicitud">
+    <wsdl:part name="parameters" element="tns:opEliminarTerceroSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCrearTerceroRespuesta">
+    <wsdl:part name="parameters" element="tns:opCrearTerceroRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCrearBalancePorClienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opCrearBalancePorClienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarProductosPorClienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarProductosPorClienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarProductosPorClienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarProductosPorClienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpActualizarDireccionPorClienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opActualizarDireccionPorClienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpActualizarTerceroSolicitud">
+    <wsdl:part name="parameters" element="tns:opActualizarTerceroSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpEliminarTerceroRespuesta">
+    <wsdl:part name="parameters" element="tns:opEliminarTerceroRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCrearClienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opCrearClienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarBalancePorClienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarBalancePorClienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarPorIdClienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarPorIdClienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCrearTerceroSolicitud">
+    <wsdl:part name="parameters" element="tns:opCrearTerceroSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarTerceroRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarTerceroRespuesta" />
+  </wsdl:message>
+  <wsdl:portType name="SrvAplCobisCliente">
+    <wsdl:operation name="OpActualizarDireccionPorCliente">
+      <wsdl:input message="S1:MsjOpActualizarDireccionPorClienteSolicitud" />
+      <wsdl:output message="S1:MsjOpActualizarDireccionPorClienteRespuesta" />
+      <wsdl:fault name="OpActualizarDireccionPorClienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpActualizarTercero">
+      <wsdl:input message="S1:MsjOpActualizarTerceroSolicitud" />
+      <wsdl:output message="S1:MsjOpActualizarTerceroRespuesta" />
+      <wsdl:fault name="OpActualizarTerceroError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarBalancePorCliente">
+      <wsdl:input message="S1:MsjOpBuscarBalancePorClienteSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarBalancePorClienteRespuesta" />
+      <wsdl:fault name="OpBuscarBalancePorClienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPorIdCliente">
+      <wsdl:input message="S1:MsjOpBuscarPorIdClienteSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarPorIdClienteRespuesta" />
+      <wsdl:fault name="OpBuscarPorIdClienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarProductosPorCliente">
+      <wsdl:input message="S1:MsjOpBuscarProductosPorClienteSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarProductosPorClienteRespuesta" />
+      <wsdl:fault name="OpBuscarProductosPorClienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTercero">
+      <wsdl:input message="S1:MsjOpBuscarTerceroSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarTerceroRespuesta" />
+      <wsdl:fault name="OpBuscarTerceroError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearBalancePorCliente">
+      <wsdl:input message="S1:MsjOpCrearBalancePorClienteSolicitud" />
+      <wsdl:output message="S1:MsjOpCrearBalancePorClienteRespuesta" />
+      <wsdl:fault name="OpCrearBalancePorClienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearCliente">
+      <wsdl:input message="S1:MsjOpCrearClienteSolicitud" />
+      <wsdl:output message="S1:MsjOpCrearClienteRespuesta" />
+      <wsdl:fault name="OpCrearClienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearTercero">
+      <wsdl:input message="S1:MsjOpCrearTerceroSolicitud" />
+      <wsdl:output message="S1:MsjOpCrearTerceroRespuesta" />
+      <wsdl:fault name="OpCrearTerceroError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpEliminarTercero">
+      <wsdl:input message="S1:MsjOpEliminarTerceroSolicitud" />
+      <wsdl:output message="S1:MsjOpEliminarTerceroRespuesta" />
+      <wsdl:fault name="OpEliminarTerceroError" message="S1:MsjError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvAplCobisClienteBindingSOAP11" type="S1:SrvAplCobisCliente">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpActualizarDireccionPorCliente">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpActualizarDireccionPorCliente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpActualizarDireccionPorClienteError">
+        <soap:fault use="literal" name="OpActualizarDireccionPorClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpActualizarTercero">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpActualizarTercero" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpActualizarTerceroError">
+        <soap:fault use="literal" name="OpActualizarTerceroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarBalancePorCliente">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpBuscarBalancePorCliente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarBalancePorClienteError">
+        <soap:fault use="literal" name="OpBuscarBalancePorClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPorIdCliente">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpBuscarPorIdCliente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarPorIdClienteError">
+        <soap:fault use="literal" name="OpBuscarPorIdClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarProductosPorCliente">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpBuscarProductosPorCliente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarProductosPorClienteError">
+        <soap:fault use="literal" name="OpBuscarProductosPorClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTercero">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpBuscarTercero" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarTerceroError">
+        <soap:fault use="literal" name="OpBuscarTerceroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearBalancePorCliente">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpCrearBalancePorCliente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCrearBalancePorClienteError">
+        <soap:fault use="literal" name="OpCrearBalancePorClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearCliente">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpCrearCliente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCrearClienteError">
+        <soap:fault use="literal" name="OpCrearClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearTercero">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpCrearTercero" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCrearTerceroError">
+        <soap:fault use="literal" name="OpCrearTerceroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpEliminarTercero">
+      <soap:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpEliminarTercero" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpEliminarTerceroError">
+        <soap:fault use="literal" name="OpEliminarTerceroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SrvAplCobisClienteBindingSOAP12" type="S1:SrvAplCobisCliente">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpActualizarDireccionPorCliente">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpActualizarDireccionPorCliente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpActualizarDireccionPorClienteError">
+        <soap12:fault use="literal" name="OpActualizarDireccionPorClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpActualizarTercero">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpActualizarTercero" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpActualizarTerceroError">
+        <soap12:fault use="literal" name="OpActualizarTerceroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarBalancePorCliente">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpBuscarBalancePorCliente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarBalancePorClienteError">
+        <soap12:fault use="literal" name="OpBuscarBalancePorClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPorIdCliente">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpBuscarPorIdCliente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarPorIdClienteError">
+        <soap12:fault use="literal" name="OpBuscarPorIdClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarProductosPorCliente">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpBuscarProductosPorCliente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarProductosPorClienteError">
+        <soap12:fault use="literal" name="OpBuscarProductosPorClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarTercero">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpBuscarTercero" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarTerceroError">
+        <soap12:fault use="literal" name="OpBuscarTerceroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearBalancePorCliente">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpCrearBalancePorCliente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCrearBalancePorClienteError">
+        <soap12:fault use="literal" name="OpCrearBalancePorClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearCliente">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpCrearCliente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCrearClienteError">
+        <soap12:fault use="literal" name="OpCrearClienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearTercero">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpCrearTercero" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCrearTerceroError">
+        <soap12:fault use="literal" name="OpCrearTerceroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpEliminarTercero">
+      <soap12:operation soapAction="http://service.srvaplcobiscliente.ecobis.cobiscorp.ws/SrvAplCobisCliente/OpEliminarTercero" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpEliminarTerceroError">
+        <soap12:fault use="literal" name="OpEliminarTerceroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvAplCobisCliente">
+    <wsdl:port name="SrvAplCobisClienteBindingSOAP11" binding="S1:SrvAplCobisClienteBindingSOAP11">
+      <soap:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisCliente.Service/SrvAplCobisCliente" />
+    </wsdl:port>
+    <wsdl:port name="SrvAplCobisClienteBindingSOAP12" binding="S1:SrvAplCobisClienteBindingSOAP12">
+      <soap12:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisCliente.Service/SrvAplCobisCliente" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.srvaplcobisconvenio.ecobis.cobiscorp" xmlns:dto1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:S1="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/" name="SrvAplCobisConvenio" targetNamespace="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/">
+      <xsd:import schemaLocation="services.xsd" namespace="http://service.srvaplcobisconvenio.ecobis.cobiscorp" />
+      <xsd:import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+      <xsd:element name="ContextoRespuesta" type="dto1:ContextoRespuesta" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MsjOpRealizarRecaudoRespuesta">
+    <wsdl:part name="parameters" element="tns:opRealizarRecaudoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpRealizarRecaudoSolicitud">
+    <wsdl:part name="parameters" element="tns:opRealizarRecaudoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarConvenioRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarConvenioRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjError">
+    <wsdl:part name="parameters" element="S1:ContextoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarMovimientoConvenioSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarMovimientoConvenioSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarConvenioSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarConvenioSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarMovimientoConvenioRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarMovimientoConvenioRespuesta" />
+  </wsdl:message>
+  <wsdl:portType name="SrvAplCobisConvenio">
+    <wsdl:operation name="OpBuscarConvenio">
+      <wsdl:input message="S1:MsjOpBuscarConvenioSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarConvenioRespuesta" />
+      <wsdl:fault name="OpBuscarConvenioError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMovimientoConvenio">
+      <wsdl:input message="S1:MsjOpBuscarMovimientoConvenioSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarMovimientoConvenioRespuesta" />
+      <wsdl:fault name="OpBuscarMovimientoConvenioError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarRecaudo">
+      <wsdl:input message="S1:MsjOpRealizarRecaudoSolicitud" />
+      <wsdl:output message="S1:MsjOpRealizarRecaudoRespuesta" />
+      <wsdl:fault name="OpRealizarRecaudoError" message="S1:MsjError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvAplCobisConvenioBindingSOAP11" type="S1:SrvAplCobisConvenio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpBuscarConvenio">
+      <soap:operation soapAction="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/SrvAplCobisConvenio/OpBuscarConvenio" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarConvenioError">
+        <soap:fault use="literal" name="OpBuscarConvenioError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMovimientoConvenio">
+      <soap:operation soapAction="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/SrvAplCobisConvenio/OpBuscarMovimientoConvenio" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarMovimientoConvenioError">
+        <soap:fault use="literal" name="OpBuscarMovimientoConvenioError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarRecaudo">
+      <soap:operation soapAction="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/SrvAplCobisConvenio/OpRealizarRecaudo" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarRecaudoError">
+        <soap:fault use="literal" name="OpRealizarRecaudoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SrvAplCobisConvenioBindingSOAP12" type="S1:SrvAplCobisConvenio">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpBuscarConvenio">
+      <soap12:operation soapAction="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/SrvAplCobisConvenio/OpBuscarConvenio" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarConvenioError">
+        <soap12:fault use="literal" name="OpBuscarConvenioError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMovimientoConvenio">
+      <soap12:operation soapAction="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/SrvAplCobisConvenio/OpBuscarMovimientoConvenio" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarMovimientoConvenioError">
+        <soap12:fault use="literal" name="OpBuscarMovimientoConvenioError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpRealizarRecaudo">
+      <soap12:operation soapAction="http://service.srvaplcobisconvenio.ecobis.cobiscorp.ws/SrvAplCobisConvenio/OpRealizarRecaudo" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OpRealizarRecaudoError">
+        <soap12:fault use="literal" name="OpRealizarRecaudoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvAplCobisConvenio">
+    <wsdl:port name="SrvAplCobisConvenioBindingSOAP11" binding="S1:SrvAplCobisConvenioBindingSOAP11">
+      <soap:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisConvenio.Service/SrvAplCobisConvenio" />
+    </wsdl:port>
+    <wsdl:port name="SrvAplCobisConvenioBindingSOAP12" binding="S1:SrvAplCobisConvenioBindingSOAP12">
+      <soap12:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisConvenio.Service/SrvAplCobisConvenio" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

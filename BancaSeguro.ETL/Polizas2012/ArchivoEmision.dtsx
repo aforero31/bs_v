@@ -1,0 +1,917 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/21/2016 1:24:14 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="P-PROEVALLE"
+  DTS:CreatorName="INTERGRUPO\pro-evalle"
+  DTS:DTSID="{E207EE67-BC5B-41D4-BC41-1510FEA47F1C}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.7001.0"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="ArchivoEmision"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{397E291D-713B-4F79-98B2-301BB809ADB5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ArchivoATMSeguros]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A2D99B23-E8B3-48A2-B77D-162F2D6F5048}"
+      DTS:ObjectName="ArchivoATMSeguros">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::RutaFisicaArchivoATMSeguro]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\hvasquezrepost\336CO23PR88620230621.TXT">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{82D21AD2-4F8C-40BE-AFBB-26220C3F6271}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ArchivoEmision]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{33E94270-4C68-472F-A179-0C1308AD3A52}"
+      DTS:ObjectName="ArchivoEmision">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::RutaFisicaArchivoEmision]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\10.75.9.12\Extraccion\336CO23PR0182023062100.TXT">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{48389A5F-A802-48FE-A8D5-31B4CF2EEE5E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BANCASEGUROS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5A3920AD-6FEB-445C-816B-8F93F7E1A9FD}"
+      DTS:ObjectName="BANCASEGUROS">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::dbBANCASEGUROS]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.1.0.4\SQL2012;Initial Catalog=BANCASEGUROS_SD4992318; User ID=userBANCASEGUROS; Password=IG2019; Provider=SQLNCLI11.1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1058DFE6-A6D8-4B07-B161-1B8B0CC34B88}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DiaHabil">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51C66A14-B8C8-41CB-9686-AFCFAB748FCC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FechaUltimaEjecucion">
+      <DTS:VariableValue
+        DTS:DataType="7">11/21/2016 2:03:59 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1BCFAF63-73C5-499F-BF9B-3B9D1FC89353}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;336CO23PR886&quot;+(DT_WSTR,4) YEAR(GETDATE()) + RIGHT( &quot;0&quot; + (DT_WSTR,2) MONTH(GETDATE()) , 2 ) + RIGHT( &quot;0&quot; + (DT_WSTR,2) DAY(GETDATE()) , 2 )&#xA;+&quot;.TXT&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NombreArchivoATMSeguro">
+      <DTS:VariableValue
+        DTS:DataType="8">336CO23PR88620230621.TXT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{73744926-1B42-4D23-8FA6-3F7264AF7074}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;336CO23PR018&quot;+(DT_WSTR,4) YEAR(GETDATE()) + RIGHT( &quot;0&quot; + (DT_WSTR,2) MONTH(GETDATE()) , 2 ) + RIGHT( &quot;0&quot; + (DT_WSTR,2) DAY(GETDATE()) , 2 )&#xA;+&quot;00.TXT&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NombreArchivoEmision">
+      <DTS:VariableValue
+        DTS:DataType="8">336CO23PR0182023062100.TXT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{76FE4D1A-22D1-4160-A53A-3614EBC30435}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RutaFisicaArchivoATMSeguros]+  @[User::NombreArchivoATMSeguro]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RutaFisicaArchivoATMSeguro">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\hvasquezrepost\336CO23PR88620230621.TXT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{56FC3E37-1601-4C18-B1A0-E4E7607F61C7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RutaFisicaArchivoEmision]+  @[User::NombreArchivoEmision]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RutaFisicaArchivoEmision">
+      <DTS:VariableValue
+        DTS:DataType="8">\\10.75.9.12\Extraccion\336CO23PR0182023062100.TXT</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizar Fecha Ejecucion"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{78DE71A3-362A-4306-9930-05068E072CCC}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizar Fecha Ejecucion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5A3920AD-6FEB-445C-816B-8F93F7E1A9FD}"
+          SQLTask:SqlStatementSource="UPDATE SEG_FechaEjecucionETL SET FechaEjecucionETL = GETDATE() where prefijo = 'EMI'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Consultar Emisiones Diarias"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{99A14524-DD5F-4ACD-A86B-0228997658A8}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Consultar Emisiones Diarias"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5A3920AD-6FEB-445C-816B-8F93F7E1A9FD}"
+          SQLTask:SqlStatementSource="exec PR_SEG_ConsultarEmisionesDia" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Evalua Fecha"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D8B89757-A44C-4F34-B2EC-89A6B8470623}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Evalua Fecha"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5A3920AD-6FEB-445C-816B-8F93F7E1A9FD}"
+          SQLTask:SqlStatementSource="IF EXISTS ( SELECT 1 FROM [SEG_DiaHabil] SDA WHERE SDA.Fecha = convert(date,getdate()) )&#xA;BEGIN&#xA;    IF  CONVERT(DATE, ? ) &lt;= convert(date,getdate())&#xA;    BEGIN&#xA;&#x9;SELECT 1 As DiaHabil&#xA;   END&#xA;   ELSE&#xA;   BEGIN&#xA;&#x9;SELECT 0  As DiaHabil&#xA;   END&#x9;&#xA;END&#xA;ELSE&#xA;BEGIN &#xA;&#x9;SELECT 0  As DiaHabil&#xA;END"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DiaHabil"
+            SQLTask:DtsVariableName="User::DiaHabil" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::FechaUltimaEjecucion"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Evalua Parametro Ejecucion"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Evalua Parametro Ejecucion"
+      DTS:DTSID="{CC14DD67-229B-4F1A-94D4-32D7CD4DB25E}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Evalua Parametro Ejecucion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5A3920AD-6FEB-445C-816B-8F93F7E1A9FD}"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM SEG_FechaEjecucionETL a WHERE prefijo = 'EMI' AND FechaEjecucionETL IS NULL)&#xA;BEGIN&#x9;&#x9;&#x9;&#xA;&#x9;UPDATE SEG_FechaEjecucionETL SET FechaEjecucionETL = GETDATE() - 1 where prefijo = 'EMI' &#xA;END&#xA;&#xA;SELECT FechaEjecucionETL as FechaUltimaEjecucion FROM SEG_FechaEjecucionETL where Prefijo = 'EMI'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="FechaUltimaEjecucion"
+            SQLTask:DtsVariableName="User::FechaUltimaEjecucion" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Genera Archivo"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3155E2E3-E90C-43E6-8911-4AE67477DF42}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Genera Archivo"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Genera Archivo\Flat File Destination"
+              componentClassID="{8DA75FED-1B7C-407D-B2AD-2B24209CCCA4}"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Genera Archivo\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ArchivoEmision]"
+                  connectionManagerRefId="Package.ConnectionManagers[ArchivoEmision]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Genera Archivo\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Genera Archivo\Flat File Destination.Inputs[Flat File Destination Input].Columns[Salida]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="Salida"
+                      externalMetadataColumnId="Package\Genera Archivo\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Column 0]"
+                      lineageId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Output].Columns[Salida]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Genera Archivo\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Column 0" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="PR_SEG_ConsultarEmisionesDia"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">exec PR_SEG_ConsultarEmisionesDia</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BANCASEGUROS]"
+                  connectionManagerRefId="Package.ConnectionManagers[BANCASEGUROS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Output].Columns[Salida]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Output].ExternalColumns[Salida]"
+                      length="8000"
+                      lineageId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Output].Columns[Salida]"
+                      name="Salida"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Output].ExternalColumns[Salida]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="Salida" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Error Output].Columns[Salida]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Error Output].Columns[Salida]"
+                      name="Salida" />
+                    <outputColumn
+                      refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Genera Archivo.Paths[OLE DB Source Output]"
+              endId="Package\Genera Archivo\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generar Archivo ATM Seguros"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D0DF6B3C-2012-471B-8AAC-74E91E71AAF3}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generar Archivo ATM Seguros"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Generar Archivo ATM Seguros\Flat File Destination"
+              componentClassID="{8DA75FED-1B7C-407D-B2AD-2B24209CCCA4}"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generar Archivo ATM Seguros\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ArchivoATMSeguros]"
+                  connectionManagerRefId="Package.ConnectionManagers[ArchivoATMSeguros]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Generar Archivo ATM Seguros\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Generar Archivo ATM Seguros\Flat File Destination.Inputs[Flat File Destination Input].Columns[Salia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="816"
+                      cachedName="Salia"
+                      externalMetadataColumnId="Package\Generar Archivo ATM Seguros\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Column 0]"
+                      lineageId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Output].Columns[Salia]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Generar Archivo ATM Seguros\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Column 0" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Generar Archivo ATM Seguros\OLE DB Source"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC	[dbo].[PR_SEG_Venta_ATM]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generar Archivo ATM Seguros\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BANCASEGUROS]"
+                  connectionManagerRefId="Package.ConnectionManagers[BANCASEGUROS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Output].Columns[Salia]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Salia]"
+                      length="816"
+                      lineageId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Output].Columns[Salia]"
+                      name="Salia"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Salia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="816"
+                      name="Salia" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Salia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="816"
+                      lineageId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Salia]"
+                      name="Salia" />
+                    <outputColumn
+                      refId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Generar Archivo ATM Seguros.Paths[OLE DB Source Output]"
+              endId="Package\Generar Archivo ATM Seguros\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Generar Archivo ATM Seguros\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F93730A7-56B2-4AB7-A8CA-4216ED03215B}"
+      DTS:From="Package\Evalua Parametro Ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Evalua Fecha" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BDBC268A-39B3-4F8E-9A56-FFCFB383038E}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::DiaHabil]  == 0"
+      DTS:From="Package\Evalua Fecha"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Consultar Emisiones Diarias" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{66368B74-10B6-42A5-9441-3623F0DCA94A}"
+      DTS:From="Package\Consultar Emisiones Diarias"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Genera Archivo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{B9F32E1D-F97A-4A71-86A6-2C0ECD15FD7A}"
+      DTS:From="Package\Genera Archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Actualizar Fecha Ejecucion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{550FA2C4-D5F6-4636-986A-0EC046E7211B}"
+      DTS:From="Package\Evalua Fecha"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Generar Archivo ATM Seguros" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Actualizar Fecha Ejecucion"
+          TopLeft="262,409" />
+        <NodeLayout
+          Size="211,42"
+          Id="Package\Consultar Emisiones Diarias"
+          TopLeft="253,247" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Evalua Fecha"
+          TopLeft="282,138" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Evalua Parametro Ejecucion"
+          TopLeft="275,55" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Genera Archivo"
+          TopLeft="283,329" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Generar Archivo ATM Seguros"
+          TopLeft="483,331" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="355.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="356,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,21.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="358.5,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="361.5,371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="376,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="217,151"
+              Start="0,0"
+              End="217,143.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.402489626556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57.402489626556"
+                    Point2="0,61.402489626556"
+                    Point3="4,61.402489626556" />
+                  <mssgle:LineSegment
+                    End="213,61.402489626556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="213,61.402489626556"
+                    Point2="217,61.402489626556"
+                    Point3="217,65.402489626556" />
+                  <mssgle:LineSegment
+                    End="217,143.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Genera Archivo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia"
+          TopLeft="95,43" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Genera Archivo\Flat File Destination"
+          TopLeft="451,38" />
+        <EdgeLayout
+          Id="Package\Genera Archivo.Paths[OLE DB Source Output]"
+          TopLeft="323,61.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128,0"
+              Start="0,0"
+              End="120.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="120.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Genera Archivo\PR_SEG_ConsultarEmisionesDia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Generar Archivo ATM Seguros">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Generar Archivo ATM Seguros\OLE DB Source"
+          TopLeft="125,55" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Generar Archivo ATM Seguros\Flat File Destination"
+          TopLeft="429,59" />
+        <EdgeLayout
+          Id="Package\Generar Archivo ATM Seguros.Paths[OLE DB Source Output]"
+          TopLeft="275,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154,0"
+              Start="0,0"
+              End="146.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="146.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generar Archivo ATM Seguros\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

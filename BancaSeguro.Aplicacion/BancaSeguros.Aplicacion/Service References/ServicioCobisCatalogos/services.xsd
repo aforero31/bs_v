@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:Q1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:tns2="http://dto2.sdf.cts.cobis.cobiscorp.com" elementFormDefault="qualified" targetNamespace="http://service.srvaplcobisgenerales.ecobis.cobiscorp" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="commonDTO2.xsd" namespace="http://dto2.sdf.cts.cobis.cobiscorp.com" />
+  <import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+  <element name="opActivarEntregaExtractoFisicoSolicitud" type="Q1:OpActivarEntregaExtractoFisicoSolicitud" />
+  <element name="opActivarEntregaExtractoFisicoRespuesta" type="Q1:OpActivarEntregaExtractoFisicoRespuesta" />
+  <element name="opBuscarCatalogoSolicitud" type="Q1:OpBuscarCatalogoSolicitud" />
+  <element name="opBuscarCatalogoRespuesta" type="Q1:OpBuscarCatalogoRespuesta" />
+  <element name="opBuscarDepartamentoSolicitud" type="Q1:OpBuscarDepartamentoSolicitud" />
+  <element name="opBuscarDepartamentoRespuesta" type="Q1:OpBuscarDepartamentoRespuesta" />
+  <element name="opBuscarExtractoAnualCostosSolicitud" type="Q1:OpBuscarExtractoAnualCostosSolicitud" />
+  <element name="opBuscarExtractoAnualCostosRespuesta" type="Q1:OpBuscarExtractoAnualCostosRespuesta" />
+  <element name="opBuscarMunicipioSolicitud" type="Q1:OpBuscarMunicipioSolicitud" />
+  <element name="opBuscarMunicipioRespuesta" type="Q1:OpBuscarMunicipioRespuesta" />
+  <element name="opBuscarOficinaSolicitud" type="Q1:OpBuscarOficinaSolicitud" />
+  <element name="opBuscarOficinaRespuesta" type="Q1:OpBuscarOficinaRespuesta" />
+  <element name="opBuscarPaisSolicitud" type="Q1:OpBuscarPaisSolicitud" />
+  <element name="opBuscarPaisRespuesta" type="Q1:OpBuscarPaisRespuesta" />
+  <element name="opBuscarPorIdParametroSolicitud" type="Q1:OpBuscarPorIdParametroSolicitud" />
+  <element name="opBuscarPorIdParametroRespuesta" type="Q1:OpBuscarPorIdParametroRespuesta" />
+  <element name="opBuscarTramiteSolicitud" type="Q1:OpBuscarTramiteSolicitud" />
+  <element name="opBuscarTramiteRespuesta" type="Q1:OpBuscarTramiteRespuesta" />
+  <element name="opInscripcionMulticashSolicitud" type="Q1:OpInscribirCuentaMulticashSolicitud" />
+  <element name="opInscripcionMulticashRespuesta" type="Q1:OpInscribirCuentaMulticashRespuesta" />
+  <element name="opSolicitarProductoSolicitud" type="Q1:OpSolicitarProductoSolicitud" />
+  <element name="opSolicitarProductoRespuesta" type="Q1:OpSolicitarProductoRespuesta" />
+</schema>

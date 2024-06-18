@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Administracion" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Administracion" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" />
+  <xs:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" />
+  <xs:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" />
+  <xs:import schemaLocation="http://localhost:60524/Administracion/ServicioAdministracion.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" />
+  <xs:complexType name="EntradaPrevisualizacionDocumentoPoliza">
+    <xs:sequence>
+      <xs:element name="campos" nillable="true" type="xs:string" />
+      <xs:element name="datosXML" nillable="true" type="xs:string" />
+      <xs:element name="plantilla" nillable="true" type="xs:base64Binary" />
+      <xs:element name="rutaArchivo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntradaPrevisualizacionDocumentoPoliza" nillable="true" type="tns:EntradaPrevisualizacionDocumentoPoliza" />
+  <xs:complexType name="ParametrizacionSeguro">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" name="_x003C_DocumentoPoliza_x003E_k__BackingField" nillable="true" type="q1:DocumentoPoliza" />
+      <xs:element name="_x003C_Login_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" name="_x003C_Planes_x003E_k__BackingField" nillable="true" type="q2:ArrayOfPlan" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" name="_x003C_ProductosNoPermitidos_x003E_k__BackingField" nillable="true" type="q3:ArrayOfProductoNoPermitido" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" name="_x003C_Seguro_x003E_k__BackingField" nillable="true" type="q4:Seguro" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" name="_x003C_TiposIdentificacionPorSeguro_x003E_k__BackingField" nillable="true" type="q5:ArrayOfTipoIdentificacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametrizacionSeguro" nillable="true" type="tns:ParametrizacionSeguro" />
+  <xs:complexType name="AprobacionDual">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosObjeto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosObjetoActual" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaAprobacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSolicitud" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSolicitudFinal" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSolicitudInicial" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdAprobacionDual" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMenu" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreMenu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreObjeto" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="Resultado" nillable="true" type="q6:Resultado" />
+      <xs:element minOccurs="0" name="UsuarioAprueba" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioEnvia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AprobacionDual" nillable="true" type="tns:AprobacionDual" />
+  <xs:complexType name="ArrayOfAprobacionDual">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AprobacionDual" nillable="true" type="tns:AprobacionDual" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAprobacionDual" nillable="true" type="tns:ArrayOfAprobacionDual" />
+</xs:schema>

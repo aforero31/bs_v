@@ -1,0 +1,162 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{430F6FD2-0F1C-4716-9EF4-1F4AA60669F5}"
+	ProjectSection(SolutionItems) = preProject
+		BancaSeguros.pssln = BancaSeguros.pssln
+		Lib\gsdll32.dll = Lib\gsdll32.dll
+		Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll = Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll
+		Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll = Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll
+		Lib\Microsoft.Practices.ServiceLocation.dll = Lib\Microsoft.Practices.ServiceLocation.dll
+		Lib\Microsoft.Practices.Unity.Configuration.dll = Lib\Microsoft.Practices.Unity.Configuration.dll
+		Lib\Microsoft.Practices.Unity.dll = Lib\Microsoft.Practices.Unity.dll
+		Lib\Microsoft.Practices.Unity.Interception.Configuration.dll = Lib\Microsoft.Practices.Unity.Interception.Configuration.dll
+		Lib\Microsoft.Practices.Unity.Interception.dll = Lib\Microsoft.Practices.Unity.Interception.dll
+		Lib\Newtonsoft.Json.dll = Lib\Newtonsoft.Json.dll
+		Performance1.psess = Performance1.psess
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAC.Seguridad", "BAC.Seguridad\BAC.Seguridad.csproj", "{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAC.EntidadesSeguridad", "BAC.EntidadesSeguridad\BAC.EntidadesSeguridad.csproj", "{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSeguros.Aplicacion", "BancaSeguros.Aplicacion\BancaSeguros.Aplicacion.csproj", "{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSeguros.Entidades", "BancaSeguros.Entidades\BancaSeguros.Entidades.csproj", "{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSeguros.Infraestructura", "BancaSeguros.Infraestructura\BancaSeguros.Infraestructura.csproj", "{16B8B311-24F8-430A-874D-98065BCCEB12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSeguros.Repositorio", "BancaSeguros.Repositorio\BancaSeguros.Repositorio.csproj", "{56C03CAF-C67C-4A90-9F76-75E2B5343075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSeguros.UnitTests", "BancaSeguros.Tests\BancaSeguros.UnitTests.csproj", "{9D983A21-FCAE-47DD-BA49-867B07CD315B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSeguros.ServiciosWCF", "BancaSeguros.ServiciosWCF\BancaSeguros.ServiciosWCF.csproj", "{035A6CCC-039F-4F03-A605-A2911FD7E452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSegurosUI", "BancaSegurosUI\BancaSegurosUI.csproj", "{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{035A6CCC-039F-4F03-A605-A2911FD7E452} = {035A6CCC-039F-4F03-A605-A2911FD7E452}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSeguros.IntegrationTests", "BancaSeguros.IntegrationTests\BancaSeguros.IntegrationTests.csproj", "{748C6FCD-D4FC-4489-83E5-3A2921945C05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3CD2C29B-29CD-4A2B-B1BD-C2FA9F50998E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancaSeguros.Sincronizacion", "BancaSeguros.Sincronizacion\BancaSeguros.Sincronizacion.csproj", "{C5DC80D4-B941-4215-92E3-9D6C12B3D399}"
+	ProjectSection(ProjectDependencies) = postProject
+		{035A6CCC-039F-4F03-A605-A2911FD7E452} = {035A6CCC-039F-4F03-A605-A2911FD7E452}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		a|Any CPU = a|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ServidorDesarrollo|Any CPU = ServidorDesarrollo|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}.a|Any CPU.ActiveCfg = a|Any CPU
+		{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}.a|Any CPU.Build.0 = a|Any CPU
+		{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{AFAE1C57-CC5A-4C09-9F1D-8EACD2F9C535}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.a|Any CPU.ActiveCfg = a|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.a|Any CPU.Build.0 = a|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{7238AAC9-A13E-4B45-A3E8-B67DB99E7C21}.ServidorDesarrollo|Any CPU.Deploy.0 = ServidorDesarrollo|Any CPU
+		{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}.a|Any CPU.ActiveCfg = a|Any CPU
+		{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}.a|Any CPU.Build.0 = a|Any CPU
+		{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{D8B4FF96-D255-4BBA-B48A-B4D0EA822668}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}.a|Any CPU.ActiveCfg = a|Any CPU
+		{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}.a|Any CPU.Build.0 = a|Any CPU
+		{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{0B8FF5BF-867E-41B6-A901-D4AA8AFF028A}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{16B8B311-24F8-430A-874D-98065BCCEB12}.a|Any CPU.ActiveCfg = a|Any CPU
+		{16B8B311-24F8-430A-874D-98065BCCEB12}.a|Any CPU.Build.0 = a|Any CPU
+		{16B8B311-24F8-430A-874D-98065BCCEB12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B8B311-24F8-430A-874D-98065BCCEB12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B8B311-24F8-430A-874D-98065BCCEB12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B8B311-24F8-430A-874D-98065BCCEB12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B8B311-24F8-430A-874D-98065BCCEB12}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{16B8B311-24F8-430A-874D-98065BCCEB12}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{56C03CAF-C67C-4A90-9F76-75E2B5343075}.a|Any CPU.ActiveCfg = a|Any CPU
+		{56C03CAF-C67C-4A90-9F76-75E2B5343075}.a|Any CPU.Build.0 = a|Any CPU
+		{56C03CAF-C67C-4A90-9F76-75E2B5343075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C03CAF-C67C-4A90-9F76-75E2B5343075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C03CAF-C67C-4A90-9F76-75E2B5343075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C03CAF-C67C-4A90-9F76-75E2B5343075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C03CAF-C67C-4A90-9F76-75E2B5343075}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{56C03CAF-C67C-4A90-9F76-75E2B5343075}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{9D983A21-FCAE-47DD-BA49-867B07CD315B}.a|Any CPU.ActiveCfg = a|Any CPU
+		{9D983A21-FCAE-47DD-BA49-867B07CD315B}.a|Any CPU.Build.0 = a|Any CPU
+		{9D983A21-FCAE-47DD-BA49-867B07CD315B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D983A21-FCAE-47DD-BA49-867B07CD315B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D983A21-FCAE-47DD-BA49-867B07CD315B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D983A21-FCAE-47DD-BA49-867B07CD315B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D983A21-FCAE-47DD-BA49-867B07CD315B}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{9D983A21-FCAE-47DD-BA49-867B07CD315B}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{035A6CCC-039F-4F03-A605-A2911FD7E452}.a|Any CPU.ActiveCfg = a|Any CPU
+		{035A6CCC-039F-4F03-A605-A2911FD7E452}.a|Any CPU.Build.0 = a|Any CPU
+		{035A6CCC-039F-4F03-A605-A2911FD7E452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{035A6CCC-039F-4F03-A605-A2911FD7E452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{035A6CCC-039F-4F03-A605-A2911FD7E452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{035A6CCC-039F-4F03-A605-A2911FD7E452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{035A6CCC-039F-4F03-A605-A2911FD7E452}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{035A6CCC-039F-4F03-A605-A2911FD7E452}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}.a|Any CPU.ActiveCfg = a|Any CPU
+		{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}.a|Any CPU.Build.0 = a|Any CPU
+		{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{A950AF9F-3E32-4C1B-9B24-D016D1D59DD6}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{748C6FCD-D4FC-4489-83E5-3A2921945C05}.a|Any CPU.ActiveCfg = a|Any CPU
+		{748C6FCD-D4FC-4489-83E5-3A2921945C05}.a|Any CPU.Build.0 = a|Any CPU
+		{748C6FCD-D4FC-4489-83E5-3A2921945C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{748C6FCD-D4FC-4489-83E5-3A2921945C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{748C6FCD-D4FC-4489-83E5-3A2921945C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{748C6FCD-D4FC-4489-83E5-3A2921945C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{748C6FCD-D4FC-4489-83E5-3A2921945C05}.ServidorDesarrollo|Any CPU.ActiveCfg = ServidorDesarrollo|Any CPU
+		{748C6FCD-D4FC-4489-83E5-3A2921945C05}.ServidorDesarrollo|Any CPU.Build.0 = ServidorDesarrollo|Any CPU
+		{C5DC80D4-B941-4215-92E3-9D6C12B3D399}.a|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DC80D4-B941-4215-92E3-9D6C12B3D399}.a|Any CPU.Build.0 = Release|Any CPU
+		{C5DC80D4-B941-4215-92E3-9D6C12B3D399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DC80D4-B941-4215-92E3-9D6C12B3D399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DC80D4-B941-4215-92E3-9D6C12B3D399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DC80D4-B941-4215-92E3-9D6C12B3D399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5DC80D4-B941-4215-92E3-9D6C12B3D399}.ServidorDesarrollo|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DC80D4-B941-4215-92E3-9D6C12B3D399}.ServidorDesarrollo|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {220BDDA4-D8FC-4DF9-9F21-A0049C08BCE8}
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35;packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.SqlCe.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

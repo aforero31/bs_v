@@ -1,0 +1,2118 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/23/2016 8:51:28 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="P-PROIMONTOYA"
+  DTS:CreatorName="INTERGRUPO\Pro-Imontoyam"
+  DTS:DTSID="{6CD1944E-FF7F-4A6F-BF77-DC476C86C524}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5583.0"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="MigrarPostVenta"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{57FBD3D0-2822-4ED4-B89A-DE13A8A05B61}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BANCASEGUROS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0F531BCF-B264-4EAB-B36D-32C7DAF243AA}"
+      DTS:ObjectName="BANCASEGUROS">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::conexionBD]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SBOGDB12\SQL2012;Initial Catalog=BANCASEGUROS_PRU_BAC;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1CD4A323-9C3D-4573-9549-D878337FC815}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="estadoBeneficiario">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CC17C8AE-43BE-40DE-A919-59A8F2256923}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="estadoConyuge">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5239DDD1-C2AD-4761-8E0B-9CF3C9F0C8D7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ventaCompleta">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cargar archivos post venta"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0186fa1d-14ba-4e80-a020-e2e813a1ff3f}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar archivos post venta">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Cargar archivos post venta\Beneficiario"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{710d7171-d0a4-410f-87a7-4e9ee2c0b9bf}"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Beneficiario"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Beneficiario.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Cargar archivos post venta\Conyuge"
+          DTS:CreationName="SSIS.ExecutePackageTask.3"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{c461669b-7d28-49df-a14d-6e25ff322592}"
+          DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conyuge"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Conyuge.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Copiar datos a las tablas reales"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{ea6fcde7-e131-48b0-ad1e-1e01e852f09c}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copiar datos a las tablas reales">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{06843d29-3db2-45cb-9d9e-d697a83bd393}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="BeneficiarioTemp a Beneficiario"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">(@[User::estadoBeneficiario]  == 1 || @[User::estadoBeneficiario]  == 4) ? True : False</DTS:PropertyExpression>
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.EventHandlers[OnPostExecute]"
+              DTS:CreationName="OnPostExecute"
+              DTS:DTSID="{b8bd580d-bb97-456b-8675-08d3b2c26ef0}"
+              DTS:EventID="911980228"
+              DTS:EventName="OnPostExecute"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{fcb8d61e-074b-4b99-95f1-d8ec4a85420e}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.EventHandlers[OnPostExecute]\Actualizar registros"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{e629f161-50eb-4c52-8439-3c9bb1b0a6a9}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Actualizar registros"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{0F531BCF-B264-4EAB-B36D-32C7DAF243AA}"
+                      SQLTask:SqlStatementSource="DECLARE @registros INT = ISNULL((SELECT COUNT(1) FROM SEG_Beneficiario),0)&#xA;&#xA;UPDATE [MIG_EjecucionMigracion]&#xA;   SET totalRegistros = @registros,&#xA;    estado = CASE WHEN @registros - totalRegistrosTemporales = 0 THEN 4 ELSE 3 END&#xA;                   ,fechaFinEjecucion = GETDATE()&#xA; WHERE nombreArchivo = 'SEG_Beneficiario'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+            <DTS:EventHandler
+              DTS:refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.EventHandlers[OnPreExecute]"
+              DTS:CreationName="OnPreExecute"
+              DTS:DTSID="{3aa5de6b-d393-49a5-8afb-c0da020740fd}"
+              DTS:EventID="998059004"
+              DTS:EventName="OnPreExecute"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{454e58bc-efce-4d38-be02-12931686a4f5}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.EventHandlers[OnPreExecute]\Inicializar log de errores"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{01dc72fa-3ebc-424f-acf1-e5037f6f8550}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Inicializar log de errores"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{0F531BCF-B264-4EAB-B36D-32C7DAF243AA}"
+                      SQLTask:SqlStatementSource="TRUNCATE TABLE MIG_LogErrorBeneficiario" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp"
+                  componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="MIG_BeneficiarioTemp"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">IF ISNULL((SELECT COUNT(1) FROM MIG_LogErrorBeneficiario),0) &gt; 0
+BEGIN
+	SELECT SV.idVenta AS idVenta
+      ,SBT.idParentesco AS idParentesco
+      ,SBT.idTipoIdentificacion AS idTipoIdentificacion
+      ,SBT.identificacion AS identificacion
+      ,SBT.nombres AS nombres
+      ,SBT.apellidos AS apellidos
+      ,SBT.participacion AS porcentaje, id
+  FROM  MIG_BeneficiarioTemp SBT
+  INNER JOIN SEG_Venta SV ON SV.consecutivo = SBT.numeroPoliza
+  INNER JOIN MIG_LogErrorBeneficiario ON MIG_LogErrorBeneficiario.idRegistro = id
+END
+ELSE
+BEGIN
+	SELECT SV.idVenta AS idVenta
+      ,SBT.idParentesco AS idParentesco
+      ,SBT.idTipoIdentificacion AS idTipoIdentificacion
+      ,SBT.identificacion AS identificacion
+      ,SBT.nombres AS nombres
+      ,SBT.apellidos AS apellidos
+      ,SBT.participacion AS porcentaje, id
+  FROM  MIG_BeneficiarioTemp SBT
+  INNER JOIN SEG_Venta SV ON SV.consecutivo = SBT.numeroPoliza
+END</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BANCASEGUROS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BANCASEGUROS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idVenta]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[idVenta]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idVenta]"
+                          name="idVenta"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idParentesco]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[idParentesco]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idParentesco]"
+                          name="idParentesco"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idTipoIdentificacion]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[idTipoIdentificacion]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idTipoIdentificacion]"
+                          name="idTipoIdentificacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[identificacion]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[identificacion]"
+                          length="16"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[identificacion]"
+                          name="identificacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[nombres]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[nombres]"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[nombres]"
+                          name="nombres"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[apellidos]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[apellidos]"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[apellidos]"
+                          name="apellidos"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[porcentaje]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[porcentaje]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[porcentaje]"
+                          name="porcentaje"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[idVenta]"
+                          dataType="i4"
+                          name="idVenta" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[idParentesco]"
+                          dataType="i4"
+                          name="idParentesco" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[idTipoIdentificacion]"
+                          dataType="i4"
+                          name="idTipoIdentificacion" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[identificacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="identificacion" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[nombres]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nombres" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[apellidos]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellidos" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[porcentaje]"
+                          dataType="i4"
+                          name="porcentaje" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[idVenta]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[idVenta]"
+                          name="idVenta" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[idParentesco]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[idParentesco]"
+                          name="idParentesco" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[idTipoIdentificacion]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[idTipoIdentificacion]"
+                          name="idTipoIdentificacion" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[identificacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[identificacion]"
+                          name="identificacion" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[nombres]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[nombres]"
+                          name="nombres" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[apellidos]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[apellidos]"
+                          name="apellidos" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[porcentaje]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[porcentaje]"
+                          name="porcentaje" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="MIG_LogErrorBeneficiario"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[MIG_LogErrorBeneficiario]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BANCASEGUROS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BANCASEGUROS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idRegistro]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].ExternalColumns[codigoError]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].ExternalColumns[columnaError]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idRegistro]"
+                          dataType="i4"
+                          name="idRegistro" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].ExternalColumns[codigoError]"
+                          dataType="i4"
+                          name="codigoError" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input].ExternalColumns[columnaError]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="columnaError" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SEG_Beneficiario"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SEG_Beneficiario]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BANCASEGUROS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BANCASEGUROS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="RedirectRow"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].Columns[idVenta]"
+                          cachedDataType="i4"
+                          cachedName="idVenta"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idVenta]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idVenta]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].Columns[idParentesco]"
+                          cachedDataType="i4"
+                          cachedName="idParentesco"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idParentesco]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idParentesco]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].Columns[idTipoIdentificacion]"
+                          cachedDataType="i4"
+                          cachedName="idTipoIdentificacion"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idTipoIdentificacion]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[idTipoIdentificacion]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].Columns[identificacion]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="16"
+                          cachedName="identificacion"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[identificacion]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[identificacion]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].Columns[nombres]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="nombres"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[nombres]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[nombres]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].Columns[apellidos]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="apellidos"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[apellidos]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[apellidos]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].Columns[porcentaje]"
+                          cachedDataType="i4"
+                          cachedName="porcentaje"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[porcentaje]"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output].Columns[porcentaje]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idBeneficiario]"
+                          dataType="i4"
+                          name="idBeneficiario" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idVenta]"
+                          dataType="i4"
+                          name="idVenta" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idParentesco]"
+                          dataType="i4"
+                          name="idParentesco" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[idTipoIdentificacion]"
+                          dataType="i4"
+                          name="idTipoIdentificacion" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[identificacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="identificacion" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[nombres]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nombres" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[apellidos]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="apellidos" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input].ExternalColumns[porcentaje]"
+                          dataType="i4"
+                          name="porcentaje" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.Paths[OLE DB Destination Error Output]"
+                  endId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Error Output"
+                  startId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Outputs[OLE DB Destination Error Output]" />
+                <path
+                  refId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.Paths[OLE DB Source Output]"
+                  endId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{568ca3e6-922c-40ca-a6ee-0988664c06e1}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ConyugeTemp a Conyuge"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Disable">(@[User::estadoConyuge] == 1 || @[User::estadoConyuge] == 4) ? True : False</DTS:PropertyExpression>
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.EventHandlers[OnPostExecute]"
+              DTS:CreationName="OnPostExecute"
+              DTS:DTSID="{3744996c-cc43-4eef-a7e1-322d82b2bcb3}"
+              DTS:EventID="682411088"
+              DTS:EventName="OnPostExecute"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{540ff303-f357-4aa5-a304-11f9bf8a8f42}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.EventHandlers[OnPostExecute]\Actualizar registros"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{4e53ad78-2a89-4139-a4f5-f8e637e1409b}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Actualizar registros"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{0F531BCF-B264-4EAB-B36D-32C7DAF243AA}"
+                      SQLTask:SqlStatementSource="DECLARE @registros INT = ISNULL((SELECT COUNT(1) FROM SEG_Conyuge),0)&#xA;&#xA;UPDATE [MIG_EjecucionMigracion]&#xA;   SET totalRegistros = @registros,&#xA;    estado = CASE WHEN @registros - totalRegistrosTemporales = 0 THEN 4 ELSE 3 END&#xA;                   ,fechaFinEjecucion = GETDATE()&#xA; WHERE nombreArchivo = 'SEG_Conyugue'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+            <DTS:EventHandler
+              DTS:refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.EventHandlers[OnPreExecute]"
+              DTS:CreationName="OnPreExecute"
+              DTS:DTSID="{b6225c3d-e07c-425f-918d-c59703953999}"
+              DTS:EventID="1271992852"
+              DTS:EventName="OnPreExecute"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{2846dcf8-c60b-45e2-b267-10da9ff53199}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.EventHandlers[OnPreExecute]\Inicializar log de errores"
+                  DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{f57cc90d-9a91-4783-af57-7a802c641b65}"
+                  DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Inicializar log de errores"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{0F531BCF-B264-4EAB-B36D-32C7DAF243AA}"
+                      SQLTask:SqlStatementSource="TRUNCATE TABLE MIG_LogErrorConyuge" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Log error"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[MIG_LogErrorConyuge]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BANCASEGUROS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BANCASEGUROS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].ExternalColumns[idRegistro]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].ExternalColumns[codigoError]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].ExternalColumns[columnaError]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].ExternalColumns[idRegistro]"
+                          dataType="i4"
+                          name="idRegistro" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].ExternalColumns[codigoError]"
+                          dataType="i4"
+                          name="codigoError" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input].ExternalColumns[columnaError]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="columnaError" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp"
+                  componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="MIG_ConyugeTemp"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">IF ISNULL((SELECT COUNT(1) FROM MIG_LogErrorConyuge),0) &gt; 0
+BEGIN
+	SELECT SV.idVenta AS idVenta
+	   ,SCT.idTipoIdentificacion AS IdTipoIdentificacion
+	   ,SCT.identificacion AS identificacion
+	   ,SCT.primerNombre AS primerNombre
+	   ,SCT.segundoNombre AS segundoNombre
+	   ,SCT.primerApellido AS primerApellido
+	   ,SCT.segundoApellido AS segundoApellido
+	   ,SCT.fechaNacimiento AS fechaNacimiento
+	   ,SCT.idGenero AS IdGenero, id
+  FROM  MIG_ConyugeTemp SCT
+  INNER JOIN SEG_Venta SV ON SV.consecutivo = SCT.numeroPoliza
+  INNER JOIN MIG_LogErrorConyuge ON MIG_LogErrorConyuge.idRegistro = id
+END
+ELSE
+BEGIN
+	SELECT SV.idVenta AS idVenta
+	   ,SCT.idTipoIdentificacion AS IdTipoIdentificacion
+	   ,SCT.identificacion AS identificacion
+	   ,SCT.primerNombre AS primerNombre
+	   ,SCT.segundoNombre AS segundoNombre
+	   ,SCT.primerApellido AS primerApellido
+	   ,SCT.segundoApellido AS segundoApellido
+	   ,SCT.fechaNacimiento AS fechaNacimiento
+	   ,SCT.idGenero AS IdGenero, id
+  FROM  MIG_ConyugeTemp SCT
+  INNER JOIN SEG_Venta SV ON SV.consecutivo = SCT.numeroPoliza
+END</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BANCASEGUROS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BANCASEGUROS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[idVenta]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[idVenta]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[idVenta]"
+                          name="idVenta"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[IdTipoIdentificacion]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[IdTipoIdentificacion]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[IdTipoIdentificacion]"
+                          name="IdTipoIdentificacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[identificacion]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[identificacion]"
+                          length="16"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[identificacion]"
+                          name="identificacion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[primerNombre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[primerNombre]"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[primerNombre]"
+                          name="primerNombre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[segundoNombre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[segundoNombre]"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[segundoNombre]"
+                          name="segundoNombre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[primerApellido]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[primerApellido]"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[primerApellido]"
+                          name="primerApellido"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[segundoApellido]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[segundoApellido]"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[segundoApellido]"
+                          name="segundoApellido"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[fechaNacimiento]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[fechaNacimiento]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[fechaNacimiento]"
+                          name="fechaNacimiento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[IdGenero]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[IdGenero]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[IdGenero]"
+                          name="IdGenero"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[idVenta]"
+                          dataType="i4"
+                          name="idVenta" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[IdTipoIdentificacion]"
+                          dataType="i4"
+                          name="IdTipoIdentificacion" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[identificacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="identificacion" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[primerNombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="primerNombre" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[segundoNombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="segundoNombre" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[primerApellido]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="primerApellido" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[segundoApellido]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="segundoApellido" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[fechaNacimiento]"
+                          dataType="dbDate"
+                          name="fechaNacimiento" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[IdGenero]"
+                          dataType="i4"
+                          name="IdGenero" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[idVenta]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[idVenta]"
+                          name="idVenta" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[IdTipoIdentificacion]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[IdTipoIdentificacion]"
+                          name="IdTipoIdentificacion" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[identificacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[identificacion]"
+                          name="identificacion" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[primerNombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[primerNombre]"
+                          name="primerNombre" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[segundoNombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[segundoNombre]"
+                          name="segundoNombre" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[primerApellido]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[primerApellido]"
+                          name="primerApellido" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[segundoApellido]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[segundoApellido]"
+                          name="segundoApellido" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[fechaNacimiento]"
+                          dataType="dbDate"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[fechaNacimiento]"
+                          name="fechaNacimiento" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[IdGenero]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[IdGenero]"
+                          name="IdGenero" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SEG_Conyuge"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SEG_Conyuge]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BANCASEGUROS]"
+                      connectionManagerRefId="Package.ConnectionManagers[BANCASEGUROS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="RedirectRow"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[idVenta]"
+                          cachedDataType="i4"
+                          cachedName="idVenta"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[idVenta]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[idVenta]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[IdTipoIdentificacion]"
+                          cachedDataType="i4"
+                          cachedName="IdTipoIdentificacion"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[IdTipoIdentificacion]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[IdTipoIdentificacion]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[identificacion]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="16"
+                          cachedName="identificacion"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[identificacion]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[identificacion]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[primerNombre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="primerNombre"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[primerNombre]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[primerNombre]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[segundoNombre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="segundoNombre"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[segundoNombre]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[segundoNombre]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[primerApellido]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="primerApellido"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[primerApellido]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[primerApellido]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[segundoApellido]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="segundoApellido"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[segundoApellido]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[segundoApellido]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[fechaNacimiento]"
+                          cachedDataType="dbDate"
+                          cachedName="fechaNacimiento"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[fechaNacimiento]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[fechaNacimiento]" />
+                        <inputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].Columns[IdGenero]"
+                          cachedDataType="i4"
+                          cachedName="IdGenero"
+                          externalMetadataColumnId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[IdGenero]"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output].Columns[IdGenero]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[idVenta]"
+                          dataType="i4"
+                          name="idVenta" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[IdTipoIdentificacion]"
+                          dataType="i4"
+                          name="IdTipoIdentificacion" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[identificacion]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="identificacion" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[primerNombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="primerNombre" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[segundoNombre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="segundoNombre" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[primerApellido]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="primerApellido" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[segundoApellido]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="segundoApellido" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[fechaNacimiento]"
+                          dataType="dbTimeStamp"
+                          name="fechaNacimiento" />
+                        <externalMetadataColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input].ExternalColumns[IdGenero]"
+                          dataType="i4"
+                          name="IdGenero" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.Paths[OLE DB Destination Error Output]"
+                  endId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Error Output"
+                  startId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Outputs[OLE DB Destination Error Output]" />
+                <path
+                  refId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.Paths[OLE DB Source Output]"
+                  endId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar Data"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{84DE1CB4-9866-4D8B-B197-727FBC233C4F}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar Data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0F531BCF-B264-4EAB-B36D-32C7DAF243AA}"
+          SQLTask:SqlStatementSource="DECLARE @estadoBeneficiario INT = (SELECT estado FROM [MIG_EjecucionMigracion] WHERE nombreArchivo = 'SEG_Beneficiario')&#xA;DECLARE @estadoConyugue INT = (SELECT estado FROM [MIG_EjecucionMigracion] WHERE nombreArchivo = 'SEG_Conyugue')&#xA;&#xA;&#xA;IF @estadoBeneficiario = 2&#xA;BEGIN&#xA;&#x9;DELETE SEG_Beneficiario&#xA;&#x9;DBCC CHECKIDENT ('SEG_Beneficiario', RESEED,0)&#xA;END&#x9;&#xA;&#xA;IF @estadoConyugue = 2&#xA;BEGIN&#xA;&#x9;DELETE SEG_Conyuge &#x9;&#xA;END&#x9;&#xA;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Validar venta"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C2C79B24-AD72-49D9-8A0E-522A174E21D2}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Validar venta"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0F531BCF-B264-4EAB-B36D-32C7DAF243AA}"
+          SQLTask:SqlStatementSource="SELECT case when estado= 4  then 1 else 0 end  as valor FROM [MIG_EjecucionMigracion]  where [nombreArchivo] = 'SEG_Venta'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ventaCompleta" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Verificar estados"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9278F935-CF13-4B1D-BD0E-29E30A83B758}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Verificar estados"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0F531BCF-B264-4EAB-B36D-32C7DAF243AA}"
+          SQLTask:SqlStatementSource="  SELECT  (SELECT estado FROM [MIG_EjecucionMigracion] WHERE nombreArchivo = 'SEG_Beneficiario'),&#xA;    (SELECT estado FROM [MIG_EjecucionMigracion] WHERE nombreArchivo = 'SEG_Conyugue')"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::estadoBeneficiario" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="1"
+            SQLTask:DtsVariableName="User::estadoConyuge" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A8BECB16-5D63-4BF7-8429-02165A669F66}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::ventaCompleta]==true"
+      DTS:From="Package\Validar venta"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Cargar archivos post venta" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{214F06BB-518F-4292-A2E0-1D506C086A7A}"
+      DTS:From="Package\Cargar archivos post venta"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Verificar estados" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9EDBF661-8BDE-4947-84FC-BB170D778910}"
+      DTS:EvalOp="1"
+      DTS:Expression="(@[User::estadoConyuge] &gt; 1 ||  @[User::estadoBeneficiario] &gt; 1) == True"
+      DTS:From="Package\Verificar estados"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Limpiar Data" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{5E19634F-06A1-4076-96FC-CCAE79494A89}"
+      DTS:From="Package\Limpiar Data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Copiar datos a las tablas reales" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Cargar archivos post venta\Beneficiario"
+          TopLeft="257,34" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Cargar archivos post venta\Conyuge"
+          TopLeft="71,35" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="454,107"
+          Size="454,150"
+          Id="Package\Cargar archivos post venta"
+          TopLeft="356,227" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario"
+          TopLeft="65,31" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge"
+          TopLeft="363,30" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="621,125"
+          Size="621,168"
+          Id="Package\Copiar datos a las tablas reales"
+          TopLeft="280,593" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Limpiar Data"
+          TopLeft="517,511" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Validar venta"
+          TopLeft="513,125" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Verificar estados"
+          TopLeft="501,423" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="583.75,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="581.75,377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="584,465">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,11.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="589,553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="201,49"
+          Id="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario"
+          TopLeft="493,234" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp"
+          TopLeft="128,133" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario"
+          TopLeft="514,132" />
+        <EdgeLayout
+          Id="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.Paths[OLE DB Source Output]"
+          TopLeft="315,153.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="199,0"
+              Start="0,0"
+              End="191.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="191.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.Paths[OLE DB Destination Error Output]"
+          TopLeft="593.75,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,20.533203125,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.EventHandlers[OnPreExecute]\Inicializar log de errores"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario.EventHandlers[OnPostExecute]\Actualizar registros"
+          TopLeft="515,63" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_LogErrorBeneficiario">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\MIG_BeneficiarioTemp">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiar datos a las tablas reales\BeneficiarioTemp a Beneficiario\SEG_Beneficiario">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp"
+          TopLeft="59,82" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error"
+          TopLeft="368.5,188.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge"
+          TopLeft="357,85" />
+        <EdgeLayout
+          Id="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.Paths[OLE DB Source Output]"
+          TopLeft="233,104.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,0"
+              Start="0,0"
+              End="116.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.Paths[OLE DB Destination Error Output]"
+          TopLeft="430.5,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.5"
+              Start="0,0"
+              End="0,54">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,21.283203125,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.EventHandlers[OnPreExecute]\Inicializar log de errores"
+          TopLeft="61,59" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge.EventHandlers[OnPostExecute]\Actualizar registros"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\MIG_ConyugeTemp">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\Log error">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copiar datos a las tablas reales\ConyugeTemp a Conyuge\SEG_Conyuge">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7d32be30-5321-4656-afe6-0795f8e89434" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.60.3.150:9121/GerenciaDesarrolloComercial/VinculacionClientes/SrvAplCobisClienteWSService/WEB-INF/wsdl/COBISCorp.eCOBIS.SrvAplCobisCliente.Service.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="commonDTO2.xsd" MetadataType="Schema" ID="acb59258-2903-48cf-8f54-c7a5ce8fbaf6" SourceId="1" SourceUrl="http://10.60.3.150:9121/GerenciaDesarrolloComercial/VinculacionClientes/SrvAplCobisClienteWSService/WEB-INF/wsdl/commonDTO2.xsd" />
+    <MetadataFile FileName="commonDTO1.xsd" MetadataType="Schema" ID="9801ffac-95df-46b4-85d7-fe82bcda7848" SourceId="1" SourceUrl="http://10.60.3.150:9121/GerenciaDesarrolloComercial/VinculacionClientes/SrvAplCobisClienteWSService/WEB-INF/wsdl/commonDTO1.xsd" />
+    <MetadataFile FileName="cobiscorp.xsd" MetadataType="Schema" ID="a0f43005-7813-47a4-a853-a55244c5bc3a" SourceId="1" SourceUrl="http://10.60.3.150:9121/GerenciaDesarrolloComercial/VinculacionClientes/SrvAplCobisClienteWSService/WEB-INF/wsdl/cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" />
+    <MetadataFile FileName="SrvAplCobisCliente.wsdl" MetadataType="Wsdl" ID="06f2d076-871f-49fc-82ab-54342232a84d" SourceId="1" SourceUrl="http://10.60.3.150:9121/GerenciaDesarrolloComercial/VinculacionClientes/SrvAplCobisClienteWSService/WEB-INF/wsdl/COBISCorp.eCOBIS.SrvAplCobisCliente.Service.wsdl" />
+    <MetadataFile FileName="services.xsd" MetadataType="Schema" ID="5219b48e-58a4-4a17-8bc4-47898cd4377b" SourceId="1" SourceUrl="http://10.60.3.150:9121/GerenciaDesarrolloComercial/VinculacionClientes/SrvAplCobisClienteWSService/WEB-INF/wsdl/services.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

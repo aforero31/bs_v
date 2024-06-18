@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:Q1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:tns2="http://dto2.sdf.cts.cobis.cobiscorp.com" elementFormDefault="qualified" targetNamespace="http://service.srvaplcobiscliente.ecobis.cobiscorp" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="commonDTO2.xsd" namespace="http://dto2.sdf.cts.cobis.cobiscorp.com" />
+  <import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+  <element name="opActualizarDireccionPorClienteSolicitud" type="Q1:OpActualizarDireccionPorClienteSolicitud" />
+  <element name="opActualizarDireccionPorClienteRespuesta" type="Q1:OpActualizarDireccionPorClienteRespuesta" />
+  <element name="opActualizarTerceroSolicitud" type="Q1:OpActualizarTerceroSolicitud" />
+  <element name="opActualizarTerceroRespuesta" type="Q1:OpActualizarTerceroRespuesta" />
+  <element name="opBuscarBalancePorClienteSolicitud" type="Q1:OpBuscarBalancePorClienteSolicitud" />
+  <element name="opBuscarBalancePorClienteRespuesta" type="Q1:OpBuscarBalancePorClienteRespuesta" />
+  <element name="opBuscarPorIdClienteSolicitud" type="Q1:OpBuscarPorIdClienteSolicitud" />
+  <element name="opBuscarPorIdClienteRespuesta" type="Q1:OpBuscarPorIdClienteRespuesta" />
+  <element name="opBuscarProductosPorClienteSolicitud" type="Q1:OpBuscarProductosPorClienteSolicitud" />
+  <element name="opBuscarProductosPorClienteRespuesta" type="Q1:OpBuscarProductosPorClienteRespuesta" />
+  <element name="opBuscarTerceroSolicitud" type="Q1:OpBuscarTerceroSolicitud" />
+  <element name="opBuscarTerceroRespuesta" type="Q1:OpBuscarTerceroRespuesta" />
+  <element name="opCrearBalancePorClienteSolicitud" type="Q1:OpCrearBalancePorClienteSolicitud" />
+  <element name="opCrearBalancePorClienteRespuesta" type="Q1:OpCrearBalancePorClienteRespuesta" />
+  <element name="opCrearClienteSolicitud" type="Q1:OpCrearClienteSolicitud" />
+  <element name="opCrearClienteRespuesta" type="Q1:OpCrearClienteRespuesta" />
+  <element name="opCrearTerceroSolicitud" type="Q1:OpCrearTerceroSolicitud" />
+  <element name="opCrearTerceroRespuesta" type="Q1:OpCrearTerceroRespuesta" />
+  <element name="opEliminarTerceroSolicitud" type="Q1:OpEliminarTerceroSolicitud" />
+  <element name="opEliminarTerceroRespuesta" type="Q1:OpEliminarTerceroRespuesta" />
+</schema>

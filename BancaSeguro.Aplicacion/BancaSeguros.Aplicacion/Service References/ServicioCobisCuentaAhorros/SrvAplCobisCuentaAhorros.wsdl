@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp" xmlns:dto1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S1="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/" name="SrvAplCobisCuentaAhorros" targetNamespace="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/">
+      <xsd:import schemaLocation="services.xsd" namespace="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp" />
+      <xsd:import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+      <xsd:element name="ContextoRespuesta" type="dto1:ContextoRespuesta" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MsjOpBuscarCuentaAhorrosRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarCuentaAhorrosRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoMovimientoCuentaAhorrosSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoMovimientoCuentaAhorrosSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoSaldoCuentaAhorrosSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoSaldoCuentaAhorrosSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoSaldoCuentaAhorrosRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoSaldoCuentaAhorrosRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarCuentaAhorrosSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarCuentaAhorrosSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoMovimientoCuentaAhorrosRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoMovimientoCuentaAhorrosRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoEncabezadoCuentaAhorroRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoEncabezadoCuentaAhorroRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoEncabezadoCuentaAhorroSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoEncabezadoCuentaAhorroSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjError">
+    <wsdl:part name="parameters" element="S1:ContextoRespuesta" />
+  </wsdl:message>
+  <wsdl:portType name="SrvAplCobisCuentaAhorros">
+    <wsdl:operation name="OpBuscarCuentaAhorros">
+      <wsdl:input message="S1:MsjOpBuscarCuentaAhorrosSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarCuentaAhorrosRespuesta" />
+      <wsdl:fault name="OpBuscarCuentaAhorrosError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoEncabezadoCuentaAhorro">
+      <wsdl:input message="S1:MsjOpBuscarExtractoEncabezadoCuentaAhorroSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarExtractoEncabezadoCuentaAhorroRespuesta" />
+      <wsdl:fault name="OpBuscarExtractoEncabezadoCuentaAhorroError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoMovimientoCuentaAhorros">
+      <wsdl:input message="S1:MsjOpBuscarExtractoMovimientoCuentaAhorrosSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarExtractoMovimientoCuentaAhorrosRespuesta" />
+      <wsdl:fault name="OpBuscarExtractoMovimientoCuentaAhorrosError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoSaldoCuentaAhorros">
+      <wsdl:input message="S1:MsjOpBuscarExtractoSaldoCuentaAhorrosSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarExtractoSaldoCuentaAhorrosRespuesta" />
+      <wsdl:fault name="OpBuscarExtractoSaldoCuentaAhorrosError" message="S1:MsjError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvAplCobisCuentaAhorrosBindingSOAP11" type="S1:SrvAplCobisCuentaAhorros">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpBuscarCuentaAhorros">
+      <soap:operation soapAction="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/SrvAplCobisCuentaAhorros/OpBuscarCuentaAhorros" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarCuentaAhorrosError">
+        <soap:fault use="literal" name="OpBuscarCuentaAhorrosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoEncabezadoCuentaAhorro">
+      <soap:operation soapAction="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/SrvAplCobisCuentaAhorros/OpBuscarExtractoEncabezadoCuentaAhorro" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoEncabezadoCuentaAhorroError">
+        <soap:fault use="literal" name="OpBuscarExtractoEncabezadoCuentaAhorroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoMovimientoCuentaAhorros">
+      <soap:operation soapAction="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/SrvAplCobisCuentaAhorros/OpBuscarExtractoMovimientoCuentaAhorros" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoMovimientoCuentaAhorrosError">
+        <soap:fault use="literal" name="OpBuscarExtractoMovimientoCuentaAhorrosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoSaldoCuentaAhorros">
+      <soap:operation soapAction="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/SrvAplCobisCuentaAhorros/OpBuscarExtractoSaldoCuentaAhorros" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoSaldoCuentaAhorrosError">
+        <soap:fault use="literal" name="OpBuscarExtractoSaldoCuentaAhorrosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SrvAplCobisCuentaAhorrosBindingSOAP12" type="S1:SrvAplCobisCuentaAhorros">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpBuscarCuentaAhorros">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/SrvAplCobisCuentaAhorros/OpBuscarCuentaAhorros" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarCuentaAhorrosError">
+        <soap12:fault use="literal" name="OpBuscarCuentaAhorrosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoEncabezadoCuentaAhorro">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/SrvAplCobisCuentaAhorros/OpBuscarExtractoEncabezadoCuentaAhorro" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoEncabezadoCuentaAhorroError">
+        <soap12:fault use="literal" name="OpBuscarExtractoEncabezadoCuentaAhorroError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoMovimientoCuentaAhorros">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/SrvAplCobisCuentaAhorros/OpBuscarExtractoMovimientoCuentaAhorros" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoMovimientoCuentaAhorrosError">
+        <soap12:fault use="literal" name="OpBuscarExtractoMovimientoCuentaAhorrosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoSaldoCuentaAhorros">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentaahorros.ecobis.cobiscorp.ws/SrvAplCobisCuentaAhorros/OpBuscarExtractoSaldoCuentaAhorros" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoSaldoCuentaAhorrosError">
+        <soap12:fault use="literal" name="OpBuscarExtractoSaldoCuentaAhorrosError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvAplCobisCuentaAhorros">
+    <wsdl:port name="SrvAplCobisCuentaAhorrosBindingSOAP11" binding="S1:SrvAplCobisCuentaAhorrosBindingSOAP11">
+      <soap:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisCuentaAhorros.Service/SrvAplCobisCuentaAhorros" />
+    </wsdl:port>
+    <wsdl:port name="SrvAplCobisCuentaAhorrosBindingSOAP12" binding="S1:SrvAplCobisCuentaAhorrosBindingSOAP12">
+      <soap12:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisCuentaAhorros.Service/SrvAplCobisCuentaAhorros" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

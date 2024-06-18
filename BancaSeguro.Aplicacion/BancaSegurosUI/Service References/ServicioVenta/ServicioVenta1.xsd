@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" />
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" />
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" />
+  <xs:import schemaLocation="http://localhost:60524/Venta/ServicioVenta.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" />
+  <xs:element name="ConsultarInformacionCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="usuario" nillable="true" type="q1:Cliente" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarInformacionClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ConsultarInformacionClienteResult" nillable="true" type="q2:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClienteEstaEnListasInhibitorias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="usuario" nillable="true" type="q3:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClienteEstaEnListasInhibitoriasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ClienteEstaEnListasInhibitoriasResult" nillable="true" type="q4:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProductosBancarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="cliente" nillable="true" type="q5:Cliente" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProductosBancariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ConsultarProductosBancariosResult" nillable="true" type="q6:ArrayOfProductoBancario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreacionRapidaCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="cliente" nillable="true" type="q7:Cliente" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreacionRapidaClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="CreacionRapidaClienteResult" nillable="true" type="q8:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarDebitoACuentaCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="registrarVenta" nillable="true" type="q9:RegistrarVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarDebitoACuentaClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="GenerarDebitoACuentaClienteResult" nillable="true" type="q10:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarCreditoACuentaAseguradora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="registrarVenta" nillable="true" type="q11:RegistrarVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarCreditoACuentaAseguradoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="GenerarCreditoACuentaAseguradoraResult" nillable="true" type="q12:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarInformacionClienteActual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="cliente" nillable="true" type="q13:Cliente" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarInformacionClienteActualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ConsultarInformacionClienteActualResult" nillable="true" type="q14:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarLosSegurosAVender">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoDeIdentificacion" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaDeNacimientoCliente" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="genero" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarLosSegurosAVenderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" minOccurs="0" name="ConsultarLosSegurosAVenderResult" nillable="true" type="q15:ArrayOfSeguro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSegurosPorCodigoYAseguradora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoSeguro" type="xs:int" />
+        <xs:element minOccurs="0" name="codigoAseguradora" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarSegurosPorCodigoYAseguradoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="ConsultarSegurosPorCodigoYAseguradoraResult" nillable="true" type="q16:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPlanesPorIdSeguro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSeguro" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPlanesPorIdSeguroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" minOccurs="0" name="ConsultarPlanesPorIdSeguroResult" nillable="true" type="q17:ArrayOfPlan" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarProcesoFinalDeLaVenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="registrarVenta" nillable="true" type="q18:RegistrarVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarProcesoFinalDeLaVentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="GenerarProcesoFinalDeLaVentaResult" nillable="true" type="q19:ResultadoVentaPoliza" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentoVentaPoliza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="consecutivoPoliza" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSeguro" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentoVentaPolizaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ObtenerDocumentoVentaPolizaResult" nillable="true" type="q20:ResultadoDocumentoPoliza" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAseguradorasActivas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarAseguradorasActivasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Seguro" minOccurs="0" name="ConsultarAseguradorasActivasResult" nillable="true" type="q21:ArrayOfAseguradora" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCategoriasPorIdSubProducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSubProducto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCategoriasPorIdSubProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" minOccurs="0" name="ObtenerCategoriasPorIdSubProductoResult" nillable="true" type="q22:ArrayOfCategoria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProductosNoPermitidosPorSeguro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSeguro" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProductosNoPermitidosPorSeguroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ConsultarProductosNoPermitidosPorSeguroResult" nillable="true" type="q23:ArrayOfProductoNoPermitido" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubProductosPorCodigoProducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoProducto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSubProductosPorCodigoProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" minOccurs="0" name="ObtenerSubProductosPorCodigoProductoResult" nillable="true" type="q24:ArrayOfSubProducto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProductosBancariosActivos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProductosBancariosActivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" minOccurs="0" name="ObtenerProductosBancariosActivosResult" nillable="true" type="q25:ArrayOfProducto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVentaPorCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="cliente" nillable="true" type="q26:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVentaPorClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ConsultarVentaPorClienteResult" nillable="true" type="q27:ArrayOfConsultarVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVentaPorClienteDiaHabil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="cliente" nillable="true" type="q28:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVentaPorClienteDiaHabilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ConsultarVentaPorClienteDiaHabilResult" nillable="true" type="q29:ArrayOfConsultarVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPolizaReimpresion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="consecutivoPoliza" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPolizaReimpresionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="ConsultarPolizaReimpresionResult" nillable="true" type="q30:ResultadoDocumentoPoliza" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVentasCuentasPorCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Venta" minOccurs="0" name="cliente" nillable="true" type="q31:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarVentasCuentasPorClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="ConsultarVentasCuentasPorClienteResult" nillable="true" type="q32:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

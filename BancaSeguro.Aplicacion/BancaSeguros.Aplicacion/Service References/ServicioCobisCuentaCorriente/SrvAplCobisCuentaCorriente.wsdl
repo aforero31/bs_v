@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp" xmlns:dto1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S1="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/" name="SrvAplCobisCuentaCorriente" targetNamespace="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/">
+      <xsd:import schemaLocation="services.xsd" namespace="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp" />
+      <xsd:import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+      <xsd:element name="ContextoRespuesta" type="dto1:ContextoRespuesta" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MsjOpBuscarCostoChequeraRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarCostoChequeraRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarChequeSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarChequeSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoMovimientoCuentaCorrienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoMovimientoCuentaCorrienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarCuentaCorrienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarCuentaCorrienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarCuentaCorrienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarCuentaCorrienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoEncabezadoCuentaCorrienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoEncabezadoCuentaCorrienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoSaldoCuentaCorrienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoSaldoCuentaCorrienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjError">
+    <wsdl:part name="parameters" element="S1:ContextoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCrearOrdenNoPagoSolicitud">
+    <wsdl:part name="parameters" element="tns:opCrearOrdenNoPagoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpSolicitarChequeraRespuesta">
+    <wsdl:part name="parameters" element="tns:opSolicitarChequeraRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpCrearOrdenNoPagoRespuesta">
+    <wsdl:part name="parameters" element="tns:opCrearOrdenNoPagoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarChequeraRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarChequeraRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpActivarChequeraSolicitud">
+    <wsdl:part name="parameters" element="tns:opActivarChequeraSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarNoPagoRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarNoPagoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpSolicitarChequeraSolicitud">
+    <wsdl:part name="parameters" element="tns:opSolicitarChequeraSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoEncabezadoCuentaCorrienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoEncabezadoCuentaCorrienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarMovimientoSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarMovimientoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarMovimientoRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarMovimientoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoSaldoCuentaCorrienteSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoSaldoCuentaCorrienteSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpActivarChequeraRespuesta">
+    <wsdl:part name="parameters" element="tns:opActivarChequeraRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarNoPagoSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarNoPagoSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarExtractoMovimientoCuentaCorrienteRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarExtractoMovimientoCuentaCorrienteRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarChequeraSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarChequeraSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarChequeRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarChequeRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarCostoChequeraSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarCostoChequeraSolicitud" />
+  </wsdl:message>
+  <wsdl:portType name="SrvAplCobisCuentaCorriente">
+    <wsdl:operation name="OpActivarChequera">
+      <wsdl:input message="S1:MsjOpActivarChequeraSolicitud" />
+      <wsdl:output message="S1:MsjOpActivarChequeraRespuesta" />
+      <wsdl:fault name="OpActivarChequeraError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCheque">
+      <wsdl:input message="S1:MsjOpBuscarChequeSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarChequeRespuesta" />
+      <wsdl:fault name="OpBuscarChequeError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarChequera">
+      <wsdl:input message="S1:MsjOpBuscarChequeraSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarChequeraRespuesta" />
+      <wsdl:fault name="OpBuscarChequeraError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCostoChequera">
+      <wsdl:input message="S1:MsjOpBuscarCostoChequeraSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarCostoChequeraRespuesta" />
+      <wsdl:fault name="OpBuscarCostoChequeraError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCuentaCorriente">
+      <wsdl:input message="S1:MsjOpBuscarCuentaCorrienteSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarCuentaCorrienteRespuesta" />
+      <wsdl:fault name="OpBuscarCuentaCorrienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoEncabezadoCuentaCorriente">
+      <wsdl:input message="S1:MsjOpBuscarExtractoEncabezadoCuentaCorrienteSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarExtractoEncabezadoCuentaCorrienteRespuesta" />
+      <wsdl:fault name="OpBuscarExtractoEncabezadoCuentaCorrienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoMovimientoCuentaCorriente">
+      <wsdl:input message="S1:MsjOpBuscarExtractoMovimientoCuentaCorrienteSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarExtractoMovimientoCuentaCorrienteRespuesta" />
+      <wsdl:fault name="OpBuscarExtractoMovimientoCuentaCorrienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoSaldoCuentaCorriente">
+      <wsdl:input message="S1:MsjOpBuscarExtractoSaldoCuentaCorrienteSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarExtractoSaldoCuentaCorrienteRespuesta" />
+      <wsdl:fault name="OpBuscarExtractoSaldoCuentaCorrienteError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMovimiento">
+      <wsdl:input message="S1:MsjOpBuscarMovimientoSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarMovimientoRespuesta" />
+      <wsdl:fault name="OpBuscarMovimientoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarNoPago">
+      <wsdl:input message="S1:MsjOpBuscarNoPagoSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarNoPagoRespuesta" />
+      <wsdl:fault name="OpBuscarNoPagoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearOrdenNoPago">
+      <wsdl:input message="S1:MsjOpCrearOrdenNoPagoSolicitud" />
+      <wsdl:output message="S1:MsjOpCrearOrdenNoPagoRespuesta" />
+      <wsdl:fault name="OpCrearOrdenNoPagoError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpSolicitarChequera">
+      <wsdl:input message="S1:MsjOpSolicitarChequeraSolicitud" />
+      <wsdl:output message="S1:MsjOpSolicitarChequeraRespuesta" />
+      <wsdl:fault name="OpSolicitarChequeraError" message="S1:MsjError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvAplCobisCuentaCorrienteBindingSOAP11" type="S1:SrvAplCobisCuentaCorriente">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpActivarChequera">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpActivarChequera" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpActivarChequeraError">
+        <soap:fault use="literal" name="OpActivarChequeraError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCheque">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarCheque" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarChequeError">
+        <soap:fault use="literal" name="OpBuscarChequeError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarChequera">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarChequera" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarChequeraError">
+        <soap:fault use="literal" name="OpBuscarChequeraError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCostoChequera">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarCostoChequera" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarCostoChequeraError">
+        <soap:fault use="literal" name="OpBuscarCostoChequeraError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCuentaCorriente">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarCuentaCorriente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarCuentaCorrienteError">
+        <soap:fault use="literal" name="OpBuscarCuentaCorrienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoEncabezadoCuentaCorriente">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarExtractoEncabezadoCuentaCorriente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoEncabezadoCuentaCorrienteError">
+        <soap:fault use="literal" name="OpBuscarExtractoEncabezadoCuentaCorrienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoMovimientoCuentaCorriente">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarExtractoMovimientoCuentaCorriente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoMovimientoCuentaCorrienteError">
+        <soap:fault use="literal" name="OpBuscarExtractoMovimientoCuentaCorrienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoSaldoCuentaCorriente">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarExtractoSaldoCuentaCorriente" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoSaldoCuentaCorrienteError">
+        <soap:fault use="literal" name="OpBuscarExtractoSaldoCuentaCorrienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMovimiento">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarMovimiento" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarMovimientoError">
+        <soap:fault use="literal" name="OpBuscarMovimientoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarNoPago">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarNoPago" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarNoPagoError">
+        <soap:fault use="literal" name="OpBuscarNoPagoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearOrdenNoPago">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpCrearOrdenNoPago" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCrearOrdenNoPagoError">
+        <soap:fault use="literal" name="OpCrearOrdenNoPagoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpSolicitarChequera">
+      <soap:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpSolicitarChequera" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpSolicitarChequeraError">
+        <soap:fault use="literal" name="OpSolicitarChequeraError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SrvAplCobisCuentaCorrienteBindingSOAP12" type="S1:SrvAplCobisCuentaCorriente">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpActivarChequera">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpActivarChequera" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpActivarChequeraError">
+        <soap12:fault use="literal" name="OpActivarChequeraError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCheque">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarCheque" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarChequeError">
+        <soap12:fault use="literal" name="OpBuscarChequeError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarChequera">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarChequera" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarChequeraError">
+        <soap12:fault use="literal" name="OpBuscarChequeraError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCostoChequera">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarCostoChequera" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarCostoChequeraError">
+        <soap12:fault use="literal" name="OpBuscarCostoChequeraError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarCuentaCorriente">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarCuentaCorriente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarCuentaCorrienteError">
+        <soap12:fault use="literal" name="OpBuscarCuentaCorrienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoEncabezadoCuentaCorriente">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarExtractoEncabezadoCuentaCorriente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoEncabezadoCuentaCorrienteError">
+        <soap12:fault use="literal" name="OpBuscarExtractoEncabezadoCuentaCorrienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoMovimientoCuentaCorriente">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarExtractoMovimientoCuentaCorriente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoMovimientoCuentaCorrienteError">
+        <soap12:fault use="literal" name="OpBuscarExtractoMovimientoCuentaCorrienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarExtractoSaldoCuentaCorriente">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarExtractoSaldoCuentaCorriente" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarExtractoSaldoCuentaCorrienteError">
+        <soap12:fault use="literal" name="OpBuscarExtractoSaldoCuentaCorrienteError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarMovimiento">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarMovimiento" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarMovimientoError">
+        <soap12:fault use="literal" name="OpBuscarMovimientoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarNoPago">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpBuscarNoPago" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarNoPagoError">
+        <soap12:fault use="literal" name="OpBuscarNoPagoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearOrdenNoPago">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpCrearOrdenNoPago" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpCrearOrdenNoPagoError">
+        <soap12:fault use="literal" name="OpCrearOrdenNoPagoError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpSolicitarChequera">
+      <soap12:operation soapAction="http://service.srvaplcobiscuentacorriente.ecobis.cobiscorp.ws/SrvAplCobisCuentaCorriente/OpSolicitarChequera" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpSolicitarChequeraError">
+        <soap12:fault use="literal" name="OpSolicitarChequeraError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvAplCobisCuentaCorriente">
+    <wsdl:port name="SrvAplCobisCuentaCorrienteBindingSOAP11" binding="S1:SrvAplCobisCuentaCorrienteBindingSOAP11">
+      <soap:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisCuentaCorriente.Service/SrvAplCobisCuentaCorriente" />
+    </wsdl:port>
+    <wsdl:port name="SrvAplCobisCuentaCorrienteBindingSOAP12" binding="S1:SrvAplCobisCuentaCorrienteBindingSOAP12">
+      <soap12:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisCuentaCorriente.Service/SrvAplCobisCuentaCorriente" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

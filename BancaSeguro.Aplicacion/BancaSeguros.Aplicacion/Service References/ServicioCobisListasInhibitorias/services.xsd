@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:Q1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:tns2="http://dto2.sdf.cts.cobis.cobiscorp.com" elementFormDefault="qualified" targetNamespace="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="commonDTO2.xsd" namespace="http://dto2.sdf.cts.cobis.cobiscorp.com" />
+  <import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+  <element name="opBuscarListasInhibitoriasOperacionBSolicitud" type="Q1:OpBuscarListasInhibitoriasOperacionBSolicitud" />
+  <element name="opBuscarListasInhibitoriasOperacionBRespuesta" type="Q1:OpBuscarListasInhibitoriasOperacionBRespuesta" />
+  <element name="opBuscarListasInhibitoriasOperacionQSolicitud" type="Q1:OpBuscarListasInhibitoriasOperacionQSolicitud" />
+  <element name="opBuscarListasInhibitoriasOperacionQRespuesta" type="Q1:OpBuscarListasInhibitoriasOperacionQRespuesta" />
+  <element name="opBuscarListasInhibitoriasOperacionSSolicitud" type="Q1:OpBuscarListasInhibitoriasOperacionSSolicitud" />
+  <element name="opBuscarListasInhibitoriasOperacionSRespuesta" type="Q1:OpBuscarListasInhibitoriasOperacionSRespuesta" />
+</schema>

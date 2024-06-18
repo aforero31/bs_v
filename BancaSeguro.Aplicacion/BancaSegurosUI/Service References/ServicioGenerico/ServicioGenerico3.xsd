@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:60524/Generico/ServicioGenerico.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" />
+  <xs:import schemaLocation="http://localhost:60524/Generico/ServicioGenerico.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" />
+  <xs:element name="ConsultarCatalogo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NombreTabla" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCatalogoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.Catalogo" minOccurs="0" name="ConsultarCatalogoResult" nillable="true" type="q1:DtoCatalogo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarError">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="evento" type="xs:int" />
+        <xs:element minOccurs="0" name="excepcion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="llave" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarErrorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="GuardarErrorResult" nillable="true" type="q2:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMensajePorLlave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="evento" type="xs:int" />
+        <xs:element minOccurs="0" name="llave" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMensajePorLlaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BancaSeguros.Entidades.General" minOccurs="0" name="ConsultarMensajePorLlaveResult" nillable="true" type="q3:Resultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c93f7757-7341-4b29-ac92-5226968cc109" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60524/Sincronizacion/ServicioSincronizacion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioSincronizacion1.xsd" MetadataType="Schema" ID="bb0ab190-f7a3-4d9b-81ac-60cbe4e02c9e" SourceId="1" SourceUrl="http://localhost:60524/Sincronizacion/ServicioSincronizacion.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioSincronizacion.xsd" MetadataType="Schema" ID="23df8634-5e7f-43e1-ade6-f1489c9238db" SourceId="1" SourceUrl="http://localhost:60524/Sincronizacion/ServicioSincronizacion.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioSincronizacion11.xsd" MetadataType="Schema" ID="4da46f88-4f45-48ea-bece-f15ff51fd10b" SourceId="1" SourceUrl="http://localhost:60524/Sincronizacion/ServicioSincronizacion.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioSincronizacion.disco" MetadataType="Disco" ID="36ba3236-684e-44f6-a220-81c3f438b2b3" SourceId="1" SourceUrl="http://localhost:60524/Sincronizacion/ServicioSincronizacion.svc?disco" />
+    <MetadataFile FileName="ServicioSincronizacion.wsdl" MetadataType="Wsdl" ID="4ce76636-8854-447b-98a5-6c6a4e9e8b66" SourceId="1" SourceUrl="http://localhost:60524/Sincronizacion/ServicioSincronizacion.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

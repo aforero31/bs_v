@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{035A6CCC-039F-4F03-A605-A2911FD7E452}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BancaSeguros.ServiciosWCF</RootNamespace>
+    <AssemblyName>BancaSeguros.ServiciosWCF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Requerimientos\UnitTests, archivos de reglas y GhostDoc\Intergrupo.Rules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <AdditionalPublishFile Include="bin\*.dll">
+      <Visible>False</Visible>
+    </AdditionalPublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administracion\ServicioAdministracion.svc" />
+    <Content Include="ArchivosPDF\Text.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ControlDual\ServicioControlDual.svc" />
+    <Content Include="Generico\ServicioGenerico.svc" />
+    <Content Include="References\gsdll32.dll" />
+    <Content Include="Sincronizacion\ServicioSincronizacion.svc" />
+    <Content Include="Venta\ServicioVenta.svc" />
+    <Content Include="Seguridad\ServicioSeguridad.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\IServicioAdministracion.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Administracion\ServicioAdministracion.svc.cs">
+      <DependentUpon>ServicioAdministracion.svc</DependentUpon>
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ControlDual\IServicioControlDual.cs" />
+    <Compile Include="ControlDual\ServicioControlDual.svc.cs">
+      <DependentUpon>ServicioControlDual.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Generico\IServicioGenerico.cs" />
+    <Compile Include="Generico\ServicioGenerico.svc.cs">
+      <DependentUpon>ServicioGenerico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Sincronizacion\IServicioSincronizacion.cs" />
+    <Compile Include="Sincronizacion\ServicioSincronizacion.svc.cs">
+      <DependentUpon>ServicioSincronizacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\IServicioVenta.cs" />
+    <Compile Include="Venta\ServicioVenta.svc.cs">
+      <DependentUpon>ServicioVenta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Seguridad\IServicioSeguridad.cs" />
+    <Compile Include="Seguridad\ServicioSeguridad.svc.cs">
+      <DependentUpon>ServicioSeguridad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\BancaSeguros.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalAC.pubxml" />
+    <None Include="Properties\PublishProfiles\ServiciosCAP.pubxml" />
+    <None Include="Properties\PublishProfiles\ServidorDesarrollo.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalWZ.pubxml" />
+    <None Include="Properties\PublishProfiles\wcfBancaSeguros.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ServidorDesarrollo.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAC.EntidadesSeguridad\BAC.EntidadesSeguridad.csproj">
+      <Project>{7238aac9-a13e-4b45-a3e8-b67db99e7c21}</Project>
+      <Name>BAC.EntidadesSeguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BAC.Seguridad\BAC.Seguridad.csproj">
+      <Project>{afae1c57-cc5a-4c09-9f1d-8eacd2f9c535}</Project>
+      <Name>BAC.Seguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Aplicacion\BancaSeguros.Aplicacion.csproj">
+      <Project>{d8b4ff96-d255-4bba-b48a-b4d0ea822668}</Project>
+      <Name>BancaSeguros.Aplicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Entidades\BancaSeguros.Entidades.csproj">
+      <Project>{0b8ff5bf-867e-41b6-a901-d4aa8aff028a}</Project>
+      <Name>BancaSeguros.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BancaSeguros.Repositorio\BancaSeguros.Repositorio.csproj">
+      <Project>{56c03caf-c67c-4a90-9f76-75e2b5343075}</Project>
+      <Name>BancaSeguros.Repositorio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ServidorDesarrollo|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'a|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60524</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60524/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="@(Gsdll)" DestinationFolder="$(SolutionDir)BancaSeguros.ServiciosWCF\bin\" />
+  </Target>
+  <Target Name="AfterPublish" AfterTargets="CopyAllFilesToSingleFolderForPackage">
+    <Exec Command="xcopy.exe &quot;$(SolutionDir)BancaSeguros.ServiciosWCF\References\gsdll32.dll&quot; &quot;$(ProjectDir)obj\$(Configuration)\Package\PackageTmp\bin&quot;" />
+    <Message Importance="Normal" Text="Finished PostBuildEventPublish.bat" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp" xmlns:dto1="http://dto.srvaplcobisentidades.ecobis.cobiscorp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S1="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/" name="SrvAplCobisListasInhibitorias" targetNamespace="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/">
+      <xsd:import schemaLocation="services.xsd" namespace="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp" />
+      <xsd:import schemaLocation="cobiscorp.ecobis.srvaplcobisentidades.dto.xsd" namespace="http://dto.srvaplcobisentidades.ecobis.cobiscorp" />
+      <xsd:element name="ContextoRespuesta" type="dto1:ContextoRespuesta" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MsjError">
+    <wsdl:part name="parameters" element="S1:ContextoRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarListasInhibitoriasOperacionBSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarListasInhibitoriasOperacionBSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarListasInhibitoriasOperacionSRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarListasInhibitoriasOperacionSRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarListasInhibitoriasOperacionQSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarListasInhibitoriasOperacionQSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarListasInhibitoriasOperacionBRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarListasInhibitoriasOperacionBRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarListasInhibitoriasOperacionSSolicitud">
+    <wsdl:part name="parameters" element="tns:opBuscarListasInhibitoriasOperacionSSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="MsjOpBuscarListasInhibitoriasOperacionQRespuesta">
+    <wsdl:part name="parameters" element="tns:opBuscarListasInhibitoriasOperacionQRespuesta" />
+  </wsdl:message>
+  <wsdl:portType name="SrvAplCobisListasInhibitorias">
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionB">
+      <wsdl:input message="S1:MsjOpBuscarListasInhibitoriasOperacionBSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarListasInhibitoriasOperacionBRespuesta" />
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionBError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionQ">
+      <wsdl:input message="S1:MsjOpBuscarListasInhibitoriasOperacionQSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarListasInhibitoriasOperacionQRespuesta" />
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionQError" message="S1:MsjError" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionS">
+      <wsdl:input message="S1:MsjOpBuscarListasInhibitoriasOperacionSSolicitud" />
+      <wsdl:output message="S1:MsjOpBuscarListasInhibitoriasOperacionSRespuesta" />
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionSError" message="S1:MsjError" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvAplCobisListasInhibitoriasBindingSOAP11" type="S1:SrvAplCobisListasInhibitorias">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionB">
+      <soap:operation soapAction="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/SrvAplCobisListasInhibitorias/OpBuscarListasInhibitoriasOperacionB" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionBError">
+        <soap:fault use="literal" name="OpBuscarListasInhibitoriasOperacionBError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionQ">
+      <soap:operation soapAction="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/SrvAplCobisListasInhibitorias/OpBuscarListasInhibitoriasOperacionQ" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionQError">
+        <soap:fault use="literal" name="OpBuscarListasInhibitoriasOperacionQError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionS">
+      <soap:operation soapAction="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/SrvAplCobisListasInhibitorias/OpBuscarListasInhibitoriasOperacionS" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionSError">
+        <soap:fault use="literal" name="OpBuscarListasInhibitoriasOperacionSError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SrvAplCobisListasInhibitoriasBindingSOAP12" type="S1:SrvAplCobisListasInhibitorias">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/BindingPolicy" />
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionB">
+      <soap12:operation soapAction="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/SrvAplCobisListasInhibitorias/OpBuscarListasInhibitoriasOperacionB" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionBError">
+        <soap12:fault use="literal" name="OpBuscarListasInhibitoriasOperacionBError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionQ">
+      <soap12:operation soapAction="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/SrvAplCobisListasInhibitorias/OpBuscarListasInhibitoriasOperacionQ" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionQError">
+        <soap12:fault use="literal" name="OpBuscarListasInhibitoriasOperacionQError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarListasInhibitoriasOperacionS">
+      <soap12:operation soapAction="http://service.srvaplcobislistasinhibitorias.ecobis.cobiscorp.ws/SrvAplCobisListasInhibitorias/OpBuscarListasInhibitoriasOperacionS" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/InputPolicy" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <wsp:PolicyReference URI="http://www.bancoagrario.gov.co/policy/OutputPolicy" />
+      </wsdl:output>
+      <wsdl:fault name="OpBuscarListasInhibitoriasOperacionSError">
+        <soap12:fault use="literal" name="OpBuscarListasInhibitoriasOperacionSError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvAplCobisListasInhibitorias">
+    <wsdl:port name="SrvAplCobisListasInhibitoriasBindingSOAP11" binding="S1:SrvAplCobisListasInhibitoriasBindingSOAP11">
+      <soap:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisListasInhibitorias.Service/SrvAplCobisListasInhibitorias" />
+    </wsdl:port>
+    <wsdl:port name="SrvAplCobisListasInhibitoriasBindingSOAP12" binding="S1:SrvAplCobisListasInhibitoriasBindingSOAP12">
+      <soap12:address location="http://localhost:9082/COBISCorp.eCOBIS.SrvAplCobisListasInhibitorias.Service/SrvAplCobisListasInhibitorias" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

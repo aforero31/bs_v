@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5de306e0-a5b7-4c6a-aa13-f8e4d949183b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="BAC.EntidadesSeguridad" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Aplicacion" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Entidades" />
+      <ReferencedAssembly AssemblyName="BancaSeguros.Infraestructura" />
+      <ReferencedAssembly AssemblyName="System" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60524/ControlDual/ServicioControlDual.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioControlDual3.xsd" MetadataType="Schema" ID="135c7ae2-8d7d-4567-981d-e58c353d687e" SourceId="1" SourceUrl="http://localhost:60524/ControlDual/ServicioControlDual.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServicioControlDual.xsd" MetadataType="Schema" ID="76aebcb8-6e56-407b-bdd3-15ad6ea3cb05" SourceId="1" SourceUrl="http://localhost:60524/ControlDual/ServicioControlDual.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioControlDual1.xsd" MetadataType="Schema" ID="b395ca33-f3c3-4a95-944d-fbcc86bed3b5" SourceId="1" SourceUrl="http://localhost:60524/ControlDual/ServicioControlDual.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioControlDual2.xsd" MetadataType="Schema" ID="0b852374-852f-4b05-8031-3966c5a23b68" SourceId="1" SourceUrl="http://localhost:60524/ControlDual/ServicioControlDual.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioControlDual.disco" MetadataType="Disco" ID="bd06ea28-449f-4a99-9e7c-ecebb4778697" SourceId="1" SourceUrl="http://localhost:60524/ControlDual/ServicioControlDual.svc?disco" />
+    <MetadataFile FileName="ServicioControlDual.wsdl" MetadataType="Wsdl" ID="e8e05ce3-5b2d-4f05-ac60-ff9c4008da49" SourceId="1" SourceUrl="http://localhost:60524/ControlDual/ServicioControlDual.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
